@@ -10,13 +10,15 @@ export interface Talents {
   name: string;
   description: string;
   unlock_condition?: string;
+  hero: Hero;
   type: "starter" | "normal" | "ultimate";
 }
 
 export interface Abilities {
   name: string;
   description: string;
-  type: "trait" | "power" | "special" | "defence" | "ultimate";
+  hero: Hero;
+  type: "trait" | "attack" | "power" | "special" | "defence" | "ultimate";
   passive?: boolean;
 }
 
@@ -32,6 +34,9 @@ export interface Build {
   name: string;
   description: string;
   hero: Hero;
-  talents: Talents[];
-  magical_objects: Magical_Objects[];
+  tier: "S" | "A" | "B" | "C" | "D";
+  core_talents: Talents[];
+  secondary_talents: Talents[];
+  core_magical_objects: Magical_Objects[];
+  secondary_magical_objects: Magical_Objects[];
 }
