@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen  bg-gray-100 text-gray-800 p-8">
       <header className="text-center my-8">
         <h1 className="text-4xl font-bold mb-4">Ravenswatch Wiki</h1>
         <p className="text-lg">
@@ -13,9 +13,10 @@ export default function Home() {
         <section className="mb-8 text-center">
           <h2 className="text-2xl font-semibold mb-2">About Ravenswatch</h2>
           <p className="text-lg">
-            Ravenswatch is an exciting game where players embark on thrilling
-            adventures. Learn more about the game&apos;s mechanics, characters,
-            and lore.
+            Fallen heroes of old folk tales and legends: you are on the verge of
+            a crucial battle against the Nightmare invading and corrupting your
+            world. A roguelike action game from the creators of Curse of the
+            Dead Gods©, playable solo or in online co-op.
           </p>
         </section>
         <section className="text-center">

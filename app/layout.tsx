@@ -9,6 +9,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import Image from "next/image";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,7 +37,13 @@ export default function RootLayout({
       <body>
         <header className="flex items-center p-4">
           <div className="flex items-center">
-            <img src="/logo.png" alt="Ravenswatch Logo" className="h-12 mr-4" />
+            <Image
+              src="/logo.png"
+              alt="Ravenswatch Logo"
+              width={48}
+              height={48}
+              className="h-12 mr-4"
+            />
             <NavigationMenu>
               <NavigationMenuList className="flex space-x-4">
                 <NavigationMenuItem>

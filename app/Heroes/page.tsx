@@ -6,15 +6,19 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import Image from "next/image";
+
 const heroes = [
   {
     name: "Scarlet",
-    description: "Scarlet, the Red Hood is one of the nine currently playable heroes in the Ravenswatch.",
+    description:
+      "Scarlet, the Red Hood is one of the nine currently playable heroes in the Ravenswatch.",
     image: "/scarlet.png",
   },
   {
     name: "Beowulf",
-    description: "Beowulf, the legendary hero known for his strength and bravery.",
+    description:
+      "Beowulf, the legendary hero known for his strength and bravery.",
     image: "/beowulf.png",
   },
   {
@@ -64,13 +68,20 @@ export default function Home() {
       <main className="w-full max-w-6xl mx-auto">
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {heroes.map((hero) => (
-            <Card key={hero.name} className="bg-white shadow-md rounded-lg overflow-hidden">
+            <Card
+              key={hero.name}
+              className="bg-white shadow-md rounded-lg overflow-hidden"
+            >
               <CardHeader>
                 <CardTitle>{hero.name}</CardTitle>
                 <CardDescription>{hero.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <img src={hero.image} alt={`Ravenswatch ${hero.name}`} className="w-full h-48 object-cover" />
+                <img // Replace with Image component
+                  src={hero.image}
+                  alt={`Ravenswatch ${hero.name}`}
+                  className="w-full h-48 object-cover"
+                />
               </CardContent>
             </Card>
           ))}
