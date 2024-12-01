@@ -26,7 +26,7 @@ const Header = () => {
         {/* Logo and Brand */}
         <div className="flex items-center gap-2 flex-shrink-0">
           <Image
-            src="/logo.png"
+            src="/rw_logo.png"
             alt="Ravenswatch Logo"
             width={48}
             height={48}
