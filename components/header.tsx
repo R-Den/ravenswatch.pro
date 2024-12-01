@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ModeToggle } from "@/components/ui/theme-toggle";
-import { Menu } from "lucide-react";
+import { Link, Menu } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -25,16 +25,18 @@ const Header = () => {
       <div className="container flex h-16 items-center">
         {/* Logo and Brand */}
         <div className="flex items-center gap-2 flex-shrink-0">
-          <Image
-            src="/rw_logo.png"
-            alt="Ravenswatch Logo"
-            width={48}
-            height={48}
-            className="h-12 w-auto"
-          />
-          <span className="text-xl font-bold text-foreground">
-            Ravenswatch.pro
-          </span>
+          <a href="/" className="flex items-center gap-2 flex-shrink-0">
+            <Image
+              src="/rw_logo.png"
+              alt="Ravenswatch Logo"
+              width={48}
+              height={48}
+              className="h-12 w-auto"
+            />
+            <span className="text-xl font-bold text-foreground">
+              Ravenswatch.pro
+            </span>
+          </a>
         </div>
 
         {/* Desktop Navigation  */}

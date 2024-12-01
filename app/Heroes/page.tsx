@@ -56,7 +56,7 @@ const heroes = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-800 p-8">
+    <div className="min-h-screen bg-background p-8">
       <header className="text-center my-8">
         <h1 className="text-4xl font-bold mb-4">Ravenswatch Wiki</h1>
         <p className="text-lg">
@@ -70,7 +70,7 @@ export default function Home() {
           {heroes.map((hero) => (
             <Card
               key={hero.name}
-              className="bg-white shadow-md rounded-lg overflow-hidden"
+              className="bg-secondary border-border shadow-md rounded-lg overflow-hidden"
             >
               <CardHeader>
                 <CardTitle>{hero.name}</CardTitle>

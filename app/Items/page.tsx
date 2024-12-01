@@ -44,7 +44,7 @@ const items = [
 
 export default function Items() {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-800 p-8">
+    <div className="min-h-screen bg-background p-8">
       <header className="text-center my-8">
         <h1 className="text-4xl font-bold mb-4">Magical Objects</h1>
         <p className="text-lg">
@@ -53,7 +53,7 @@ export default function Items() {
       </header>
 
       <main className="w-full max-w-6xl mx-auto">
-        <Table className="bg-white shadow-md rounded-lg overflow-hidden">
+        <Table className="bg-secondary border-border shadow-md rounded-lg overflow-hidden">
           <TableCaption>A list of magical objects in Ravenswatch.</TableCaption>
           <TableHeader>
             <TableRow>
