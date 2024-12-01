@@ -9,15 +9,16 @@ export interface Hero {
 export interface Talents {
   name: string;
   description: string;
-  unlock_condition?: string;
-  hero: Hero;
+  unlock_rank?: number;
+  hero: string;
   type: "starter" | "normal" | "ultimate";
+  upgrade_changes?: string;
 }
 
 export interface Abilities {
   name: string;
   description: string;
-  hero: Hero;
+  hero: string;
   type: "trait" | "attack" | "power" | "special" | "defence" | "ultimate";
   passive?: boolean;
 }
