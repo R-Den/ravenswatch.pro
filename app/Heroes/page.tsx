@@ -5,53 +5,27 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { aladdin } from "@/lib/heroes/aladdin/aladdin";
+import { beowulf } from "@/lib/heroes/beowulf/beowulf";
+// import { carmilla } from "@/lib/heroes/carmilla/carmilla";
+import { geppetto } from "@/lib/heroes/geppetto/geppetto";
+import { melusine } from "@/lib/heroes/melusine/melusine";
+import { piper } from "@/lib/heroes/piper/piper";
+import { scarlet } from "@/lib/heroes/scarlet/scarlet";
+import { snow_queen } from "@/lib/heroes/snow_queen/snow_queen";
+import { wukong } from "@/lib/heroes/wukong/wukong";
 
 import Image from "next/image";
 
 const heroes = [
-  {
-    name: "Scarlet",
-    description:
-      "Scarlet, the Red Hood is one of the nine currently playable heroes in the Ravenswatch.",
-    image: "/scarlet.png",
-  },
-  {
-    name: "Beowulf",
-    description:
-      "Beowulf, the legendary hero known for his strength and bravery.",
-    image: "/beowulf.png",
-  },
-  {
-    name: "Aladdin",
-    description: "Aladdin, the cunning hero with a magical lamp.",
-    image: "/aladdin.png",
-  },
-  {
-    name: "Snow Queen",
-    description: "Snow Queen, the icy ruler with powerful frost abilities.",
-    image: "/snowqueen.png",
-  },
-  {
-    name: "Melusine",
-    description: "Melusine, the water nymph with enchanting abilities.",
-    image: "/melusine.png",
-  },
-  {
-    name: "Dracula",
-    description: "Dracula, the vampire lord with dark powers.",
-    image: "/dracula.png",
-  },
-  {
-    name: "Robin Hood",
-    description: "Robin Hood, the master archer and defender of the poor.",
-    image: "/robinhood.png",
-  },
-  {
-    name: "Rapunzel",
-    description: "Rapunzel, the princess with magical hair.",
-    image: "/rapunzel.png",
-  },
-  // Add more heroes as needed
+  aladdin,
+  beowulf,
+  geppetto,
+  melusine,
+  piper,
+  scarlet,
+  snow_queen,
+  wukong,
 ];
 
 export default function Home() {
@@ -77,8 +51,10 @@ export default function Home() {
                 <CardDescription>{hero.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <img // Replace with Image component
-                  src={hero.image}
+                <Image
+                  src={`/heroes/${hero.name}.png`}
+                  width={500}
+                  height={500}
                   alt={`Ravenswatch ${hero.name}`}
                   className="w-full h-48 object-cover"
                 />

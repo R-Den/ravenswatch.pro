@@ -10,7 +10,7 @@ import {
 } from "./abilities";
 
 export const melusine: Hero = {
-  name: "melusine",
+  name: "Melusine",
   unlock_condition: "Complete Chapter 1 with The Pied Piper",
   description:
     "Melusine the Siren commands the waters and uses them to infuse the will-o-wisps at her side to submerge those foolish enough to be caught within her captivating song.",
