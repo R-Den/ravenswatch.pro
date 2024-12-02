@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ModeToggle } from "@/components/ui/theme-toggle";
-import { Link, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuItem,

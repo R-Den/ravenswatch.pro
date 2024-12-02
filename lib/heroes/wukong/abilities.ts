@@ -1,5 +1,4 @@
 import { Abilities } from "@/lib/types";
-import { wukong } from "./wukong";
 
 export const wukong_trait: Abilities = {
   name: "Taiji",
