@@ -5,15 +5,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { aladdin } from "@/lib/heroes/aladdin/aladdin";
-import { beowulf } from "@/lib/heroes/beowulf/beowulf";
-// import { carmilla } from "@/lib/heroes/carmilla/carmilla";
-import { geppetto } from "@/lib/heroes/geppetto/geppetto";
-import { melusine } from "@/lib/heroes/melusine/melusine";
-import { piper } from "@/lib/heroes/piper/piper";
-import { scarlet } from "@/lib/heroes/scarlet/scarlet";
-import { snow_queen } from "@/lib/heroes/snow_queen/snow_queen";
-import { wukong } from "@/lib/heroes/wukong/wukong";
+import { aladdin } from "@/lib/heroes/aladdin";
+import { beowulf } from "@/lib/heroes/beowulf";
+// import { carmilla } from "@/lib/heroes/carmilla";
+import { geppetto } from "@/lib/heroes/geppetto";
+import { melusine } from "@/lib/heroes/melusine";
+import { piper } from "@/lib/heroes/piper";
+import { scarlet } from "@/lib/heroes/scarlet";
+import { snow_queen } from "@/lib/heroes/snow_queen";
+import { wukong } from "@/lib/heroes/wukong";
 
 import Image from "next/image";
 
