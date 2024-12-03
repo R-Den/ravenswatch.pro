@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ModeToggle } from "@/components/ui/theme-toggle";
-import { Menu } from "lucide-react";
+import { Menu, Mail, Github } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { links } from "@/lib/data";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,6 +21,18 @@ const Header = () => {
     { href: "/Items", label: "Items" },
     { href: "/Build", label: "Build" },
     { href: "/About", label: "About" },
+  ];
+  const socialLinks = [
+    {
+      href: links.githubUrl,
+      icon: <Github size={20} />,
+      condition: true,
+    },
+    {
+      href: `mailto:${links.email}`,
+      icon: <Mail size={20} />,
+      condition: true,
+    },
   ];
 
   return (
@@ -57,9 +70,29 @@ const Header = () => {
           </NavigationMenu>
         </div>
 
-        {/* Mode Toggle and Mobile Menu Button */}
-        <div className="flex items-center gap-2 flex-shrink-0 md:absolute md:right-4">
-          <ModeToggle />
+        <div className="flex items-center gap-1 flex-shrink-0 md:absolute md:right-4">
+          <div className="flex items-center gap-2">
+            <ModeToggle />
+            {/* Separator Line - Only visible on desktop */}
+            <div className="hidden md:block w-px h-6 bg-border" />
+            {/* Social Links - Only visible on desktop */}
+            <div className="hidden md:flex items-center space-x-3 ml-2">
+              {socialLinks.map(
+                (link) =>
+                  link.condition && (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      {link.icon}
+                    </a>
+                  ),
+              )}
+            </div>
+          </div>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="inline-flex md:hidden items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-accent hover:text-accent-foreground"
@@ -70,7 +103,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden border-t flex justify-center">
           <div className="container py-4">
@@ -85,6 +118,22 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
+              <div className="flex space-x-3 pt-2">
+                {socialLinks.map(
+                  (link) =>
+                    link.condition && (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-foreground"
+                      >
+                        {link.icon}
+                      </a>
+                    ),
+                )}
+              </div>
             </nav>
           </div>
         </div>
