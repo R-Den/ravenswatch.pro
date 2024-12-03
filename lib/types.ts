@@ -30,9 +30,10 @@ export interface Abilities {
 }
 
 export interface Magical_Objects {
+  id: string;
   name: string;
   description: string;
-  rarity: "common" | "rare" | "epic" | "legendary";
+  rarity: "common" | "rare" | "epic" | "legendary" | "cursed";
   super_effect?: string;
   stacks_to_effect?: 3 | 4 | 5;
 }
