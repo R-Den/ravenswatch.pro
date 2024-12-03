@@ -8,39 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const items = [
-  {
-    name: "Magic Lamp",
-    description: "A lamp that grants three wishes.",
-    rarity: "Legendary",
-    effect: "Grants three wishes to the holder.",
-  },
-  {
-    name: "Excalibur",
-    description: "The legendary sword of King Arthur.",
-    rarity: "Epic",
-    effect: "Increases attack power significantly.",
-  },
-  {
-    name: "Phoenix Feather",
-    description: "A feather from the mythical Phoenix.",
-    rarity: "Rare",
-    effect: "Revives the holder upon death.",
-  },
-  {
-    name: "Invisibility Cloak",
-    description: "A cloak that makes the wearer invisible.",
-    rarity: "Epic",
-    effect: "Grants invisibility to the wearer.",
-  },
-  {
-    name: "Healing Potion",
-    description: "A potion that heals wounds.",
-    rarity: "Common",
-    effect: "Restores health to the drinker.",
-  },
-  // Add more items as needed
-];
+import { magical_objects } from "@/lib/magical_objects/magical_objects";
 
 export default function Items() {
   return (
@@ -58,18 +26,20 @@ export default function Items() {
           <TableHeader>
             <TableRow>
               <TableHead className="w-[200px]">Name</TableHead>
-              <TableHead>Description</TableHead>
-              <TableHead>Rarity</TableHead>
               <TableHead>Effect</TableHead>
+              <TableHead>Rarity</TableHead>
+              <TableHead>Super Effect</TableHead>
+              <TableHead>stacks to effect</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {items.map((item) => (
+            {magical_objects.map((item) => (
               <TableRow key={item.name}>
                 <TableCell className="font-medium">{item.name}</TableCell>
                 <TableCell>{item.description}</TableCell>
                 <TableCell>{item.rarity}</TableCell>
-                <TableCell>{item.effect}</TableCell>
+                <TableCell>{item.super_effect}</TableCell>
+                <TableCell>{item.stacks_to_effect}</TableCell>
               </TableRow>
             ))}
           </TableBody>
