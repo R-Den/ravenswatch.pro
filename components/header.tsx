@@ -17,8 +17,8 @@ const Header = () => {
   const navigationItems = [
     { href: "/", label: "Home" },
     { href: "/Heroes", label: "Heroes" },
-    { href: "/Build", label: "Build" },
     { href: "/Items", label: "Items" },
+    { href: "/Build", label: "Build" },
     { href: "/About", label: "About" },
   ];
 
@@ -72,9 +72,9 @@ const Header = () => {
 
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
-        <div className="md:hidden border-t">
+        <div className="md:hidden border-t flex justify-center">
           <div className="container py-4">
-            <nav className="flex flex-col space-y-4">
+            <nav className="flex flex-col items-center space-y-4">
               {navigationItems.map((item) => (
                 <a
                   key={item.href}
