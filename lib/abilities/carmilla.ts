@@ -1,61 +1,61 @@
 import { Abilities } from "@/lib/types";
 import { HERO_IDS } from "../hero-ids";
 
-export const wukong_abilities: Abilities[] = [
+export const carmilla_abilities: Abilities[] = [
   {
-    id: "wukong-trait",
-    name: "Taiji",
+    id: "carmilla-trait",
+    name: "Dhampir",
     description:
-      "Switch between YIN STANCE and YANG STANCE. YIN: All abilities and ATTACKS gain 10% LIFE ON HIT, on activation all heroes around gain 15 SHIELD for 6 seconds. YANG: Sun Wukong deals and takes 100% more damage, on activation all heroes around gain STRENGTH for 4 seconds",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Passive: Carmilla uses BLOOD to fuel some of her abilities, or health when none is left. Active: Enter Winged Form, draining 9 BLOOD per second to gain +30% MOVE SPEED and BLOOD-free abilities. DAY: Every 1 second, restore 2 health to all nearby heroes. NIGHT: Gain +30% Crit Chance.",
+    hero: HERO_IDS.CARMILLA,
     type: "trait",
   },
   {
-    id: "wukong-attack",
-    name: "Ruyi Jingu Bang",
+    id: "carmilla-attack",
+    name: "Tearing",
     description:
-      "Chain attacks with the staff, with each successive move increasing its range and power. The full chain deals a total of 162 damage",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Chain a series of 5 attacks with clawed hands, with the last attack dealing +300% damage. The combo overall deals a total of 48 damage and earns 8 BLOOD point(s).",
+    hero: HERO_IDS.CARMILLA,
     type: "attack",
   },
   {
-    id: "wukong-power",
-    name: "Jindou Yun",
+    id: "carmilla-power",
+    name: "Blood Orb",
     description:
-      "Rush toward a nearby enemy then strike it for 60 damage. If other enemies are nearby, this ability chains up to two more times while INTANGIBLE. After landing POWER, Sun Wukong is briefly INTANGIBLE while leaping backwards",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Carmilla sends a blood orb forward; holding the action consumes BLOOD to fuel it, dealing 80 area damage per second. Upon release, the blood orb explodes and deals 40 area damage. While channeling POWER, the orb can be slowly moved around.",
+    hero: HERO_IDS.CARMILLA,
     type: "power",
   },
   {
-    id: "wukong-special",
-    name: "Mantra",
+    id: "carmilla-special",
+    name: "Death Kiss",
     description:
-      "Launch prayer beads that orbit Sun Wukong for 5 second(s), dealing 32 damage per second to enemies affected",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Hold then release - Carmilla launches herself at the target location, then bites the closest enemy while INTANGIBLE, dealing 100 damage. Each successful bite earns 30 BLOOD point(s).",
+    hero: HERO_IDS.CARMILLA,
     type: "special",
   },
   {
-    id: "wukong-defence",
-    name: "Empty Palm",
+    id: "carmilla-defence",
+    name: "Bat Swarm",
     description:
-      "Block any attack for 0.5 seconds. If an attack is blocked, the blocking time is reset and Empty Palm's cooldown is refreshed. Blocking multiple attacks with one DEFENSE activation does not stack progression of Talents/Quests. On a successful block, if the attack still going then automaticlly block those attacks without pressing DEFENSE again",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Carmilla transforms into an INTANGIBLE bat swarm for 0.65 second(s), dealing 30 damage to enemies passed through as BLEED. Holding the action consumes BLOOD to keep this form active for up to 3 second(s).",
+    hero: HERO_IDS.CARMILLA,
     type: "defence",
   },
   {
-    id: "wukong-ultimate1",
-    name: "Monkey Clones",
+    id: "carmilla-ultimate1",
+    name: "Impalement",
     description:
-      "Sun Wukong becomes INTANGIBLE and summons 6 clones in the area, which will fight nearby enemies and attract their attention. Clones copy Sun Wukong's VITALITY and DMG and disappear after 10 second",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Consumes all BLOOD to launch a series of blood spikes erupting from the ground in front, dealing 450 damage per second to enemies in the area. Each BLOOD point consumed increases the damage by +1%. In Winged Form, Impalement does not consume BLOOD while still increasing its damage.",
+    hero: HERO_IDS.CARMILLA,
     type: "ultimate",
   },
   {
-    id: "wukong-ultimate2",
-    name: "Transfiguration",
+    id: "carmilla-ultimate2",
+    name: "Blood Lash",
     description:
-      "Sun Wukong transforms for 20 seconds into a copy of another random hero, with all their standard Talents activated, of Epic quality. When transformed as Aladdin, TRAIT can only be activated once per transformation",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Summon a whip of blood, dealing 100 area damage. Next 12 ATTACKS use the whip to strike in large areas, with the combo overall dealing a total of 140 damage.",
+    hero: HERO_IDS.CARMILLA,
     type: "ultimate",
   },
 ];

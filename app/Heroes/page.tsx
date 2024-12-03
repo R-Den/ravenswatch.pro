@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 import { aladdin } from "@/lib/heroes/aladdin";
 import { beowulf } from "@/lib/heroes/beowulf";
-// import { carmilla } from "@/lib/heroes/carmilla";
+import { carmilla } from "@/lib/heroes/carmilla";
 import { geppetto } from "@/lib/heroes/geppetto";
 import { melusine } from "@/lib/heroes/melusine";
 import { piper } from "@/lib/heroes/piper";
@@ -20,6 +20,7 @@ import Image from "next/image";
 const heroes = [
   aladdin,
   beowulf,
+  carmilla,
   geppetto,
   melusine,
   piper,

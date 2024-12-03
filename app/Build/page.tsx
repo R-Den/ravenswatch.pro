@@ -1,5 +1,6 @@
 import { aladdin } from "@/lib/heroes/aladdin";
 import { beowulf } from "@/lib/heroes/beowulf";
+import { carmilla } from "@/lib/heroes/carmilla";
 import { geppetto } from "@/lib/heroes/geppetto";
 import { melusine } from "@/lib/heroes/melusine";
 import { piper } from "@/lib/heroes/piper";
@@ -18,6 +19,7 @@ export default async function BuildPage() {
   const heroes = [
     aladdin,
     beowulf,
+    carmilla,
     geppetto,
     melusine,
     piper,
