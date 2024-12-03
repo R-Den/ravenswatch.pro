@@ -1,8 +1,8 @@
 import {
   Card,
+  CardHeader,
   CardContent,
   CardDescription,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { aladdin } from "@/lib/heroes/aladdin";
@@ -45,20 +45,24 @@ export default function Home() {
           {heroes.map((hero) => (
             <Card
               key={hero.name}
-              className="bg-secondary border-border shadow-md rounded-lg overflow-hidden"
+              className="bg-secondary border-border shadow-md rounded-lg overflow-hidden flex flex-col justify-between"
             >
               <CardHeader>
                 <CardTitle>{hero.name}</CardTitle>
-                <CardDescription>{hero.description}</CardDescription>
+                <CardDescription className="flex-1">
+                  {hero.description}
+                </CardDescription>
               </CardHeader>
-              <CardContent>
-                <Image
-                  src={`/heroes/${hero.name}.png`}
-                  width={500}
-                  height={500}
-                  alt={`Ravenswatch ${hero.name}`}
-                  className="w-full h-48 object-cover"
-                />
+              <CardContent className="flex justify-center items-end">
+                <div className="w-full h-72 relative">
+                  <Image
+                    src={`/heroes/${hero.name}.png`}
+                    alt={hero.name}
+                    layout="fill"
+                    objectFit="contain"
+                    className="object-cover"
+                  />
+                </div>
               </CardContent>
             </Card>
           ))}
@@ -67,3 +71,23 @@ export default function Home() {
     </div>
   );
 }
+            // <Card
+            //   key={hero.name}
+            //   className="bg-secondary border-border shadow-md rounded-lg overflow-hidden flex flex-col justify-between"
+            // >
+            //   <CardHeader>
+            //     <CardTitle>{hero.name}</CardTitle>
+            //     <CardDescription className="flex-1">
+            //       {hero.description}
+            //     </CardDescription>
+            //   </CardHeader>
+            //   <CardContent className="flex justify-center items-end">
+            //     <Image
+            //       src={`/heroes/${hero.name}.png`}
+            //       alt={hero.name}
+            //       width={200}
+            //       height={200}
+            //       className="object-cover"
+            //     />
+            //   </CardContent>
+            // </Card>

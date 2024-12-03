@@ -30,7 +30,7 @@ export const HeroSelection = ({
             <TooltipTrigger asChild>
               <Button
                 variant={selectedHero?.id === hero.id ? "default" : "outline"}
-                className="w-full aspect-square p-2"
+                className="w-full aspect-square p-2 size-fit"
                 onClick={() => onHeroSelect(hero)}
               >
                 <Image
