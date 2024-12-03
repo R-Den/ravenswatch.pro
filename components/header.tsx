@@ -9,6 +9,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
+import Link from "next/link";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 
 const Header = () => {
@@ -18,32 +19,29 @@ const Header = () => {
     { href: "/Heroes", label: "Heroes" },
     { href: "/Items", label: "Items" },
     { href: "/About", label: "About" },
-    { href: "/Build", label: "Builds" },
   ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
+      <div className="container flex h-16 items-center justify-between">
         {/* Logo and Brand */}
-        <div className="flex items-center gap-2 flex-shrink-0">
-          <a href="/" className="flex items-center gap-2 flex-shrink-0">
-            <Image
-              src="/rw_logo.png"
-              alt="Ravenswatch Logo"
-              width={48}
-              height={48}
-              className="h-12 w-auto"
-            />
-            <span className="text-xl font-bold text-foreground">
-              Ravenswatch.pro
-            </span>
-          </a>
-        </div>
+        <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+          <Image
+            src="/rw_logo.png"
+            alt="Ravenswatch Logo"
+            width={48}
+            height={48}
+            className="h-12 w-auto"
+          />
+          <span className="text-xl font-bold text-foreground">
+            Ravenswatch.pro
+          </span>
+        </Link>
 
-        {/* Desktop Navigation  */}
-        <div className="hidden md:flex flex-1 justify-center">
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex flex-1 justify-center absolute left-1/2 transform -translate-x-1/2">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="flex justify-center items-center">
               {navigationItems.map((item) => (
                 <NavigationMenuItem key={item.href}>
                   <NavigationMenuLink
@@ -59,7 +57,7 @@ const Header = () => {
         </div>
 
         {/* Mode Toggle and Mobile Menu Button */}
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center gap-2 flex-shrink-0 md:absolute md:right-4">
           <ModeToggle />
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
