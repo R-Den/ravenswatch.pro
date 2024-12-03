@@ -1,61 +1,61 @@
 import { Abilities } from "@/lib/types";
 import { HERO_IDS } from "../hero-ids";
 
-export const wukong_abilities: Abilities[] = [
+export const snow_queen_abilities: Abilities[] = [
   {
-    id: "wukong-trait",
-    name: "Taiji",
+    id: "snow_queen-trait",
+    name: "Ice Crown",
     description:
-      "Switch between YIN STANCE and YANG STANCE. YIN: All abilities and ATTACKS gain 10% LIFE ON HIT, on activation all heroes around gain 15 SHIELD for 6 seconds. YANG: Sun Wukong deals and takes 100% more damage, on activation all heroes around gain STRENGTH for 4 seconds",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Passive: Some abilities apply CHILLED to enemies hit, decreasing their move speed by 40% for 5 seconds. Active: Briefly become INTANGIBLE and shatter all CHILLED enemies, dealing 60 damage to them and removing their CHILLED status",
+    hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "trait",
   },
   {
-    id: "wukong-attack",
-    name: "Ruyi Jingu Bang",
+    id: "snow_queen-attack",
+    name: "Ice Lances",
     description:
-      "Chain attacks with the staff, with each successive move increasing its range and power. The full chain deals a total of 162 damage",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Shoot out ice lances, that deal 15 damage and pierce through enemies. Ice Lances deal +50% damage to CHILLED targets",
+    hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "attack",
   },
   {
-    id: "wukong-power",
-    name: "Jindou Yun",
+    id: "snow_queen-power",
+    name: "Frost Blast",
     description:
-      "Rush toward a nearby enemy then strike it for 60 damage. If other enemies are nearby, this ability chains up to two more times while INTANGIBLE. After landing POWER, Sun Wukong is briefly INTANGIBLE while leaping backwards",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Create a large area of FROST, dealing 50 damage to enemies in the area and inflicting them with CHILLED",
+    hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "power",
   },
   {
-    id: "wukong-special",
-    name: "Mantra",
+    id: "snow_queen-special",
+    name: "Ice Shards",
     description:
-      "Launch prayer beads that orbit Sun Wukong for 5 second(s), dealing 32 damage per second to enemies affected",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Throw a volley of ice shards at a short range, dealing up to 65 damage. Ice Shards deal +50% damage to CHILLED enemies",
+    hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "special",
   },
   {
-    id: "wukong-defence",
-    name: "Empty Palm",
+    id: "snow_queen-defence",
+    name: "Ice Skating",
     description:
-      "Block any attack for 0.5 seconds. If an attack is blocked, the blocking time is reset and Empty Palm's cooldown is refreshed. Blocking multiple attacks with one DEFENSE activation does not stack progression of Talents/Quests. On a successful block, if the attack still going then automaticlly block those attacks without pressing DEFENSE again",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Boost your own Move Speed and create FROST underfoot, dealing 30 damage to enemies passed and inflicting them with CHILLED. Briefly grants INTANGIBLE at the start of the ability. Ice Skating can be cancelled early and its cooldown is proportional to the time it has been used (with a minimum of 2s)",
+    hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "defence",
   },
   {
-    id: "wukong-ultimate1",
-    name: "Monkey Clones",
+    id: "snow_queen-ultimate1",
+    name: "Frost Ray",
     description:
-      "Sun Wukong becomes INTANGIBLE and summons 6 clones in the area, which will fight nearby enemies and attract their attention. Clones copy Sun Wukong's VITALITY and DMG and disappear after 10 second",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Channel a Frost Ray to the ground, dealing 160 damage per second and applying CHILLED to hit enemies. The Snow Queen can still be damaged while channeling Frost Ray. Frost Ray can be cancelled early and its cooldown is proportional to the time it has been used (with a minimum of 10s)",
+    hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "ultimate",
   },
   {
-    id: "wukong-ultimate2",
-    name: "Transfiguration",
+    id: "snow_queen-ultimate2",
+    name: "Snowstorm",
     description:
-      "Sun Wukong transforms for 20 seconds into a copy of another random hero, with all their standard Talents activated, of Epic quality. When transformed as Aladdin, TRAIT can only be activated once per transformation",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Summon a snow storm to deal 5 damage per second, inflicting all enemies within range with CHILLED. The effect lasts for 10 seconds",
+    hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "ultimate",
   },
 ];

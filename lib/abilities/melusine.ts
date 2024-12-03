@@ -1,61 +1,61 @@
 import { Abilities } from "@/lib/types";
 import { HERO_IDS } from "../hero-ids";
 
-export const wukong_abilities: Abilities[] = [
+export const melusine_abilities: Abilities[] = [
   {
-    id: "wukong-trait",
-    name: "Taiji",
+    id: "melusine-trait",
+    name: "Siren's Call",
     description:
-      "Switch between YIN STANCE and YANG STANCE. YIN: All abilities and ATTACKS gain 10% LIFE ON HIT, on activation all heroes around gain 15 SHIELD for 6 seconds. YANG: Sun Wukong deals and takes 100% more damage, on activation all heroes around gain STRENGTH for 4 seconds",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Switch between SING STANCE and MOVE STANCE. SING STANCE casts a controllable WISP but immobilizes the Hero. MOVE STANCE revokes WISP and restores control to the Hero. In SING STANCE, DASH also revokes control of WISP. While exiting SING STANCE Melusine moves quickly for a brief moment",
+    hero: HERO_IDS.MELUSINE,
     type: "trait",
   },
   {
-    id: "wukong-attack",
-    name: "Ruyi Jingu Bang",
+    id: "melusine-attack",
+    name: "Wisp Attack",
     description:
-      "Chain attacks with the staff, with each successive move increasing its range and power. The full chain deals a total of 162 damage",
-    hero: HERO_IDS.SUN_WUKONG,
+      "WISP suddenly dashes forward, dealing 21 damage to all enemies passed. Automatically enter SING STANCE when cast",
+    hero: HERO_IDS.MELUSINE,
     type: "attack",
   },
   {
-    id: "wukong-power",
-    name: "Jindou Yun",
+    id: "melusine-power",
+    name: "Splatter",
     description:
-      "Rush toward a nearby enemy then strike it for 60 damage. If other enemies are nearby, this ability chains up to two more times while INTANGIBLE. After landing POWER, Sun Wukong is briefly INTANGIBLE while leaping backwards",
-    hero: HERO_IDS.SUN_WUKONG,
+      "WISP pulses a splash of water, dealing 50 damage to all enemies around. Automatically enter SING STANCE when cast",
+    hero: HERO_IDS.MELUSINE,
     type: "power",
   },
   {
-    id: "wukong-special",
-    name: "Mantra",
+    id: "melusine-special",
+    name: "Torrent",
     description:
-      "Launch prayer beads that orbit Sun Wukong for 5 second(s), dealing 32 damage per second to enemies affected",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Send waves of water forward, dealing up to 100 damage. Torrent can still be cast during SING STANCE and does not revoke control of WISP",
+    hero: HERO_IDS.MELUSINE,
     type: "special",
   },
   {
-    id: "wukong-defence",
-    name: "Empty Palm",
+    id: "melusine-defence",
+    name: "Dive",
     description:
-      "Block any attack for 0.5 seconds. If an attack is blocked, the blocking time is reset and Empty Palm's cooldown is refreshed. Blocking multiple attacks with one DEFENSE activation does not stack progression of Talents/Quests. On a successful block, if the attack still going then automaticlly block those attacks without pressing DEFENSE again",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Dive into a pool of water, turning INTANGIBLE for a short time. Reemerge in MOVE STANCE",
+    hero: HERO_IDS.MELUSINE,
     type: "defence",
   },
   {
-    id: "wukong-ultimate1",
-    name: "Monkey Clones",
+    id: "melusine-ultimate1",
+    name: "Water Bomb",
     description:
-      "Sun Wukong becomes INTANGIBLE and summons 6 clones in the area, which will fight nearby enemies and attract their attention. Clones copy Sun Wukong's VITALITY and DMG and disappear after 10 second",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Melusine wraps herself in a water sphere and turns INVINCIBLE. After a short time or if triggered, the sphere explodes and deals 400 damage to all nearby enemies",
+    hero: HERO_IDS.MELUSINE,
     type: "ultimate",
   },
   {
-    id: "wukong-ultimate2",
-    name: "Transfiguration",
+    id: "melusine-ultimate2",
+    name: "Wisp Ballet",
     description:
-      "Sun Wukong transforms for 20 seconds into a copy of another random hero, with all their standard Talents activated, of Epic quality. When transformed as Aladdin, TRAIT can only be activated once per transformation",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Summon 6 autonomous WISPS that pursue and attack nearby enemies. After 4 seconds, the WISPS cast Splatter and then disappear. Melusine can still be damaged while channeling Wisp Ballet. Wisp Ballet can be cancelled early and its cooldown is proportional to the time it has been used (with a minimum of 10s)",
+    hero: HERO_IDS.MELUSINE,
     type: "ultimate",
   },
 ];

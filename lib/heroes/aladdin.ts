@@ -3,6 +3,7 @@ import { aladdin_talents } from "@/lib/talents/aladdin";
 import { aladdin_abilities } from "@/lib/abilities/aladdin";
 
 export const aladdin: Hero = {
+  id: "aladdin",
   name: "Aladdin",
   unlock_condition: "Complete Chapter 1 with Scarlet",
   description:

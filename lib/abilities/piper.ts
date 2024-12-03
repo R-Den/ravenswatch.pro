@@ -1,61 +1,61 @@
 import { Abilities } from "@/lib/types";
 import { HERO_IDS } from "../hero-ids";
 
-export const wukong_abilities: Abilities[] = [
+export const piper_abilities: Abilities[] = [
   {
-    id: "wukong-trait",
-    name: "Taiji",
+    id: "piper-trait",
+    name: "Infestation",
     description:
-      "Switch between YIN STANCE and YANG STANCE. YIN: All abilities and ATTACKS gain 10% LIFE ON HIT, on activation all heroes around gain 15 SHIELD for 6 seconds. YANG: Sun Wukong deals and takes 100% more damage, on activation all heroes around gain STRENGTH for 4 seconds",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Passive: Rats spawn from the ground at regular intervals and follow the Hero (up to 20 rats). Active: Order all current rats to attack enemies, they attack up to 3 times for 5 damage each and die afterwards",
+    hero: HERO_IDS.THE_PIED_PIPER,
     type: "trait",
   },
   {
-    id: "wukong-attack",
-    name: "Ruyi Jingu Bang",
+    id: "piper-attack",
+    name: "Flute",
     description:
-      "Chain attacks with the staff, with each successive move increasing its range and power. The full chain deals a total of 162 damage",
-    hero: HERO_IDS.SUN_WUKONG,
+      "DAY: Hold to play the flute, sending notes dealing 6 damage each. NIGHT: Hold to play the flute, sending piercing notes dealing 4 damage each. Does not prevent movement but reduces Move Speed",
+    hero: HERO_IDS.THE_PIED_PIPER,
     type: "attack",
   },
   {
-    id: "wukong-power",
-    name: "Jindou Yun",
+    id: "piper-power",
+    name: "Solo",
     description:
-      "Rush toward a nearby enemy then strike it for 60 damage. If other enemies are nearby, this ability chains up to two more times while INTANGIBLE. After landing POWER, Sun Wukong is briefly INTANGIBLE while leaping backwards",
-    hero: HERO_IDS.SUN_WUKONG,
+      "DAY: Play a solo note on the flute, sending 3 waves of 3 notes in a cone, each one dealing 12 damage. NIGHT: Play a solo note on the flute, sending 3 waves of 3 piercing notes in a straight line, each one dealing 8 damage. Does not prevent movement but reduces Move Speed",
+    hero: HERO_IDS.THE_PIED_PIPER,
     type: "power",
   },
   {
-    id: "wukong-special",
-    name: "Mantra",
+    id: "piper-special",
+    name: "Fortissimo",
     description:
-      "Launch prayer beads that orbit Sun Wukong for 5 second(s), dealing 32 damage per second to enemies affected",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Create a zone of power that makes all enemies inside VULNERABLE",
+    hero: HERO_IDS.THE_PIED_PIPER,
     type: "special",
   },
   {
-    id: "wukong-defence",
-    name: "Empty Palm",
+    id: "piper-defence",
+    name: "Acoustic Blast",
     description:
-      "Block any attack for 0.5 seconds. If an attack is blocked, the blocking time is reset and Empty Palm's cooldown is refreshed. Blocking multiple attacks with one DEFENSE activation does not stack progression of Talents/Quests. On a successful block, if the attack still going then automaticlly block those attacks without pressing DEFENSE again",
-    hero: HERO_IDS.SUN_WUKONG,
+      "The Pied Piper briefly becomes INTANGIBLE then creates an acoustic blast, stunning and pushing back all enemies around",
+    hero: HERO_IDS.THE_PIED_PIPER,
     type: "defence",
   },
   {
-    id: "wukong-ultimate1",
-    name: "Monkey Clones",
+    id: "piper-ultimate1",
+    name: "Unchained Melody",
     description:
-      "Sun Wukong becomes INTANGIBLE and summons 6 clones in the area, which will fight nearby enemies and attract their attention. Clones copy Sun Wukong's VITALITY and DMG and disappear after 10 second",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Play notes continuously and rapidly, automatically targeting the closest enemy and dealing up to 120 damage per second. During this ability, the Hero runs forward but the direction can be controlled. DAY: the notes stop at the first enemy hit, dealing more damage. NIGHT: the notes pierce through all enemies, dealing less damage than at DAY. The Pied Piper can still be damaged while channeling Unchained Melody",
+    hero: HERO_IDS.THE_PIED_PIPER,
     type: "ultimate",
   },
   {
-    id: "wukong-ultimate2",
-    name: "Transfiguration",
+    id: "piper-ultimate2",
+    name: "Plague of Rats",
     description:
-      "Sun Wukong transforms for 20 seconds into a copy of another random hero, with all their standard Talents activated, of Epic quality. When transformed as Aladdin, TRAIT can only be activated once per transformation",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Channel a melody to control a swarm of rats that rushes forward and deals up to 100 damage per second over a large area. The Pied Piper can still be damaged while channeling Plague of Rats. Plague of Rats can be cancelled early and its cooldown is proportional to the time it has been used (with a minimum of 10s)",
+    hero: HERO_IDS.THE_PIED_PIPER,
     type: "ultimate",
   },
 ];

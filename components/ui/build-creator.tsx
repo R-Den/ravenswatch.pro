@@ -8,6 +8,7 @@ import { BuildBoard } from "../BuildBoard";
 import { TalentSelectionBar } from "../TalentSelectionBar";
 import { DragEndEvent } from "@dnd-kit/core";
 
+// when implementing sharing / editing builds from can populate this
 const INITIAL_BUILD_SLOTS: BuildSlot[] = [
   { level: 1, type: "starter", content: null },
   { level: 2, type: "normal", content: null },

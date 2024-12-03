@@ -1,61 +1,60 @@
 import { Abilities } from "@/lib/types";
 import { HERO_IDS } from "../hero-ids";
 
-export const wukong_abilities: Abilities[] = [
+export const beowulf_abilities: Abilities[] = [
   {
-    id: "wukong-trait",
-    name: "Taiji",
-    description:
-      "Switch between YIN STANCE and YANG STANCE. YIN: All abilities and ATTACKS gain 10% LIFE ON HIT, on activation all heroes around gain 15 SHIELD for 6 seconds. YANG: Sun Wukong deals and takes 100% more damage, on activation all heroes around gain STRENGTH for 4 seconds",
-    hero: HERO_IDS.SUN_WUKONG,
+    id: "beowulf-trait",
+    name: "Last Wyrm",
+    description: "Call Wyrm to empower the next POWER, SPECIAL, or DEFENSE",
+    hero: HERO_IDS.BEOWULF,
     type: "trait",
   },
   {
-    id: "wukong-attack",
-    name: "Ruyi Jingu Bang",
+    id: "beowulf-attack",
+    name: "Runic Sword",
     description:
-      "Chain attacks with the staff, with each successive move increasing its range and power. The full chain deals a total of 162 damage",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Chain together a series of attacks with the sword, the last attack deals 200% damage. Whole combo deals a total of 70 damage",
+    hero: HERO_IDS.BEOWULF,
     type: "attack",
   },
   {
-    id: "wukong-power",
-    name: "Jindou Yun",
+    id: "beowulf-power",
+    name: "Shockwave",
     description:
-      "Rush toward a nearby enemy then strike it for 60 damage. If other enemies are nearby, this ability chains up to two more times while INTANGIBLE. After landing POWER, Sun Wukong is briefly INTANGIBLE while leaping backwards",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Scrape the sword on the floor to project a shockwave in front that deals 50 damage along the path. +WYRM: deals +50% damage and applies IGNITE to all enemies hit",
+    hero: HERO_IDS.BEOWULF,
     type: "power",
   },
   {
-    id: "wukong-special",
-    name: "Mantra",
+    id: "beowulf-special",
+    name: "Whirlwind",
     description:
-      "Launch prayer beads that orbit Sun Wukong for 5 second(s), dealing 32 damage per second to enemies affected",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Spin with the sword, briefly becoming INTANGIBLE and dealing 15 damage all around then finish with a swing that deals 60 damage all around. +WYRM: deals +50% damage and finisher applies IGNITE to all enemies hit",
+    hero: HERO_IDS.BEOWULF,
     type: "special",
   },
   {
-    id: "wukong-defence",
-    name: "Empty Palm",
+    id: "beowulf-defence",
+    name: "Shield",
     description:
-      "Block any attack for 0.5 seconds. If an attack is blocked, the blocking time is reset and Empty Palm's cooldown is refreshed. Blocking multiple attacks with one DEFENSE activation does not stack progression of Talents/Quests. On a successful block, if the attack still going then automaticlly block those attacks without pressing DEFENSE again",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Hold to raise shield and block all incoming damage - release to bash with shield and deal 30 damage. +WYRM: deals +50% damage. Each attack blocked heals all Heroes around by 30% of blocked damage. Become INTANGIBLE when bashing with shield",
+    hero: HERO_IDS.BEOWULF,
     type: "defence",
   },
   {
-    id: "wukong-ultimate1",
-    name: "Monkey Clones",
+    id: "beowulf-ultimate1",
+    name: "Dragon's Flight",
     description:
-      "Sun Wukong becomes INTANGIBLE and summons 6 clones in the area, which will fight nearby enemies and attract their attention. Clones copy Sun Wukong's VITALITY and DMG and disappear after 10 second",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Wyrm takes off and tracks enemies, continuously breathing fire during its flight and dealing 200 damage per second and applying IGNITE to all enemies hit. TRAIT is disabled during this time but is refreshed at the end of the duration",
+    hero: HERO_IDS.BEOWULF,
     type: "ultimate",
   },
   {
-    id: "wukong-ultimate2",
-    name: "Transfiguration",
+    id: "beowulf-ultimate2",
+    name: "Raging Chain",
     description:
-      "Sun Wukong transforms for 20 seconds into a copy of another random hero, with all their standard Talents activated, of Epic quality. When transformed as Aladdin, TRAIT can only be activated once per transformation",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Beowulf rushes forward, stopping at the first enemy and striking them twice in a small cone before sending himself backwards. Wyrm then shoots two fireballs at the point of impact, applying IGNITE to all enemies hit. Using Raging Chain with no target puts the ability on a 5 second(s) cooldown. Beowulf can still be damaged while attacking with Raging Chain",
+    hero: HERO_IDS.BEOWULF,
     type: "ultimate",
   },
 ];

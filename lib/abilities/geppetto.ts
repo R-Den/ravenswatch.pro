@@ -1,61 +1,61 @@
 import { Abilities } from "@/lib/types";
 import { HERO_IDS } from "../hero-ids";
 
-export const wukong_abilities: Abilities[] = [
+export const geppetto_abilities: Abilities[] = [
   {
-    id: "wukong-trait",
-    name: "Taiji",
+    id: "geppetto-trait",
+    name: "Dummy",
     description:
-      "Switch between YIN STANCE and YANG STANCE. YIN: All abilities and ATTACKS gain 10% LIFE ON HIT, on activation all heroes around gain 15 SHIELD for 6 seconds. YANG: Sun Wukong deals and takes 100% more damage, on activation all heroes around gain STRENGTH for 4 seconds",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Build a DUMMY that draws enemies' attention and attacks them for 40 damage. Geppetto can have up to 3 DUMMIES built at the same time. DUMMIES can be dismantled using CONTEXTUAL ACTION and will self-destroy if they are too far from Geppetto",
+    hero: HERO_IDS.GEPPETTO,
     type: "trait",
   },
   {
-    id: "wukong-attack",
-    name: "Ruyi Jingu Bang",
+    id: "geppetto-attack",
+    name: "Hammer",
     description:
-      "Chain attacks with the staff, with each successive move increasing its range and power. The full chain deals a total of 162 damage",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Attack with a hammer at close quarters, dealing 15 damage. DUMMIES hit are healed for 15% of their Maximum Health",
+    hero: HERO_IDS.GEPPETTO,
     type: "attack",
   },
   {
-    id: "wukong-power",
-    name: "Jindou Yun",
+    id: "geppetto-power",
+    name: "Uppercut",
     description:
-      "Rush toward a nearby enemy then strike it for 60 damage. If other enemies are nearby, this ability chains up to two more times while INTANGIBLE. After landing POWER, Sun Wukong is briefly INTANGIBLE while leaping backwards",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Perform a powerful hammer strike that deals 25 damage. Closest DUMMY hit is displaced and deals 50 damage along its path",
+    hero: HERO_IDS.GEPPETTO,
     type: "power",
   },
   {
-    id: "wukong-special",
-    name: "Mantra",
+    id: "geppetto-special",
+    name: "Cogsplosion",
     description:
-      "Launch prayer beads that orbit Sun Wukong for 5 second(s), dealing 32 damage per second to enemies affected",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Hold then release to roll a bomb that explodes after a short duration, dealing 40 damage all around. DUMMIES hit are healed for 40% of their Maximum Health",
+    hero: HERO_IDS.GEPPETTO,
     type: "special",
   },
   {
-    id: "wukong-defence",
-    name: "Empty Palm",
+    id: "geppetto-defence",
+    name: "Defibrillation",
     description:
-      "Block any attack for 0.5 seconds. If an attack is blocked, the blocking time is reset and Empty Palm's cooldown is refreshed. Blocking multiple attacks with one DEFENSE activation does not stack progression of Talents/Quests. On a successful block, if the attack still going then automaticlly block those attacks without pressing DEFENSE again",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Apply a 20 SHIELD on GEPPETTO and all DUMMIES for 6 seconds. Briefly grants INTANGIBLE at the start of the ability",
+    hero: HERO_IDS.GEPPETTO,
     type: "defence",
   },
   {
-    id: "wukong-ultimate1",
-    name: "Monkey Clones",
+    id: "geppetto-ultimate1",
+    name: "Meca-Puppet",
     description:
-      "Sun Wukong becomes INTANGIBLE and summons 6 clones in the area, which will fight nearby enemies and attract their attention. Clones copy Sun Wukong's VITALITY and DMG and disappear after 10 second",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Create an autonomous giant PUPPET that will attack the closest target and deal up to 77 damage per second. PUPPET follows Geppetto if no target is nearby and lasts up to 40 seconds",
+    hero: HERO_IDS.GEPPETTO,
     type: "ultimate",
   },
   {
-    id: "wukong-ultimate2",
-    name: "Transfiguration",
+    id: "geppetto-ultimate2",
+    name: "Overclock",
     description:
-      "Sun Wukong transforms for 20 seconds into a copy of another random hero, with all their standard Talents activated, of Epic quality. When transformed as Aladdin, TRAIT can only be activated once per transformation",
-    hero: HERO_IDS.SUN_WUKONG,
+      "Make all active DUMMIES spin around and track nearby enemies, each one dealing 50 per second all around. DUMMIES under the effect of Overclock are INTANGIBLE. Cooldown is proportional to the number of DUMMIES effected",
+    hero: HERO_IDS.GEPPETTO,
     type: "ultimate",
   },
 ];
