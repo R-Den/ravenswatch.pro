@@ -5,31 +5,11 @@ import {
   CardDescription,
   CardTitle,
 } from "@/components/ui/card";
-import { aladdin } from "@/lib/heroes/aladdin";
-import { beowulf } from "@/lib/heroes/beowulf";
-import { carmilla } from "@/lib/heroes/carmilla";
-import { geppetto } from "@/lib/heroes/geppetto";
-import { melusine } from "@/lib/heroes/melusine";
-import { piper } from "@/lib/heroes/piper";
-import { scarlet } from "@/lib/heroes/scarlet";
-import { snow_queen } from "@/lib/heroes/snow_queen";
-import { wukong } from "@/lib/heroes/wukong";
-
+import { getAllHeroes } from "@/lib/registry";
 import Image from "next/image";
 
-const heroes = [
-  aladdin,
-  beowulf,
-  carmilla,
-  geppetto,
-  melusine,
-  piper,
-  scarlet,
-  snow_queen,
-  wukong,
-];
-
 export default function Home() {
+  const heroes = getAllHeroes();
   return (
     <div className="min-h-screen bg-background p-8">
       <header className="text-center my-8">

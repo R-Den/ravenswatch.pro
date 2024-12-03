@@ -1,10 +1,25 @@
 import { Hero, Talents, Abilities } from "./types";
+import { aladdin } from "./heroes/aladdin";
+import { beowulf } from "./heroes/beowulf";
+import { carmilla } from "./heroes/carmilla";
+import { geppetto } from "./heroes/geppetto";
+import { melusine } from "./heroes/melusine";
+import { piper } from "./heroes/piper";
+import { scarlet } from "./heroes/scarlet";
+import { snow_queen } from "./heroes/snow_queen";
 import { wukong } from "./heroes/wukong";
 
 export const registry = {
   heroes: {
+    [aladdin.id]: aladdin,
+    [beowulf.id]: beowulf,
+    [carmilla.id]: carmilla,
+    [geppetto.id]: geppetto,
+    [melusine.id]: melusine,
+    [piper.id]: piper,
+    [scarlet.id]: scarlet,
+    [snow_queen.id]: snow_queen,
     [wukong.id]: wukong,
-    // other heroes will be added here
   },
 } as const;
 
