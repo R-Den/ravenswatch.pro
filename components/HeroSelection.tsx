@@ -24,7 +24,7 @@ export const HeroSelection = ({
       <CardTitle>Select Hero</CardTitle>
     </CardHeader>
     <CardContent>
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 gap-4">
         {heroes.map((hero) => (
           <Tooltip key={hero.id}>
             <TooltipTrigger asChild>

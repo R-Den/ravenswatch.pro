@@ -54,7 +54,7 @@ export const BuildBoard = ({
             <Card
               key={slot.level}
               className={cn(
-                "relative",
+                "relative col-span-1",
                 slot.level === 5 && "col-span-1",
                 slot.level === 10 && "col-span-1",
               )}
