@@ -61,21 +61,33 @@ export interface TalentButtonProps {
   isSelected?: boolean;
 }
 
+// More specific type for HTML/ARIA attributes
+export interface DraggableAttributes {
+  role?: string;
+  tabIndex?: number;
+  "aria-describedby"?: string;
+  "aria-disabled"?: boolean;
+  "aria-pressed"?: boolean;
+  "aria-roledescription"?: string;
+  "data-testid"?: string;
+  draggable?: boolean;
+  style?: React.CSSProperties;
+  translate?: "yes" | "no";
+  hidden?: boolean;
+  id?: string;
+  className?: string;
+  title?: string;
+}
+
 export interface DraggableSlotProps {
   slot: BuildSlot;
   onRemove: () => void;
-  attributes?: {
-    role?: string;
-    tabIndex?: number;
-    "aria-describedby"?: string;
-    "aria-disabled"?: boolean;
-    "aria-pressed"?: boolean;
-    "aria-roledescription"?: string;
-    [key: string]: any;
-  };
+  attributes?: DraggableAttributes;
   listeners?: {
-    onKeyDown?(event: React.KeyboardEvent): void;
-    onMouseDown?(event: React.MouseEvent): void;
-    onPointerDown?(event: React.PointerEvent): void;
+    onKeyDown?(event: React.KeyboardEvent<Element>): void;
+    onMouseDown?(event: React.MouseEvent<Element>): void;
+    onPointerDown?(event: React.PointerEvent<Element>): void;
+    onTouchStart?(event: React.TouchEvent<Element>): void;
+    onClick?(event: React.MouseEvent<Element>): void;
   };
 }
