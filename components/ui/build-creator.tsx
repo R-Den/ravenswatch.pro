@@ -49,8 +49,8 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
           return slot.level === 10
             ? { ...slot, content: null }
             : slot.level === level
-              ? { ...slot, content }
-              : slot;
+            ? { ...slot, content }
+            : slot;
         }
         return slot.level === level ? { ...slot, content } : slot;
       }),
@@ -95,27 +95,29 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
   return (
     <TooltipProvider>
       <div className="container mx-auto p-4 space-y-6">
-        <HeroSelection
-          heroes={heroes}
-          selectedHero={selectedHero}
-          onHeroSelect={handleHeroSelect}
-        />
+        <div className="flex space-x-6">
+          <HeroSelection
+            heroes={heroes}
+            selectedHero={selectedHero}
+            onHeroSelect={handleHeroSelect}
+          />
 
-        {selectedHero && (
-          <>
+          {selectedHero && (
             <BuildBoard
               buildSlots={buildSlots}
               onSlotUpdate={handleSlotUpdate}
               onDragEnd={handleDragEnd}
             />
+          )}
+        </div>
 
-            <TalentSelectionBar
-              selectedHero={selectedHero}
-              buildSlots={buildSlots}
-              onSlotUpdate={handleSlotUpdate}
-              selectedIds={selectedIds}
-            />
-          </>
+        {selectedHero && (
+          <TalentSelectionBar
+            selectedHero={selectedHero}
+            buildSlots={buildSlots}
+            onSlotUpdate={handleSlotUpdate}
+            selectedIds={selectedIds}
+          />
         )}
       </div>
     </TooltipProvider>
