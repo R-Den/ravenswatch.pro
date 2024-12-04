@@ -4,7 +4,7 @@ export default function Home() {
       <header className="text-center my-8">
         <h1 className="text-4xl font-bold mb-4">Ravenswatch Wiki</h1>
         <p className="text-lg">
-          Welcome to the Ravenswatch.PRO, your ultimate resource for all things
+          Welcome to the Ravenswatch.pro, your ultimate resource for all things
           related to the game Ravenswatch.
         </p>
       </header>
