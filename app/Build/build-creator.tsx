@@ -3,9 +3,10 @@
 import React, { useState, useMemo } from "react";
 import { Hero, Talents, Abilities, BuildSlot } from "@/lib/types";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { HeroSelection } from "../HeroSelection";
-import { BuildBoard } from "../BuildBoard";
-import { TalentSelectionBar } from "../TalentSelectionBar";
+import { HeroSelection } from "./HeroSelection";
+import { BuildBoard } from "./BuildBoard";
+// import { ItemSelectionBar } from "./ItemSelectionBar";
+import { TalentSelectionBar } from "./TalentSelectionBar";
 import { DragEndEvent } from "@dnd-kit/core";
 
 // when implementing sharing / editing builds from can populate this
@@ -49,8 +50,8 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
           return slot.level === 10
             ? { ...slot, content: null }
             : slot.level === level
-            ? { ...slot, content }
-            : slot;
+              ? { ...slot, content }
+              : slot;
         }
         return slot.level === level ? { ...slot, content } : slot;
       }),
