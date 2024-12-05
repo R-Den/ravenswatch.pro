@@ -1,6 +1,5 @@
 import { Hero, Talents, Abilities, BuildSlot } from "@/lib/types";
 import { Card, CardContent } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -31,11 +30,11 @@ export const TalentSelectionBar = ({
   return (
     <Card className="fixed bottom-0 left-0 right-0 bg-background border-t">
       <CardContent className="p-4">
-        <div className="grid grid-cols-12 gap-4">
+        <div className="grid grid-cols-12 gap-8">
           {/* Starter Talents */}
-          <div className="col-span-3">
+          <div className="col-span-3 border-r pr-4">
             <h3 className="font-bold mb-3">Starter Talents</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-2">
               {selectedHero.talents
                 .filter((talent) => talent.type === "starter")
                 .map((talent) => (
@@ -51,42 +50,40 @@ export const TalentSelectionBar = ({
           </div>
 
           {/* Normal Talents */}
-          <div className="col-span-6">
+          <div className="col-span-6 relative">
             <div className="flex justify-between items-center mb-3">
               <h3 className="font-bold">Normal Talents</h3>
               <Badge variant="secondary">
                 {getSelectedNormalTalents()}/7 Selected
               </Badge>
             </div>
-            <ScrollArea className="h-[180px]">
-              <div className="grid grid-cols-6 gap-4">
-                {selectedHero.talents
-                  .filter((talent) => talent.type === "normal")
-                  .map((talent) => (
-                    <TalentButton
-                      key={talent.id}
-                      talent={talent}
-                      onClick={() => {
-                        const emptySlot = buildSlots.find(
-                          (slot) => slot.type === "normal" && !slot.content,
-                        );
-                        if (emptySlot && getSelectedNormalTalents() < 7) {
-                          onSlotUpdate(emptySlot.level, talent);
-                        }
-                      }}
-                      isDisabled={getSelectedNormalTalents() >= 7}
-                      isSelected={selectedIds.includes(talent.id)}
-                    />
-                  ))}
-              </div>
-            </ScrollArea>
+            <div className="grid grid-cols-6 gap-4">
+              {selectedHero.talents
+                .filter((talent) => talent.type === "normal")
+                .map((talent) => (
+                  <TalentButton
+                    key={talent.id}
+                    talent={talent}
+                    onClick={() => {
+                      const emptySlot = buildSlots.find(
+                        (slot) => slot.type === "normal" && !slot.content,
+                      );
+                      if (emptySlot && getSelectedNormalTalents() < 7) {
+                        onSlotUpdate(emptySlot.level, talent);
+                      }
+                    }}
+                    isDisabled={getSelectedNormalTalents() >= 7}
+                    isSelected={selectedIds.includes(talent.id)}
+                  />
+                ))}
+            </div>
           </div>
 
           {/* Ultimate and Upgrades */}
-          <div className="col-span-3">
+          <div className="col-span-3 border-l pl-4">
             <h3 className="font-bold mb-3">Ultimate & Upgrade</h3>
             <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-2">
                 {selectedHero.abilities
                   .filter((ability) => ability.type === "ultimate")
                   .map((ultimate) => (
@@ -127,7 +124,7 @@ export const TalentSelectionBar = ({
               </div>
 
               {buildSlots[4].content && (
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-2">
                   {selectedHero.talents
                     .filter(
                       (talent) =>

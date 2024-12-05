@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ModeToggle } from "@/components/ui/theme-toggle";
+import { ModeToggle } from "@/components/theme-toggle";
 import { Menu, Mail, Github } from "lucide-react";
 import {
   NavigationMenu,

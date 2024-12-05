@@ -61,6 +61,13 @@ export interface TalentButtonProps {
   isSelected?: boolean;
 }
 
+export interface ItemButtonProps {
+  magical_object: Magical_Objects;
+  onClick: () => void;
+  isDisabled?: boolean;
+  isSelected?: boolean;
+}
+
 // More specific type for HTML/ARIA attributes
 export interface DraggableAttributes {
   role?: string;

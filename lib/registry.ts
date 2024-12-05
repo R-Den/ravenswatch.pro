@@ -1,4 +1,4 @@
-import { Hero, Talents, Abilities } from "./types";
+import { Hero, Talents, Abilities, Magical_Objects } from "./types";
 import { aladdin } from "./heroes/aladdin";
 import { beowulf } from "./heroes/beowulf";
 import { carmilla } from "./heroes/carmilla";
@@ -8,6 +8,7 @@ import { piper } from "./heroes/piper";
 import { scarlet } from "./heroes/scarlet";
 import { snow_queen } from "./heroes/snow_queen";
 import { wukong } from "./heroes/wukong";
+import { magical_objects } from "./magical_objects/magical_objects";
 
 export const registry = {
   heroes: {
@@ -21,6 +22,7 @@ export const registry = {
     [snow_queen.id]: snow_queen,
     [wukong.id]: wukong,
   },
+  magical_objects,
 } as const;
 
 // Basic data access
@@ -32,6 +34,9 @@ export function getAllHeroes(): Hero[] {
   return Object.values(registry.heroes);
 }
 
+export function getAllMagicalObjects(): Magical_Objects[] {
+  return Object.values(registry.magical_objects);
+}
 // Talent helpers
 export function getHeroTalents(heroId: string): Talents[] {
   return registry.heroes[heroId]?.talents || [];

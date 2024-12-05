@@ -3,9 +3,10 @@
 import React, { useState, useMemo } from "react";
 import { Hero, Talents, Abilities, BuildSlot } from "@/lib/types";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { HeroSelection } from "../HeroSelection";
-import { BuildBoard } from "../BuildBoard";
-import { TalentSelectionBar } from "../TalentSelectionBar";
+import { HeroSelection } from "./HeroSelection";
+import { BuildBoard } from "./BuildBoard";
+// import { ItemSelectionBar } from "./ItemSelectionBar";
+import { TalentSelectionBar } from "./TalentSelectionBar";
 import { DragEndEvent } from "@dnd-kit/core";
 
 // when implementing sharing / editing builds from can populate this
@@ -95,27 +96,29 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
   return (
     <TooltipProvider>
       <div className="container mx-auto p-4 space-y-6">
-        <HeroSelection
-          heroes={heroes}
-          selectedHero={selectedHero}
-          onHeroSelect={handleHeroSelect}
-        />
+        <div className="flex space-x-6">
+          <HeroSelection
+            heroes={heroes}
+            selectedHero={selectedHero}
+            onHeroSelect={handleHeroSelect}
+          />
 
-        {selectedHero && (
-          <>
+          {selectedHero && (
             <BuildBoard
               buildSlots={buildSlots}
               onSlotUpdate={handleSlotUpdate}
               onDragEnd={handleDragEnd}
             />
+          )}
+        </div>
 
-            <TalentSelectionBar
-              selectedHero={selectedHero}
-              buildSlots={buildSlots}
-              onSlotUpdate={handleSlotUpdate}
-              selectedIds={selectedIds}
-            />
-          </>
+        {selectedHero && (
+          <TalentSelectionBar
+            selectedHero={selectedHero}
+            buildSlots={buildSlots}
+            onSlotUpdate={handleSlotUpdate}
+            selectedIds={selectedIds}
+          />
         )}
       </div>
     </TooltipProvider>

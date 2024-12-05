@@ -1,5 +1,5 @@
 import { getAllHeroes } from "@/lib/registry";
-import BuildCreator from "@/components/ui/build-creator";
+import BuildCreator from "./build-creator";
 
 export const metadata = {
   title: "Build Creator | Ravenswatch",
