@@ -5,7 +5,7 @@ import { ItemButton } from "./ItemButton";
 
 interface ItemSelectionBarProps {
   buildSlots: BuildSlot[];
-  onSlotUpdate: (level: number, content: Magical_Objects | null) => void;
+  onSlotUpdate: (item: Magical_Objects) => void;
   selectedIds: string[];
 }
 
@@ -36,7 +36,7 @@ export const ItemSelectionBar = ({
                       (slot) => slot.type === "normal" && !slot.content,
                     );
                     if (emptySlot && getSelectedNormalTalents() < 7) {
-                      onSlotUpdate(emptySlot.level, magical_object);
+                      onSlotUpdate(magical_object);
                     }
                   }}
                   isDisabled={getSelectedNormalTalents() >= 7}
