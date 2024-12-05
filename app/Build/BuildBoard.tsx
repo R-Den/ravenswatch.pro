@@ -45,7 +45,7 @@ export const BuildBoard = ({
       modifiers={[restrictToVerticalAxis]}
       onDragEnd={onDragEnd}
     >
-      <div className="grid grid-cols-5 gap-4 mb-6">
+      <div className="grid grid-cols-5 gap-4 h-full">
         <SortableContext
           items={normalSlotIds}
           strategy={verticalListSortingStrategy}
@@ -64,7 +64,7 @@ export const BuildBoard = ({
                   Level {slot.level}
                 </div>
               </CardHeader>
-              <CardContent className="p-2">
+              <CardContent className="m">
                 <AnimatePresence>
                   {slot.content ? (
                     <DraggableSlot
@@ -72,7 +72,7 @@ export const BuildBoard = ({
                       onRemove={() => onSlotUpdate(slot.level, null)}
                     />
                   ) : (
-                    <div className="w-full aspect-square border-2 border-dashed rounded flex items-center justify-center text-muted-foreground">
+                    <div className="w-full h-full p-4 aspect-square border-2 border-dashed rounded flex items-center justify-center text-muted-foreground">
                       {slot.type === "starter"
                         ? "Starter"
                         : slot.type === "ultimate"

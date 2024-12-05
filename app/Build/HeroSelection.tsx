@@ -1,5 +1,6 @@
 import { Hero } from "@/lib/types";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+//import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/app/Build/cardCollapsible";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
@@ -21,7 +22,6 @@ export const HeroSelection = ({
 }: HeroSelectionProps) => (
   <Card>
     <CardHeader>
-      <CardTitle>Select Hero</CardTitle>
     </CardHeader>
     <CardContent>
       <div className="grid grid-cols-2 gap-4">
