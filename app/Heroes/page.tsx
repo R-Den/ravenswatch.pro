@@ -34,15 +34,13 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex justify-center items-end">
-                <div className="w-full h-72 relative">
-                  <Image
-                    src={`/heroes/${hero.name}.png`}
-                    alt={hero.name}
-                    layout="fill"
-                    objectFit="contain"
-                    className="object-cover"
-                  />
-                </div>
+                <Image
+                  src={`/heroes/${hero.name}.png`}
+                  alt={hero.name}
+                  height={1548}
+                  width={1000}
+                  className="object-cover"
+                />
               </CardContent>
             </Card>
           ))}
@@ -51,23 +49,3 @@ export default function Home() {
     </div>
   );
 }
-            // <Card
-            //   key={hero.name}
-            //   className="bg-secondary border-border shadow-md rounded-lg overflow-hidden flex flex-col justify-between"
-            // >
-            //   <CardHeader>
-            //     <CardTitle>{hero.name}</CardTitle>
-            //     <CardDescription className="flex-1">
-            //       {hero.description}
-            //     </CardDescription>
-            //   </CardHeader>
-            //   <CardContent className="flex justify-center items-end">
-            //     <Image
-            //       src={`/heroes/${hero.name}.png`}
-            //       alt={hero.name}
-            //       width={200}
-            //       height={200}
-            //       className="object-cover"
-            //     />
-            //   </CardContent>
-            // </Card>
