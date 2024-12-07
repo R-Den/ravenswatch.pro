@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ModeToggle } from "@/components/theme-toggle";
-import { Menu, Mail, Github } from "lucide-react";
+import { Menu } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -11,28 +11,19 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-import { links } from "@/lib/data";
+import { getAllHeroes } from "@/lib/registry";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const heroes = getAllHeroes();
+
   const navigationItems = [
     { href: "/", label: "Home" },
     { href: "/Heroes", label: "Heroes" },
     { href: "/Items", label: "Items" },
     { href: "/Build", label: "Build" },
     { href: "/About", label: "About" },
-  ];
-  const socialLinks = [
-    {
-      href: links.githubUrl,
-      icon: <Github size={20} />,
-      condition: true,
-    },
-    {
-      href: `mailto:${links.email}`,
-      icon: <Mail size={20} />,
-      condition: true,
-    },
   ];
 
   return (
@@ -57,42 +48,48 @@ const Header = () => {
           <NavigationMenu>
             <NavigationMenuList className="flex justify-center items-center">
               {navigationItems.map((item) => (
-                <NavigationMenuItem key={item.href}>
+                <NavigationMenuItem
+                  key={item.href}
+                  onMouseEnter={() => item.label === "Heroes" && setIsDropdownOpen(true)}
+                  onMouseLeave={() => item.label === "Heroes" && setIsDropdownOpen(false)}
+                >
                   <NavigationMenuLink
                     className={navigationMenuTriggerStyle()}
                     href={item.href}
                   >
                     {item.label}
                   </NavigationMenuLink>
+                  {item.label === "Heroes" && (
+                    <div
+                      className={`absolute mt-2 w-48 bg-background border border-border rounded shadow-lg transition-all duration-300 ease-in-out transform ${
+                        isDropdownOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
+                      } origin-top`}
+                      onMouseEnter={() => setIsDropdownOpen(true)}
+                      onMouseLeave={() => setIsDropdownOpen(false)}
+                    >
+                      <ul>
+                        {heroes.map((hero) => (
+                          <li key={hero.id}>
+                            <Link
+                              href={`/Heroes/${hero.id}`}
+                              className="block px-4 py-2 hover:bg-accent"
+                            >
+                              {hero.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
           </NavigationMenu>
         </div>
 
-        <div className="flex items-center gap-1 flex-shrink-0 md:absolute md:right-4">
-          <div className="flex items-center gap-2">
-            <ModeToggle />
-            {/* Separator Line - Only visible on desktop */}
-            <div className="hidden md:block w-px h-6 bg-border" />
-            {/* Social Links - Only visible on desktop */}
-            <div className="hidden md:flex items-center space-x-3 ml-2">
-              {socialLinks.map(
-                (link) =>
-                  link.condition && (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-foreground"
-                    >
-                      {link.icon}
-                    </a>
-                  ),
-              )}
-            </div>
-          </div>
+        {/* Mode Toggle and Mobile Menu Button */}
+        <div className="flex items-center gap-2 flex-shrink-0 md:absolute md:right-4">
+          <ModeToggle />
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="inline-flex md:hidden items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-accent hover:text-accent-foreground"
@@ -103,7 +100,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
         <div className="md:hidden border-t flex justify-center">
           <div className="container py-4">
@@ -118,22 +115,6 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <div className="flex space-x-3 pt-2">
-                {socialLinks.map(
-                  (link) =>
-                    link.condition && (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground"
-                      >
-                        {link.icon}
-                      </a>
-                    ),
-                )}
-              </div>
             </nav>
           </div>
         </div>
