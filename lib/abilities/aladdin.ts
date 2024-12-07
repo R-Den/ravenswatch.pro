@@ -44,7 +44,7 @@ export const aladdin_abilities: Abilities[] = [
   },
   {
     id: "aladdin-ultimate1",
-    name: "Monkey Clones",
+    name: "Dream Wish",
     description:
       "Sun aladdin becomes INTANGIBLE and summons 6 clones in the area, which will fight nearby enemies and attract their attention. Clones copy Sun aladdin's VITALITY and DMG and disappear after 10 second",
     hero: HERO_IDS.ALADDIN,
@@ -52,7 +52,7 @@ export const aladdin_abilities: Abilities[] = [
   },
   {
     id: "aladdin-ultimate2",
-    name: "Transfiguration",
+    name: "Magic Carpet",
     description:
       "Sun aladdin transforms for 20 seconds into a copy of another random hero, with all their standard Talents activated, of Epic quality. When transformed as Aladdin, TRAIT can only be activated once per transformation",
     hero: HERO_IDS.ALADDIN,

@@ -18,6 +18,7 @@ import { TalentSelectionBar } from "./TalentSelectionBar";
 import { DragEndEvent } from "@dnd-kit/core";
 import { X, Book, Sword } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Item } from "@radix-ui/react-navigation-menu";
 
 // when implementing sharing / editing builds from can populate this
 const INITIAL_BUILD_SLOTS: BuildSlot[] = [
@@ -199,7 +200,7 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
                           onClick={() => handleItemRemove(itemId)}
                         >
                           <Image
-                            src="/items/placeholder.png"
+                            src={`/items/${itemId}.png`}
                             width={64}
                             height={64}
                             alt={itemId}

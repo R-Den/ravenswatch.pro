@@ -101,7 +101,7 @@ export const TalentSelectionBar = ({
                             disabled={buildSlots[4].content !== null}
                           >
                             <Image
-                              src={`/abilities/${ultimate.name}.png`}
+                              src={`/abilities/${ultimate.hero}/${ultimate.name}.png`}
                               height={104}
                               width={104}
                               alt={ultimate.name}

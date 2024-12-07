@@ -4,7 +4,7 @@ import { HERO_IDS } from "../hero-ids";
 export const aladdin_talents: Talents[] = [
   {
     id: "aladdin-aerial-catch",
-    name: "Aerial Catch	",
+    name: "Aerial Catch",
     description:
       "Quest (x15): After they hit an enemy, retrieving SPECIAL's blades during DEFENSE grants +1 ARMOR. Complete: Doing it again grants 12/15/18/21 SHIELD to all nearby Heroes for 6 seconds",
     unlock_rank: 0,
@@ -54,7 +54,7 @@ export const aladdin_talents: Talents[] = [
   },
   {
     id: "aladdin-shard-blades",
-    name: "Shard Blades	",
+    name: "Shard Blades",
     description:
       "While ENCHANTMENT is active on blades, ATTACKS have their range increased by 20%/25%/30%/35% and deal +20% damage",
     unlock_rank: 0,
