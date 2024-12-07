@@ -17,7 +17,7 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 export default function Items() {
   const rarities = ["common", "rare", "epic", "legendary", "cursed"];
   const [collapsed, setCollapsed] = useState<{ [key: string]: boolean }>(
-    rarities.reduce((acc, rarity) => ({ ...acc, [rarity]: true }), {})
+    rarities.reduce((acc, rarity) => ({ ...acc, [rarity]: false }), {})
   );
 
   const toggleCollapse = (rarity: string) => {
