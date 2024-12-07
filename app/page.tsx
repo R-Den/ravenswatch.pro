@@ -1,3 +1,29 @@
+import Image from "next/image";
+import { wukong } from "@/lib/heroes/wukong";
+import { carmilla } from "@/lib/heroes/carmilla";
+import { aladdin } from "@/lib/heroes/aladdin";
+import {
+  Card,
+  CardHeader,
+  CardDescription,
+  CardTitle,
+} from "@/components/ui/card";
+
+const featuredHeroes = [
+  {
+    name: wukong.name,
+    description: "WhatTheShuck - Dev",
+  },
+  {
+    name: carmilla.name,
+    description: "R-Den - Dev",
+  },
+  {
+    name: aladdin.name,
+    description: "Miet - Project Manager",
+  },
+];
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen  bg-background p-8">
@@ -22,8 +48,34 @@ export default function Home() {
         <section className="text-center">
           <h2 className="text-2xl font-semibold mb-2">Featured Heroes</h2>
           <p className="text-lg">
-            Discover the heroes of Ravenswatch and their unique abilities.
+            Discover the Dev Team&apos;s favourite heroes in Ravenswatch.
           </p>
+
+          <br />
+          <section className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8">
+            {featuredHeroes.map((hero) => (
+              <Card
+                key={hero.name}
+                className="bg-secondary border-border shadow-md rounded-lg overflow-hidden flex flex-col justify-between"
+              >
+                <CardHeader>
+                  <CardTitle>{hero.name}</CardTitle>
+                  <CardDescription className="flex-1">
+                    {hero.description}
+                  </CardDescription>
+                </CardHeader>
+                <div className="w-full h-full relative">
+                  <Image
+                    src={`/heroes/${hero.name}.png`}
+                    alt={hero.name}
+                    height={1548}
+                    width={1000}
+                    className="object-cover"
+                  />
+                </div>
+              </Card>
+            ))}
+          </section>
         </section>
       </main>
     </div>
