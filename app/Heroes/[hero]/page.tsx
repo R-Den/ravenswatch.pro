@@ -85,13 +85,8 @@ export default async function HeroPage({ params }: HeroPageProps) {
                 <CardHeader className="flex justify-between items-center">
                   <CardTitle>{talent.name}</CardTitle>
                   <span className="text-sm text-gray-500 ml-2">
-                    Type: {talent.type}
-                  </span>
-                  <span className="text-sm text-gray-500 ml-2">
-                    Unlock: Rank {talent.unlock_rank}
-                  </span>
-                  <span className="text-sm text-gray-500 ml-2">
-                    On upgrade: {talent.upgrade_changes}
+                    Type: {talent.type} | Unlock: Rank {talent.unlock_rank} | On
+                    upgrade: {talent.upgrade_changes}
                   </span>
                 </CardHeader>
                 <CardContent className="flex items-center">
