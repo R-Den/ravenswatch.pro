@@ -61,7 +61,7 @@ export default function Home() {
               <Link key={hero.id} href={`/Heroes/${hero.id}`} className="block">
                 <Card
                   key={hero.name}
-                  className="bg-secondary border-border shadow-md rounded-lg overflow-hidden flex flex-col justify-between hover:scale-105 hover:bg-input"
+                  className="bg-secondary border-border shadow-md rounded-lg overflow-hidden flex flex-col justify-between hover:scale-105 transform transition-transform duration-300"
                 >
                   <CardHeader>
                     <CardTitle>{hero.name}</CardTitle>
