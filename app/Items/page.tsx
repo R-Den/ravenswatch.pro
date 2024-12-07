@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/table";
 
 import { magical_objects } from "@/lib/magical_objects/magical_objects";
+import Image from "next/image";
 
 export default function Items() {
   return (
@@ -25,6 +26,7 @@ export default function Items() {
           <TableCaption>A list of magical objects in Ravenswatch.</TableCaption>
           <TableHeader>
             <TableRow>
+              <TableHead>Icon</TableHead>
               <TableHead className="w-[200px]">Name</TableHead>
               <TableHead>Effect</TableHead>
               <TableHead>Rarity</TableHead>
@@ -35,6 +37,15 @@ export default function Items() {
           <TableBody>
             {magical_objects.map((item) => (
               <TableRow key={item.name}>
+                <TableCell>
+                  <Image
+                    src={`/items/${item.name}.png`}
+                    alt={item.name}
+                    width={208}
+                    height={208}
+                    className="rounded-lg"
+                  />
+                </TableCell>
                 <TableCell className="font-medium">{item.name}</TableCell>
                 <TableCell>{item.description}</TableCell>
                 <TableCell>{item.rarity}</TableCell>
