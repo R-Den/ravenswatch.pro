@@ -1,13 +1,23 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { Hero, Talents, Abilities, BuildSlot } from "@/lib/types";
+import {
+  Hero,
+  Talents,
+  Abilities,
+  BuildSlot,
+  Magical_Objects,
+} from "@/lib/types";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
 import { HeroSelection } from "./HeroSelection";
-import { BuildBoard } from "./BuildBoard";
-// import { ItemSelectionBar } from "./ItemSelectionBar";
+import { getAllMagicalObjects } from "@/lib/registry";
+import { BuildTalentBoard } from "./BuildTalentBoard";
+import ItemBoard from "./BuildItemBoard";
+import { ItemSelectionBar } from "./ItemSelectionBar";
 import { TalentSelectionBar } from "./TalentSelectionBar";
 import { DragEndEvent } from "@dnd-kit/core";
+import { X, Book, Sword } from "lucide-react";
 
 // when implementing sharing / editing builds from can populate this
 const INITIAL_BUILD_SLOTS: BuildSlot[] = [
@@ -27,6 +37,11 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
   const [selectedHero, setSelectedHero] = useState<Hero | null>(null);
   const [buildSlots, setBuildSlots] =
     useState<BuildSlot[]>(INITIAL_BUILD_SLOTS);
+  const [selectedItems, setSelectedItems] = useState<Map<string, number>>(
+    new Map(),
+  );
+  const [showTalentBar, setShowTalentBar] = useState(true);
+  const [showItemBar, setShowItemBar] = useState(false);
 
   const selectedIds = useMemo(
     () =>
@@ -37,9 +52,10 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
   const handleHeroSelect = (hero: Hero) => {
     setSelectedHero(hero);
     setBuildSlots(INITIAL_BUILD_SLOTS);
+    setSelectedItems(new Map());
   };
 
-  const handleSlotUpdate = (
+  const handleTalentSlotUpdate = (
     level: number,
     content: Talents | Abilities | null,
   ) => {
@@ -56,6 +72,53 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
         return slot.level === level ? { ...slot, content } : slot;
       }),
     );
+  };
+
+  const handleItemUpdate = (item: Magical_Objects | string) => {
+    // Allow passing either the item object or just the itemId
+    const itemId = typeof item === "string" ? item : item.id;
+    const itemObj =
+      typeof item === "string"
+        ? getAllMagicalObjects().find((i) => i.id === item)
+        : item;
+
+    if (!itemObj) return;
+
+    setSelectedItems((prev) => {
+      const newMap = new Map(prev);
+      if (itemObj.rarity === "legendary" || itemObj.rarity === "cursed") {
+        if (!prev.has(itemId)) {
+          newMap.set(itemId, 1);
+        }
+      } else {
+        const currentCount = prev.get(itemId) || 0;
+        newMap.set(itemId, currentCount + 1);
+      }
+      return newMap;
+    });
+  };
+
+  const handleItemRemove = (itemId: string) => {
+    setSelectedItems((prev) => {
+      const newMap = new Map(prev);
+      const currentCount = prev.get(itemId) || 0;
+      if (currentCount <= 1) {
+        newMap.delete(itemId);
+      } else {
+        newMap.set(itemId, currentCount - 1);
+      }
+      return newMap;
+    });
+  };
+
+  const toggleBar = (barType: "talent" | "item") => {
+    if (barType === "talent") {
+      setShowTalentBar(!showTalentBar);
+      setShowItemBar(false);
+    } else {
+      setShowItemBar(!showItemBar);
+      setShowTalentBar(false);
+    }
   };
 
   const handleDragEnd = (event: DragEndEvent) => {
@@ -104,21 +167,81 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
           />
 
           {selectedHero && (
-            <BuildBoard
-              buildSlots={buildSlots}
-              onSlotUpdate={handleSlotUpdate}
-              onDragEnd={handleDragEnd}
-            />
+            <>
+              <div className="flex-1">
+                <div className="flex justify-end space-x-2 mb-4">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => toggleBar("talent")}
+                    className="flex items-center space-x-1"
+                  >
+                    <Book className="w-4 h-4" />
+                    <span>Talents</span>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => toggleBar("item")}
+                    className="flex items-center space-x-1"
+                  >
+                    <Sword className="w-4 h-4" />
+                    <span>Items</span>
+                  </Button>
+                </div>
+
+                <BuildTalentBoard
+                  buildSlots={buildSlots}
+                  onSlotUpdate={handleTalentSlotUpdate}
+                  onDragEnd={handleDragEnd}
+                />
+              </div>
+              {/* Right side - Item Board */}
+              <ItemBoard
+                selectedItems={selectedItems}
+                onItemRemove={handleItemRemove}
+                onItemAdd={handleItemUpdate}
+                onShowItemBar={() => setShowItemBar(true)}
+                items={getAllMagicalObjects()}
+              />
+            </>
           )}
         </div>
 
-        {selectedHero && (
-          <TalentSelectionBar
-            selectedHero={selectedHero}
-            buildSlots={buildSlots}
-            onSlotUpdate={handleSlotUpdate}
-            selectedIds={selectedIds}
-          />
+        {selectedHero && showTalentBar && (
+          <div className="relative">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="absolute -top-3 right-3 z-10"
+              onClick={() => setShowTalentBar(false)}
+            >
+              <X className="w-4 h-4" />
+            </Button>
+            <TalentSelectionBar
+              selectedHero={selectedHero}
+              buildSlots={buildSlots}
+              onSlotUpdate={handleTalentSlotUpdate}
+              selectedIds={selectedIds}
+            />
+          </div>
+        )}
+
+        {selectedHero && showItemBar && (
+          <div className="relative">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="absolute -top-3 right-3 z-10"
+              onClick={() => setShowItemBar(false)}
+            >
+              <X className="w-4 h-4" />
+            </Button>
+            <ItemSelectionBar
+              selectedItems={selectedItems}
+              onItemUpdate={handleItemUpdate}
+            />
+          </div>
         )}
       </div>
     </TooltipProvider>

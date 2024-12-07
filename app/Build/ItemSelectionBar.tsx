@@ -1,22 +1,24 @@
-import { BuildSlot, Magical_Objects } from "@/lib/types";
+import { Magical_Objects } from "@/lib/types";
 import { getAllMagicalObjects } from "@/lib/registry";
 import { Card, CardContent } from "@/components/ui/card";
 import { ItemButton } from "./ItemButton";
 
 interface ItemSelectionBarProps {
-  buildSlots: BuildSlot[];
-  onSlotUpdate: (level: number, content: Magical_Objects | null) => void;
-  selectedIds: string[];
+  selectedItems: Map<string, number>;
+  onItemUpdate: (item: Magical_Objects) => void;
 }
 
 export const ItemSelectionBar = ({
-  buildSlots,
-  onSlotUpdate,
-  selectedIds,
+  selectedItems,
+  onItemUpdate,
 }: ItemSelectionBarProps) => {
-  const getSelectedNormalTalents = () =>
-    buildSlots.filter((slot) => slot.type === "normal" && slot.content).length;
   const magical_objects = getAllMagicalObjects();
+  const isItemDisabled = (item: Magical_Objects) => {
+    const isSelected = selectedItems.has(item.id);
+    return (
+      (item.rarity === "legendary" || item.rarity === "cursed") && isSelected
+    );
+  };
 
   return (
     <Card className="fixed bottom-0 left-0 right-0 bg-background border-t">
@@ -31,16 +33,9 @@ export const ItemSelectionBar = ({
                 <ItemButton
                   key={magical_object.id}
                   magical_object={magical_object}
-                  onClick={() => {
-                    const emptySlot = buildSlots.find(
-                      (slot) => slot.type === "normal" && !slot.content,
-                    );
-                    if (emptySlot && getSelectedNormalTalents() < 7) {
-                      onSlotUpdate(emptySlot.level, magical_object);
-                    }
-                  }}
-                  isDisabled={getSelectedNormalTalents() >= 7}
-                  isSelected={selectedIds.includes(magical_object.id)}
+                  onClick={() => onItemUpdate(magical_object)}
+                  isDisabled={isItemDisabled(magical_object)}
+                  isSelected={isItemDisabled(magical_object)}
                 />
               ))}
             </div>

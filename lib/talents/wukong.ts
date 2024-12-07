@@ -3,8 +3,8 @@ import { HERO_IDS } from "../hero-ids";
 
 export const wukong_talents: Talents[] = [
   {
-    id: "wukong-stone-skin",
-    name: "Stone Skin",
+    id: "wukong-stone-monkey",
+    name: "Stone Monkey",
     description:
       "Quest (x40): Each successful DEFENSE grants +0.5 ARMOR. Complete: Each block triggers an attack dealing 100% of the blocked damage as area damage",
     unlock_rank: 0,
@@ -192,8 +192,8 @@ export const wukong_talents: Talents[] = [
     upgrade_changes: "+4% damage",
   },
   {
-    id: "wukong-saced-seal",
-    name: "Saced Seal",
+    id: "wukong-sacred-seal",
+    name: "Sacred Seal",
     description:
       "When SPECIAL ends, orbs sink into the ground to draw a sacred pattern that explodes after a short time, dealing 100 area damage",
     unlock_rank: 7,

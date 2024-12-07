@@ -22,7 +22,7 @@ interface BuildBoardProps {
   onDragEnd: (event: DragEndEvent) => void;
 }
 
-export const BuildBoard = ({
+export const BuildTalentBoard = ({
   buildSlots,
   onSlotUpdate,
   onDragEnd,
@@ -73,13 +73,16 @@ export const BuildBoard = ({
                     />
                   ) : (
                     <div className="w-full h-full p-4 aspect-square border-2 border-dashed rounded flex items-center justify-center text-muted-foreground">
-                      {slot.type === "starter"
-                        ? "Starter"
-                        : slot.type === "ultimate"
-                          ? "Ultimate"
-                          : slot.type === "ultimate-upgrade"
-                            ? "Upgrade"
-                            : "Normal"}
+                      +
+                      <div className="text-sm font-medium text-center">
+                        {slot.type === "starter"
+                          ? "Starter"
+                          : slot.type === "ultimate"
+                            ? "Ultimate"
+                            : slot.type === "ultimate-upgrade"
+                              ? "Upgrade"
+                              : "Normal"}
+                      </div>
                     </div>
                   )}
                 </AnimatePresence>
