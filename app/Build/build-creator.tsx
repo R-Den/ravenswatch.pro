@@ -10,15 +10,14 @@ import {
 } from "@/lib/types";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { HeroSelection } from "./HeroSelection";
-import { BuildBoard } from "./BuildBoard";
+import { getAllMagicalObjects } from "@/lib/registry";
+import { BuildTalentBoard } from "./BuildTalentBoard";
+import ItemBoard from "./BuildItemBoard";
 import { ItemSelectionBar } from "./ItemSelectionBar";
 import { TalentSelectionBar } from "./TalentSelectionBar";
 import { DragEndEvent } from "@dnd-kit/core";
 import { X, Book, Sword } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Item } from "@radix-ui/react-navigation-menu";
 
 // when implementing sharing / editing builds from can populate this
 const INITIAL_BUILD_SLOTS: BuildSlot[] = [
@@ -75,16 +74,25 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
     );
   };
 
-  const handleItemUpdate = (item: Magical_Objects) => {
+  const handleItemUpdate = (item: Magical_Objects | string) => {
+    // Allow passing either the item object or just the itemId
+    const itemId = typeof item === "string" ? item : item.id;
+    const itemObj =
+      typeof item === "string"
+        ? getAllMagicalObjects().find((i) => i.id === item)
+        : item;
+
+    if (!itemObj) return;
+
     setSelectedItems((prev) => {
       const newMap = new Map(prev);
-      if (item.rarity === "legendary" || item.rarity === "cursed") {
-        if (!prev.has(item.id)) {
-          newMap.set(item.id, 1);
+      if (itemObj.rarity === "legendary" || itemObj.rarity === "cursed") {
+        if (!prev.has(itemId)) {
+          newMap.set(itemId, 1);
         }
       } else {
-        const currentCount = prev.get(item.id) || 0;
-        newMap.set(item.id, currentCount + 1);
+        const currentCount = prev.get(itemId) || 0;
+        newMap.set(itemId, currentCount + 1);
       }
       return newMap;
     });
@@ -159,68 +167,44 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
           />
 
           {selectedHero && (
-            <div className="flex-1">
-              <div className="flex justify-end space-x-2 mb-4">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => toggleBar("talent")}
-                  className="flex items-center space-x-1"
-                >
-                  <Book className="w-4 h-4" />
-                  <span>Talents</span>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => toggleBar("item")}
-                  className="flex items-center space-x-1"
-                >
-                  <Sword className="w-4 h-4" />
-                  <span>Items</span>
-                </Button>
-              </div>
-
-              <BuildBoard
-                buildSlots={buildSlots}
-                onSlotUpdate={handleTalentSlotUpdate}
-                onDragEnd={handleDragEnd}
-              />
-
-              {/* need to make into a component  */}
-              <div className="mt-6">
-                <h3 className="font-bold mb-3">Selected Items</h3>
-                <div className="grid grid-cols-6 gap-4">
-                  {Array.from(selectedItems.entries()).map(
-                    ([itemId, count]) => (
-                      <div key={itemId} className="relative">
-                        <Button
-                          variant="outline"
-                          className="w-16 h-16 relative"
-                          onClick={() => handleItemRemove(itemId)}
-                        >
-                          <Image
-                            src={`/items/${itemId}.png`}
-                            width={64}
-                            height={64}
-                            alt={itemId}
-                            className="w-full h-full object-cover rounded"
-                          />
-                          {count > 1 && (
-                            <Badge
-                              variant="secondary"
-                              className="absolute -top-2 -right-2"
-                            >
-                              {count}
-                            </Badge>
-                          )}
-                        </Button>
-                      </div>
-                    ),
-                  )}
+            <>
+              <div className="flex-1">
+                <div className="flex justify-end space-x-2 mb-4">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => toggleBar("talent")}
+                    className="flex items-center space-x-1"
+                  >
+                    <Book className="w-4 h-4" />
+                    <span>Talents</span>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => toggleBar("item")}
+                    className="flex items-center space-x-1"
+                  >
+                    <Sword className="w-4 h-4" />
+                    <span>Items</span>
+                  </Button>
                 </div>
+
+                <BuildTalentBoard
+                  buildSlots={buildSlots}
+                  onSlotUpdate={handleTalentSlotUpdate}
+                  onDragEnd={handleDragEnd}
+                />
               </div>
-            </div>
+              {/* Right side - Item Board */}
+              <ItemBoard
+                selectedItems={selectedItems}
+                onItemRemove={handleItemRemove}
+                onItemAdd={handleItemUpdate}
+                onShowItemBar={() => setShowItemBar(true)}
+                items={getAllMagicalObjects()}
+              />
+            </>
           )}
         </div>
 
@@ -254,9 +238,8 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
               <X className="w-4 h-4" />
             </Button>
             <ItemSelectionBar
-              buildSlots={buildSlots}
-              onSlotUpdate={handleItemUpdate}
-              selectedIds={Array.from(selectedItems.keys())}
+              selectedItems={selectedItems}
+              onItemUpdate={handleItemUpdate}
             />
           </div>
         )}
