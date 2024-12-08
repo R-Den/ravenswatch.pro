@@ -21,18 +21,17 @@ import { X, Book, Sword } from "lucide-react";
 
 // when implementing sharing / editing builds from can populate this
 const INITIAL_BUILD_SLOTS: BuildSlot[] = [
-  { level: 1, type: "starter", content: null },
-  { level: 2, type: "normal", content: null },
-  { level: 3, type: "normal", content: null },
-  { level: 4, type: "normal", content: null },
-  { level: 5, type: "ultimate", content: null },
-  { level: 6, type: "normal", content: null },
-  { level: 7, type: "normal", content: null },
-  { level: 8, type: "normal", content: null },
-  { level: 9, type: "normal", content: null },
-  { level: 10, type: "ultimate-upgrade", content: null },
+  { id: "starter", type: "starter", content: null },
+  { id: "core-1", type: "normal", content: null },
+  { id: "core-2", type: "normal", content: null },
+  { id: "core-3", type: "normal", content: null },
+  { id: "core-4", type: "normal", content: null },
+  { id: "ultimate", type: "ultimate", content: null },
+  { id: "core-5", type: "normal", content: null },
+  { id: "core-6", type: "normal", content: null },
+  { id: "core-7", type: "normal", content: null },
+  { id: "ultimate-upgrade", type: "ultimate-upgrade", content: null },
 ];
-
 const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
   const [selectedHero, setSelectedHero] = useState<Hero | null>(null);
   const [buildSlots, setBuildSlots] =
@@ -42,11 +41,16 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
   );
   const [showTalentBar, setShowTalentBar] = useState(true);
   const [showItemBar, setShowItemBar] = useState(false);
+  const [alternativeTalents, setAlternativeTalents] = useState<BuildSlot[]>([]);
 
   const selectedIds = useMemo(
-    () =>
-      buildSlots.filter((slot) => slot.content).map((slot) => slot.content!.id),
-    [buildSlots],
+    () => [
+      ...buildSlots
+        .filter((slot) => slot.content)
+        .map((slot) => slot.content!.id),
+      ...alternativeTalents.map((slot) => slot.content!.id),
+    ],
+    [buildSlots, alternativeTalents],
   );
 
   const handleHeroSelect = (hero: Hero) => {
@@ -56,22 +60,43 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
   };
 
   const handleTalentSlotUpdate = (
-    level: number,
+    slotId: string,
     content: Talents | Abilities | null,
   ) => {
-    setBuildSlots((prev) =>
-      prev.map((slot) => {
-        // If removing an ultimate, also remove its upgrade
-        if (level === 5 && !content) {
-          return slot.level === 10
-            ? { ...slot, content: null }
-            : slot.level === level
-              ? { ...slot, content }
-              : slot;
-        }
-        return slot.level === level ? { ...slot, content } : slot;
-      }),
-    );
+    // Check if it's a core slot
+    const coreSlot = buildSlots.find((slot) => slot.id === slotId);
+    if (coreSlot) {
+      setBuildSlots((prev) =>
+        prev.map((slot) => {
+          if (slot.id === slotId) {
+            return { ...slot, content };
+          }
+          // If removing an ultimate, also remove its upgrade
+          if (
+            slotId === "ultimate" &&
+            !content &&
+            slot.id === "ultimate-upgrade"
+          ) {
+            return { ...slot, content: null };
+          }
+          return slot;
+        }),
+      );
+    } else {
+      // Handle alternative talents
+      if (content) {
+        // Adding new alternative talent
+        setAlternativeTalents((prev) => [
+          ...prev,
+          { id: slotId, type: "normal", content },
+        ]);
+      } else {
+        // Removing alternative talent
+        setAlternativeTalents((prev) =>
+          prev.filter((slot) => slot.id !== slotId),
+        );
+      }
+    }
   };
 
   const handleItemUpdate = (item: Magical_Objects | string) => {
@@ -120,23 +145,18 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
       setShowTalentBar(false);
     }
   };
-
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
     if (!over) return;
 
-    const activeId = active.id;
-    const overId = over.id;
+    const activeId = active.id as string;
+    const overId = over.id as string;
 
     if (activeId === overId) return;
 
     setBuildSlots((prev) => {
-      const oldIndex = prev.findIndex(
-        (slot) => slot.level.toString() === activeId,
-      );
-      const newIndex = prev.findIndex(
-        (slot) => slot.level.toString() === overId,
-      );
+      const oldIndex = prev.findIndex((slot) => slot.id === activeId);
+      const newIndex = prev.findIndex((slot) => slot.id === overId);
 
       if (oldIndex === -1 || newIndex === -1) return prev;
 
@@ -194,6 +214,8 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
                   buildSlots={buildSlots}
                   onSlotUpdate={handleTalentSlotUpdate}
                   onDragEnd={handleDragEnd}
+                  onShowTalentBar={() => toggleBar("talent")}
+                  alternativeTalents={alternativeTalents}
                 />
               </div>
               {/* Right side - Item Board */}
@@ -201,7 +223,7 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
                 selectedItems={selectedItems}
                 onItemRemove={handleItemRemove}
                 onItemAdd={handleItemUpdate}
-                onShowItemBar={() => setShowItemBar(true)}
+                onShowItemBar={() => toggleBar("item")}
                 items={getAllMagicalObjects()}
               />
             </>

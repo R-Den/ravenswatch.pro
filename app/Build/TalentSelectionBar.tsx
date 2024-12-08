@@ -2,19 +2,18 @@ import { Hero, Talents, Abilities, BuildSlot } from "@/lib/types";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { TalentButton } from "./TalentButton";
+import { AbilityButton } from "./AbilityButton";
 
 interface TalentSelectionBarProps {
   selectedHero: Hero;
   buildSlots: BuildSlot[];
-  onSlotUpdate: (level: number, content: Talents | Abilities | null) => void;
+  onSlotUpdate: (slotId: string, content: Talents | Abilities | null) => void;
   selectedIds: string[];
 }
 
@@ -27,6 +26,19 @@ export const TalentSelectionBar = ({
   const getSelectedNormalTalents = () =>
     buildSlots.filter((slot) => slot.type === "normal" && slot.content).length;
 
+  const handleTalentSelect = (talent: Talents | Abilities) => {
+    // Find the first empty core slot or use alternative section
+    const emptySlot = buildSlots.find(
+      (slot) => slot.type === "normal" && !slot.content,
+    );
+
+    if (emptySlot) {
+      onSlotUpdate(emptySlot.id, talent);
+    } else {
+      // Add to alternatives
+      onSlotUpdate(`alternative-${Date.now()}`, talent);
+    }
+  };
   return (
     <Card className="fixed bottom-0 left-0 right-0 bg-background border-t">
       <CardContent className="p-4">
@@ -41,8 +53,18 @@ export const TalentSelectionBar = ({
                   <TalentButton
                     key={talent.id}
                     talent={talent}
-                    onClick={() => onSlotUpdate(1, talent)}
-                    isDisabled={buildSlots[0].content !== null}
+                    onClick={() => {
+                      const starterSlot = buildSlots.find(
+                        (slot) => slot.type === "starter",
+                      );
+                      if (starterSlot) {
+                        onSlotUpdate(starterSlot.id, talent);
+                      }
+                    }}
+                    isDisabled={
+                      buildSlots.find((slot) => slot.type === "starter")
+                        ?.content !== null
+                    }
                     isSelected={selectedIds.includes(talent.id)}
                   />
                 ))}
@@ -64,15 +86,8 @@ export const TalentSelectionBar = ({
                   <TalentButton
                     key={talent.id}
                     talent={talent}
-                    onClick={() => {
-                      const emptySlot = buildSlots.find(
-                        (slot) => slot.type === "normal" && !slot.content,
-                      );
-                      if (emptySlot && getSelectedNormalTalents() < 7) {
-                        onSlotUpdate(emptySlot.level, talent);
-                      }
-                    }}
-                    isDisabled={getSelectedNormalTalents() >= 7}
+                    onClick={() => handleTalentSelect(talent)}
+                    isDisabled={false}
                     isSelected={selectedIds.includes(talent.id)}
                   />
                 ))}
@@ -94,20 +109,32 @@ export const TalentSelectionBar = ({
                     >
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <Button
-                            variant="outline"
-                            className="w-16 h-16"
-                            onClick={() => onSlotUpdate(5, ultimate)}
-                            disabled={buildSlots[4].content !== null}
+                          <AbilityButton
+                            key={ultimate.id}
+                            ability={ultimate}
+                            onClick={() => {
+                              const ultimateSlot = buildSlots.find(
+                                (slot) => slot.type === "ultimate",
+                              );
+                              if (ultimateSlot) {
+                                onSlotUpdate(ultimateSlot.id, ultimate);
+                              }
+                            }}
+                            isDisabled={
+                              buildSlots.find(
+                                (slot) => slot.type === "ultimate",
+                              )?.content !== null
+                            }
+                            isSelected={selectedIds.includes(ultimate.id)}
                           >
-                            <Image
+                            {/* <Image
                               src={`/abilities/${ultimate.hero}/${ultimate.name}.png`}
                               height={104}
                               width={104}
                               alt={ultimate.name}
                               className="w-full h-full object-cover rounded"
-                            />
-                          </Button>
+                            /> */}
+                          </AbilityButton>
                         </TooltipTrigger>
                         <TooltipContent side="top">
                           <div className="space-y-2">
@@ -123,21 +150,33 @@ export const TalentSelectionBar = ({
                   ))}
               </div>
 
-              {buildSlots[4].content && (
+              {buildSlots.find((slot) => slot.type === "ultimate")?.content && (
                 <div className="grid grid-cols-2 gap-2">
                   {selectedHero.talents
                     .filter(
                       (talent) =>
                         talent.type === "ultimate" &&
                         talent.prerequisite ===
-                          (buildSlots[4].content as Abilities).name,
+                          buildSlots.find((slot) => slot.type === "ultimate")
+                            ?.content?.name,
                     )
                     .map((talent) => (
                       <TalentButton
                         key={talent.id}
                         talent={talent}
-                        onClick={() => onSlotUpdate(10, talent)}
-                        isDisabled={buildSlots[9].content !== null}
+                        onClick={() => {
+                          const upgradeSlot = buildSlots.find(
+                            (slot) => slot.type === "ultimate-upgrade",
+                          );
+                          if (upgradeSlot) {
+                            onSlotUpdate(upgradeSlot.id, talent);
+                          }
+                        }}
+                        isDisabled={
+                          buildSlots.find(
+                            (slot) => slot.type === "ultimate-upgrade",
+                          )?.content !== null
+                        }
                         isSelected={selectedIds.includes(talent.id)}
                       />
                     ))}
