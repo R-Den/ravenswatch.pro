@@ -20,9 +20,8 @@ export const HeroSelection = ({
   selectedHero,
   onHeroSelect,
 }: HeroSelectionProps) => (
-  <Card>
-    <CardHeader>
-    </CardHeader>
+  <Card selectedHero={selectedHero}>
+    <CardHeader></CardHeader>
     <CardContent>
       <div className="grid grid-cols-2 gap-4">
         {heroes.map((hero) => (

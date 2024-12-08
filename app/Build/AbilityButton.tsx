@@ -28,7 +28,7 @@ export const AbilityButton = ({
           disabled={isDisabled || isSelected}
         >
           <Image
-            src={`/abilities/ability.hero}/${ability.name}.png`}
+            src={`/abilities/${ability.hero}/${ability.name}.png`}
             width={104}
             height={104}
             alt={ability.name}

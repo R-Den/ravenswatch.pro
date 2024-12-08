@@ -11,13 +11,14 @@ import {
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import { HeroSelection } from "./HeroSelection";
+import HeroSelectionDialog from "./HeroSelectionDialog";
 import { getAllMagicalObjects } from "@/lib/registry";
 import { BuildTalentBoard } from "./BuildTalentBoard";
 import ItemBoard from "./BuildItemBoard";
 import { ItemSelectionBar } from "./ItemSelectionBar";
 import { TalentSelectionBar } from "./TalentSelectionBar";
 import { DragEndEvent } from "@dnd-kit/core";
-import { X, Book, Sword } from "lucide-react";
+import { X, Book, Sword, Save, Eraser } from "lucide-react";
 
 // when implementing sharing / editing builds from can populate this
 const INITIAL_BUILD_SLOTS: BuildSlot[] = [
@@ -42,6 +43,10 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
   const [showTalentBar, setShowTalentBar] = useState(true);
   const [showItemBar, setShowItemBar] = useState(false);
   const [alternativeTalents, setAlternativeTalents] = useState<BuildSlot[]>([]);
+  const [showConfirmDialog, setShowConfirmDialog] = useState(false);
+  const [pendingHeroSelection, setPendingHeroSelection] = useState<Hero | null>(
+    null,
+  );
 
   const selectedIds = useMemo(
     () => [
@@ -54,9 +59,36 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
   );
 
   const handleHeroSelect = (hero: Hero) => {
-    setSelectedHero(hero);
-    setBuildSlots(INITIAL_BUILD_SLOTS);
-    setSelectedItems(new Map());
+    if (buildSlots.some((slot) => slot.content) || selectedItems.size > 0) {
+      setPendingHeroSelection(hero);
+      setShowConfirmDialog(true);
+    } else {
+      setSelectedHero(hero);
+    }
+  };
+
+  const handleClearAll = () => {
+    if (pendingHeroSelection) {
+      setSelectedHero(pendingHeroSelection);
+      setBuildSlots(INITIAL_BUILD_SLOTS);
+      setSelectedItems(new Map());
+      setShowConfirmDialog(false);
+      setPendingHeroSelection(null);
+    }
+  };
+
+  const handleClearTalentsOnly = () => {
+    if (pendingHeroSelection) {
+      setSelectedHero(pendingHeroSelection);
+      setBuildSlots(INITIAL_BUILD_SLOTS);
+      setShowConfirmDialog(false);
+      setPendingHeroSelection(null);
+    }
+  };
+
+  const handleDialogClose = () => {
+    setShowConfirmDialog(false);
+    setPendingHeroSelection(null);
   };
 
   const handleTalentSlotUpdate = (
@@ -178,6 +210,13 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
 
   return (
     <TooltipProvider>
+      <HeroSelectionDialog
+        isOpen={showConfirmDialog}
+        onClose={handleDialogClose}
+        onClearAll={handleClearAll}
+        onClearTalentsOnly={handleClearTalentsOnly}
+        selectedHeroName={pendingHeroSelection?.name || ""}
+      />
       <div className="container mx-auto p-4 space-y-6">
         <div className="flex space-x-6">
           <HeroSelection
@@ -208,8 +247,25 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
                     <Sword className="w-4 h-4" />
                     <span>Items</span>
                   </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handleHeroSelect(selectedHero)}
+                    className="flex items-center space-x-1"
+                  >
+                    <Eraser className="w-4 h-4" />
+                    <span>Clear</span>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => toggleBar("item")}
+                    className="flex items-center space-x-1"
+                  >
+                    <Save className="w-4 h-4" />
+                    <span>Save</span>
+                  </Button>
                 </div>
-
                 <BuildTalentBoard
                   buildSlots={buildSlots}
                   onSlotUpdate={handleTalentSlotUpdate}

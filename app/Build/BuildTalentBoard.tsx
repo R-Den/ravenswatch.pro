@@ -75,7 +75,6 @@ export const BuildTalentBoard = ({
   return (
     <div className="space-y-8">
       <div className="space-y-4">
-        <h2 className="text-lg font-semibold">Optimal Build</h2>
         <DndContext
           sensors={sensors}
           modifiers={[restrictToVerticalAxis]}
