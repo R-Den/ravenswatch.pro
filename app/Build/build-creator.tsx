@@ -47,6 +47,15 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
   const [pendingHeroSelection, setPendingHeroSelection] = useState<Hero | null>(
     null,
   );
+  const [talentSelectionMode, setTalentSelectionMode] = useState<
+    "core" | "alternative"
+  >("core");
+
+  const handleTalentBarOpen = (mode: "core" | "alternative") => {
+    setShowTalentBar(true);
+    setShowItemBar(false);
+    setTalentSelectionMode(mode);
+  };
 
   const selectedIds = useMemo(
     () => [
@@ -59,7 +68,11 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
   );
 
   const handleHeroSelect = (hero: Hero) => {
-    if (buildSlots.some((slot) => slot.content) || selectedItems.size > 0) {
+    if (
+      buildSlots.some((slot) => slot.content) ||
+      alternativeTalents.length > 0 ||
+      selectedItems.size > 0
+    ) {
       setPendingHeroSelection(hero);
       setShowConfirmDialog(true);
     } else {
@@ -71,6 +84,7 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
     if (pendingHeroSelection) {
       setSelectedHero(pendingHeroSelection);
       setBuildSlots(INITIAL_BUILD_SLOTS);
+      setAlternativeTalents([]);
       setSelectedItems(new Map());
       setShowConfirmDialog(false);
       setPendingHeroSelection(null);
@@ -81,6 +95,7 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
     if (pendingHeroSelection) {
       setSelectedHero(pendingHeroSelection);
       setBuildSlots(INITIAL_BUILD_SLOTS);
+      setAlternativeTalents([]);
       setShowConfirmDialog(false);
       setPendingHeroSelection(null);
     }
@@ -270,7 +285,7 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
                   buildSlots={buildSlots}
                   onSlotUpdate={handleTalentSlotUpdate}
                   onDragEnd={handleDragEnd}
-                  onShowTalentBar={() => toggleBar("talent")}
+                  onShowTalentBar={handleTalentBarOpen}
                   alternativeTalents={alternativeTalents}
                 />
               </div>
@@ -301,6 +316,7 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
               buildSlots={buildSlots}
               onSlotUpdate={handleTalentSlotUpdate}
               selectedIds={selectedIds}
+              defaultTab={talentSelectionMode}
             />
           </div>
         )}
