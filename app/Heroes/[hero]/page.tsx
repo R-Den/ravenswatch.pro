@@ -47,7 +47,7 @@ export default async function HeroPage({ params }: HeroPageProps) {
 
         <section className="mb-8">
           <h2 className="text-3xl font-bold mb-4">Abilities</h2>
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {hero.abilities.map((ability) => (
               <Card
                 key={ability.id}

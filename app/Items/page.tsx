@@ -10,6 +10,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
+import TableOfContents from "@/components/ui/toc";
+
 import { magical_objects } from "@/lib/magical_objects/magical_objects";
 import Image from "next/image";
 import { ChevronDown, ChevronRight } from "lucide-react";
@@ -24,8 +26,13 @@ export default function Items() {
     setCollapsed((prev) => ({ ...prev, [rarity]: !prev[rarity] }));
   };
 
+  const sections = rarities.map((rarity) => ({
+    id: rarity,
+    title: `${rarity.charAt(0).toUpperCase() + rarity.slice(1)} Items`,
+  }));
+
   return (
-    <div className="min-h-screen bg-background p-8">
+    <div className="min-h-screen bg-background p-8 relative">
       <header className="text-center my-8">
         <h1 className="text-4xl font-bold mb-4">Magical Objects</h1>
         <p className="text-lg">
@@ -35,7 +42,7 @@ export default function Items() {
 
       <main className="w-full max-w-6xl mx-auto">
         {rarities.map((rarity) => (
-          <div key={rarity} className="mb-8">
+          <section key={rarity} id={rarity} className="mb-8">
             <h2
               className="text-2xl font-bold mb-4 capitalize cursor-pointer flex items-center"
               onClick={() => toggleCollapse(rarity)}
@@ -88,9 +95,11 @@ export default function Items() {
                 </TableBody>
               </Table>
             )}
-          </div>
+          </section>
         ))}
       </main>
+
+      <TableOfContents sections={sections} />
     </div>
   );
 }
