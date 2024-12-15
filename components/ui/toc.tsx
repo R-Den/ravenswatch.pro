@@ -7,7 +7,7 @@ interface TableOfContentsProps {
 
 const TableOfContents: React.FC<TableOfContentsProps> = ({ sections }) => {
   return (
-    <nav className="fixed right-0 top-20 w-64 p-4 bg-background shadow-lg rounded-lg border border-border">
+    <nav className="fixed left-10 top-20 w-64 p-4 bg-background shadow-lg rounded-lg border border-border">
       <h2 className="text-xl font-bold mb-4">Table of Contents</h2>
       <ul className="space-y-2">
         {sections.map((section) => (
