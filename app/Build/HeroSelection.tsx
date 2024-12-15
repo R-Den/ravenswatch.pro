@@ -20,7 +20,7 @@ export const HeroSelection = ({
   selectedHero,
   onHeroSelect,
 }: HeroSelectionProps) => (
-  <Card selectedHero={selectedHero}>
+  <Card selectedHero={selectedHero} autoCollapse={true}>
     <CardHeader></CardHeader>
     <CardContent>
       <div className="grid grid-cols-2 gap-4">

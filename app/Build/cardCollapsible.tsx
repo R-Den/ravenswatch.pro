@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
@@ -8,9 +8,16 @@ const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & {
     selectedHero?: { name: string } | null;
+    autoCollapse?: boolean;
   }
->(({ className, children, selectedHero, ...props }, ref) => {
+>(({ className, children, selectedHero, autoCollapse, ...props }, ref) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
+
+  useEffect(() => {
+    if (autoCollapse && selectedHero) {
+      setIsCollapsed(true);
+    }
+  }, [selectedHero, autoCollapse]);
 
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);

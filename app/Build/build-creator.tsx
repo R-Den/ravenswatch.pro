@@ -18,7 +18,7 @@ import ItemBoard from "./BuildItemBoard";
 import { ItemSelectionBar } from "./ItemSelectionBar";
 import { TalentSelectionBar } from "./TalentSelectionBar";
 import { DragEndEvent } from "@dnd-kit/core";
-import { X, Book, Sword, Save, Eraser } from "lucide-react";
+import { Book, Sword, Save, Eraser } from "lucide-react";
 
 // when implementing sharing / editing builds from can populate this
 const INITIAL_BUILD_SLOTS: BuildSlot[] = [
@@ -302,42 +302,22 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
         </div>
 
         {selectedHero && showTalentBar && (
-          <div className="relative">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="absolute -top-3 right-3 z-10"
-              onClick={() => setShowTalentBar(false)}
-            >
-              <X className="w-4 h-4" />
-            </Button>
-            <TalentSelectionBar
-              selectedHero={selectedHero}
-              buildSlots={buildSlots}
-              onSlotUpdate={handleTalentSlotUpdate}
-              selectedIds={selectedIds}
-              defaultTab={talentSelectionMode}
-              onClose={() => setShowTalentBar(false)}
-            />
-          </div>
+          <TalentSelectionBar
+            selectedHero={selectedHero}
+            buildSlots={buildSlots}
+            onSlotUpdate={handleTalentSlotUpdate}
+            selectedIds={selectedIds}
+            defaultTab={talentSelectionMode}
+            onClose={() => setShowTalentBar(false)}
+          />
         )}
 
         {selectedHero && showItemBar && (
-          <div className="relative">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="absolute -top-3 right-3 z-10"
-              onClick={() => setShowItemBar(false)}
-            >
-              <X className="w-4 h-4" />
-            </Button>
-            <ItemSelectionBar
-              selectedItems={selectedItems}
-              onItemUpdate={handleItemUpdate}
-              onClose={() => setShowItemBar(false)}
-            />
-          </div>
+          <ItemSelectionBar
+            selectedItems={selectedItems}
+            onItemUpdate={handleItemUpdate}
+            onClose={() => setShowItemBar(false)}
+          />
         )}
       </div>
     </TooltipProvider>

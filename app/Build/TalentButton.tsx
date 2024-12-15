@@ -23,7 +23,7 @@ export const TalentButton = ({
       <TooltipTrigger asChild>
         <Button
           variant="outline"
-          className="w-16 h-16"
+          className="w-16 h-16 p-0"
           onClick={onClick}
           disabled={isDisabled || isSelected}
         >

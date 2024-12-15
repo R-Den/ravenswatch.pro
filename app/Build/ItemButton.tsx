@@ -17,13 +17,13 @@ export const ItemButton = ({
 }: ItemButtonProps) => (
   <motion.div
     whileHover={{ scale: 1.05 }}
-    className="flex flex-col items-center space-y-1"
+    className="flex flex-col items-center"
   >
     <Tooltip>
       <TooltipTrigger asChild>
         <Button
           variant="outline"
-          className="w-16 h-16"
+          className="w-16 h-16 p-0"
           onClick={onClick}
           disabled={isDisabled || isSelected}
         >
