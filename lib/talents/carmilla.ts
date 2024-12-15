@@ -110,7 +110,7 @@ export const carmilla_talents: Talents[] = [
     upgrade_changes: "+10% Crit Chance",
   },
   {
-    id: "carmilla-Victimization",
+    id: "carmilla-victimization",
     name: "Victimization",
     description:
       "SPECIAL applies MARKED to bitten enemies for 4.0 seconds | MARKED targets take +25% damage and spread this status to another nearby enemy when they die",

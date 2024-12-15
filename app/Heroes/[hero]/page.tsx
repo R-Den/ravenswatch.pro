@@ -39,7 +39,7 @@ export default async function HeroPage({ params }: HeroPageProps) {
             <h2 className="text-3xl font-bold mb-4">Introduction</h2>
             <div className="flex flex-col md:flex-row items-center md:items-start">
               <Image
-                src={`/heroes/${hero.name}.png`}
+                src={`/heroes/${hero.id}.png`}
                 alt={hero.name}
                 height={300}
                 width={200}
@@ -65,7 +65,7 @@ export default async function HeroPage({ params }: HeroPageProps) {
                   </CardHeader>
                   <CardContent className="flex items-center">
                     <Image
-                      src={`/abilities/${hero.id}/${ability.name}.png`}
+                      src={`/abilities/${hero.id}/${ability.id}.png`}
                       alt={ability.name}
                       width={96}
                       height={96}
@@ -95,7 +95,7 @@ export default async function HeroPage({ params }: HeroPageProps) {
                   </CardHeader>
                   <CardContent className="flex items-center">
                     <Image
-                      src={`/talents/${hero.id}/${talent.name}.png`}
+                      src={`/talents/${hero.id}/${talent.id}.png`}
                       alt={talent.name}
                       width={96}
                       height={96}

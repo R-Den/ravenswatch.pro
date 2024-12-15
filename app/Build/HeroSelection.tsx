@@ -33,7 +33,7 @@ export const HeroSelection = ({
                 onClick={() => onHeroSelect(hero)}
               >
                 <Image
-                  src={`/heroes/thumbnail/${hero.name}.png`}
+                  src={`/heroes/thumbnail/${hero.id}.png`}
                   width={500}
                   height={500}
                   alt={hero.name}

@@ -34,7 +34,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="flex justify-center items-end">
                   <Image
-                    src={`/heroes/${hero.name}.png`}
+                    src={`/heroes/${hero.id}.png`}
                     alt={hero.name}
                     height={1548}
                     width={1000}

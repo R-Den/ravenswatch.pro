@@ -71,7 +71,7 @@ export default function Home() {
                   </CardHeader>
                   <div className="w-full h-full relative">
                     <Image
-                      src={`/heroes/${hero.name}.png`}
+                      src={`/heroes/${hero.id}.png`}
                       alt={hero.name}
                       height={1548}
                       width={1000}

@@ -19,7 +19,7 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 export default function Items() {
   const rarities = ["common", "rare", "epic", "legendary", "cursed"];
   const [collapsed, setCollapsed] = useState<{ [key: string]: boolean }>(
-    rarities.reduce((acc, rarity) => ({ ...acc, [rarity]: false }), {})
+    rarities.reduce((acc, rarity) => ({ ...acc, [rarity]: false }), {}),
   );
 
   const toggleCollapse = (rarity: string) => {
@@ -40,7 +40,8 @@ export default function Items() {
         <header className="text-center my-8">
           <h1 className="text-4xl font-bold mb-4">Magical Objects</h1>
           <p className="text-lg">
-            Discover the magical objects in Ravenswatch and their unique effects.
+            Discover the magical objects in Ravenswatch and their unique
+            effects.
           </p>
         </header>
 
@@ -80,7 +81,7 @@ export default function Items() {
                         <TableRow key={item.name}>
                           <TableCell>
                             <Image
-                              src={`/items/${item.name}.png`}
+                              src={`/items/${item.id}.png`}
                               alt={item.name}
                               width={80}
                               height={80}

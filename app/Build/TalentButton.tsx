@@ -28,7 +28,7 @@ export const TalentButton = ({
           disabled={isDisabled || isSelected}
         >
           <Image
-            src={`/talents/${talent.hero}/${talent.name}.png`}
+            src={`/talents/${talent.hero}/${talent.id}.png`}
             width={104}
             height={104}
             alt={talent.name}
