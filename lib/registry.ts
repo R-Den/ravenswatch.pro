@@ -39,6 +39,11 @@ export function getAllHeroes(): Hero[] {
 export function getAllMagicalObjects(): Magical_Objects[] {
   return Object.values(registry.magical_objects);
 }
+
+export function getMagicalObject(objectId: string): Magical_Objects | undefined {
+  return registry.magical_objects[objectId];
+}
+
 // Talent helpers
 export function getHeroTalents(heroId: string): Talents[] {
   return registry.heroes[heroId]?.talents || [];
@@ -46,7 +51,7 @@ export function getHeroTalents(heroId: string): Talents[] {
 
 export function getHeroTalentsByType(
   heroId: string,
-  type: Talents["type"],
+  type: Talents["type"]
 ): Talents[] {
   return getHeroTalents(heroId).filter((talent) => talent.type === type);
 }
@@ -70,14 +75,14 @@ export function getHeroAbilities(heroId: string): Abilities[] {
 
 export function getHeroAbilityByType(
   heroId: string,
-  type: Abilities["type"],
+  type: Abilities["type"]
 ): Abilities | undefined {
   return getHeroAbilities(heroId).find((ability) => ability.type === type);
 }
 
 export function getHeroUltimateAbilities(heroId: string): Abilities[] {
   return getHeroAbilities(heroId).filter(
-    (ability) => ability.type === "ultimate",
+    (ability) => ability.type === "ultimate"
   );
 }
 
@@ -111,7 +116,7 @@ export function isValidBuild(
   starterTalent: Talents | null,
   normalTalents: Talents[],
   ultimate: Abilities | null,
-  ultimateUpgrade: Talents | null,
+  ultimateUpgrade: Talents | null
 ): { valid: boolean; error?: string } {
   const hero = getHero(heroId);
   if (!hero) return { valid: false, error: "Invalid hero" };
@@ -172,7 +177,7 @@ export function serialiseBuild(
   starterTalent: Talents,
   normalTalents: Talents[],
   ultimate: Abilities | null,
-  ultimateUpgrade: Talents | null,
+  ultimateUpgrade: Talents | null
 ): SerialisedBuild {
   return {
     heroId,
@@ -201,14 +206,14 @@ export function deserialiseBuild(build: SerialisedBuild): {
     };
 
   const starterTalent = hero.talents.find(
-    (t) => t.id === build.starterTalentId,
+    (t) => t.id === build.starterTalentId
   );
   const normalTalents = hero.talents.filter((t) =>
-    build.normalTalentIds.includes(t.id),
+    build.normalTalentIds.includes(t.id)
   );
   const ultimate = hero.abilities.find((a) => a.id === build.ultimateId);
   const ultimateUpgrade = hero.talents.find(
-    (t) => t.id === build.ultimateUpgradeId,
+    (t) => t.id === build.ultimateUpgradeId
   );
 
   return {

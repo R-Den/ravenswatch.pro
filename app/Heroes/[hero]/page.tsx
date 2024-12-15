@@ -1,7 +1,12 @@
 import { getHero } from "@/lib/registry";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardTitle,
+} from "@/components/ui/card";
 import TableOfContents from "@/components/ui/toc";
 
 interface HeroPageProps {
