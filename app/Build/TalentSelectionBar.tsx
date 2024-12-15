@@ -2,6 +2,7 @@ import { Hero, Talents, Abilities, BuildSlot } from "@/lib/types";
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   Tooltip,
@@ -10,7 +11,7 @@ import {
 } from "@/components/ui/tooltip";
 import { TalentButton } from "./TalentButton";
 import { AbilityButton } from "./AbilityButton";
-import { HelpCircle } from "lucide-react";
+import { HelpCircle, X } from "lucide-react";
 
 interface TalentSelectionBarProps {
   selectedHero: Hero;
@@ -18,6 +19,7 @@ interface TalentSelectionBarProps {
   onSlotUpdate: (slotId: string, content: Talents | Abilities | null) => void;
   selectedIds: string[];
   defaultTab?: "core" | "alternative" | undefined;
+  onClose: () => void;
 }
 
 type TabValue = "core" | "alternative";
@@ -28,6 +30,7 @@ export const TalentSelectionBar = ({
   onSlotUpdate,
   selectedIds,
   defaultTab = "core",
+  onClose,
 }: TalentSelectionBarProps) => {
   const [activeTab, setActiveTab] = useState<TabValue>(defaultTab);
   const getSelectedNormalTalents = () =>
@@ -67,6 +70,17 @@ export const TalentSelectionBar = ({
   return (
     <Card className="fixed bottom-0 left-0 right-0 bg-background border-t">
       <CardContent className="p-4">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="font-bold text-lg">Talent Selection</h3>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={onClose}
+            className="hover:bg-muted"
+          >
+            <X className="w-4 h-4" />
+          </Button>
+        </div>
         <div className="grid grid-cols-12 gap-8">
           {/* Starter Talents */}
           <div className="col-span-3 border-r pr-4">

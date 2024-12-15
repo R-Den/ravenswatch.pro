@@ -317,6 +317,7 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
               onSlotUpdate={handleTalentSlotUpdate}
               selectedIds={selectedIds}
               defaultTab={talentSelectionMode}
+              onClose={() => setShowTalentBar(false)}
             />
           </div>
         )}
@@ -334,6 +335,7 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
             <ItemSelectionBar
               selectedItems={selectedItems}
               onItemUpdate={handleItemUpdate}
+              onClose={() => setShowItemBar(false)}
             />
           </div>
         )}
