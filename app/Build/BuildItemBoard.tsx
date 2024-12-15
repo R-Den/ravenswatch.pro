@@ -68,7 +68,7 @@ const ItemBoard = ({
                         onClick={() => handleItemClick(itemId)}
                       >
                         <Image
-                          src={`/items/${item.name}.png`}
+                          src={`/items/${item.id}.png`}
                           width={80}
                           height={80}
                           alt={item.name}

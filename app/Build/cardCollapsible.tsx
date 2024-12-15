@@ -38,7 +38,7 @@ const Card = React.forwardRef<
           {isCollapsed && selectedHero && (
             <div className="w-8 h-8 mr-4">
               <Image
-                src={`/heroes/thumbnail/${selectedHero.name}.png`}
+                src={`/heroes/thumbnail/${selectedHero.id}.png`}
                 width={32}
                 height={32}
                 alt={selectedHero.name}

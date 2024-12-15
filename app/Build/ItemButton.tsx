@@ -28,8 +28,7 @@ export const ItemButton = ({
           disabled={isDisabled || isSelected}
         >
           <Image
-            // src="/talents/placeholder.png"
-            src={`/items/${item.name}.png`}
+            src={`/items/${item.id}.png`}
             width={104}
             height={104}
             alt={item.name}
