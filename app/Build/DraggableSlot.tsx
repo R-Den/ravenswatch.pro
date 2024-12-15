@@ -44,8 +44,8 @@ export const DraggableSlot = ({
               <Image
                 src={
                   slot.type === "ultimate"
-                    ? `/abilities/${slot.content.hero}/${slot.content.name}.png`
-                    : `/talents/${slot.content.hero}/${slot.content.name}.png`
+                    ? `/abilities/${slot.content.hero}/${slot.content.id}.png`
+                    : `/talents/${slot.content.hero}/${slot.content.id}.png`
                 }
                 width={104}
                 height={104}
