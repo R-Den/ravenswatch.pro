@@ -7,7 +7,7 @@ import Image from "next/image";
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & {
-    selectedHero?: { name: string } | null;
+    selectedHero?: { name: string; id: string } | null;
     autoCollapse?: boolean;
   }
 >(({ className, children, selectedHero, autoCollapse, ...props }, ref) => {
