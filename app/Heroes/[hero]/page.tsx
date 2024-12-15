@@ -6,8 +6,6 @@ import {
   CardHeader,
   CardContent,
   CardTitle,
-  CardDescription,
-  CardFooter,
 } from "@/components/ui/card";
 import TableOfContents from "@/components/ui/toc";
 
