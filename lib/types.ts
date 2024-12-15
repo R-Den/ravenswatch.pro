@@ -51,7 +51,7 @@ export interface Build {
 export interface BuildSlot {
   type: "starter" | "normal" | "ultimate" | "ultimate-upgrade";
   content: Talents | Abilities | null;
-  level: number;
+  id: string;
 }
 
 export interface TalentButtonProps {
@@ -67,8 +67,22 @@ export interface ItemButtonProps {
   isDisabled?: boolean;
   isSelected?: boolean;
 }
+export interface AbilityButtonProps {
+  ability: Abilities;
+  onClick: () => void;
+  isDisabled?: boolean;
+  isSelected?: boolean;
+}
 
-// More specific type for HTML/ARIA attributes
+export interface DraggableSyntheticListeners {
+  onKeyDown?(event: React.KeyboardEvent<HTMLElement>): void;
+  onClick?(event: React.MouseEvent<HTMLElement>): void;
+  onMouseDown?(event: React.MouseEvent<HTMLElement>): void;
+  onMouseUp?(event: React.MouseEvent<HTMLElement>): void;
+  onTouchEnd?(event: React.TouchEvent<HTMLElement>): void;
+  onTouchStart?(event: React.TouchEvent<HTMLElement>): void;
+}
+
 export interface DraggableAttributes {
   role?: string;
   tabIndex?: number;
@@ -90,11 +104,5 @@ export interface DraggableSlotProps {
   slot: BuildSlot;
   onRemove: () => void;
   attributes?: DraggableAttributes;
-  listeners?: {
-    onKeyDown?(event: React.KeyboardEvent<Element>): void;
-    onMouseDown?(event: React.MouseEvent<Element>): void;
-    onPointerDown?(event: React.PointerEvent<Element>): void;
-    onTouchStart?(event: React.TouchEvent<Element>): void;
-    onClick?(event: React.MouseEvent<Element>): void;
-  };
+  listeners?: DraggableSyntheticListeners;
 }

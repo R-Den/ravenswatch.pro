@@ -200,8 +200,8 @@ export const beowulf_talents: Talents[] = [
     upgrade_changes: "+4 SHIELD + Hero Level",
   },
   {
-    id: "beowulf-furious-blow",
-    name: "Furious Blow",
+    id: "beowulf-furious-blows",
+    name: "Furious Blows",
     description:
       "After a SPECIAL, the next ATTACK triggers a series of 3 strikes dealing 100% damage each. If Wyrm empowered SPECIAL, the attacks apply an IGNITE status to enemies and inflict +50% damage",
     unlock_rank: 8,

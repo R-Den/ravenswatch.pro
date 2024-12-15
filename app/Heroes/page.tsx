@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import { getAllHeroes } from "@/lib/registry";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const heroes = getAllHeroes();
@@ -23,26 +24,25 @@ export default function Home() {
       <main className="w-full max-w-6xl mx-auto">
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {heroes.map((hero) => (
-            <Card
-              key={hero.name}
-              className="bg-secondary border-border shadow-md rounded-lg overflow-hidden flex flex-col justify-between"
-            >
-              <CardHeader>
-                <CardTitle>{hero.name}</CardTitle>
-                <CardDescription className="flex-1">
-                  {hero.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex justify-center items-end">
-                <Image
-                  src={`/heroes/${hero.name}.png`}
-                  alt={hero.name}
-                  height={1548}
-                  width={1000}
-                  className="object-cover"
-                />
-              </CardContent>
-            </Card>
+            <Link key={hero.id} href={`/Heroes/${hero.id}`} className="block">
+              <Card className="bg-card border-border shadow-md rounded-lg overflow-hidden flex flex-col justify-between h-full transform transition-transform duration-300 hover:scale-105 hover:bg-input">
+                <CardHeader>
+                  <CardTitle>{hero.name}</CardTitle>
+                  <CardDescription className="flex-1">
+                    {hero.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex justify-center items-end">
+                  <Image
+                    src={`/heroes/${hero.name}.png`}
+                    alt={hero.name}
+                    height={1548}
+                    width={1000}
+                    className="object-cover"
+                  />
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </section>
       </main>

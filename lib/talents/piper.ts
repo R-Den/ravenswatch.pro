@@ -169,8 +169,8 @@ export const piper_talents: Talents[] = [
     upgrade_changes: "+5% damage",
   },
   {
-    id: "piper-music-of-spheres",
-    name: "Music of Spheres",
+    id: "piper-music-of-the-spheres",
+    name: "Music of the Spheres",
     description:
       "DASH leaves behind a bubbled clef that explodes when hit, sending 4 POWER music notes to enemies around",
     unlock_rank: 5,

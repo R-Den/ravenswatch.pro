@@ -8,19 +8,23 @@ import {
   CardDescription,
   CardTitle,
 } from "@/components/ui/card";
+import Link from "next/link";
 
 const featuredHeroes = [
   {
     name: wukong.name,
     description: "WhatTheShuck - Dev",
+    id: wukong.id,
   },
   {
     name: carmilla.name,
     description: "R-Den - Dev",
+    id: carmilla.id,
   },
   {
     name: aladdin.name,
     description: "Miet - Project Manager",
+    id: aladdin.id,
   },
 ];
 
@@ -54,26 +58,28 @@ export default function Home() {
           <br />
           <section className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8">
             {featuredHeroes.map((hero) => (
-              <Card
-                key={hero.name}
-                className="bg-secondary border-border shadow-md rounded-lg overflow-hidden flex flex-col justify-between"
-              >
-                <CardHeader>
-                  <CardTitle>{hero.name}</CardTitle>
-                  <CardDescription className="flex-1">
-                    {hero.description}
-                  </CardDescription>
-                </CardHeader>
-                <div className="w-full h-full relative">
-                  <Image
-                    src={`/heroes/${hero.name}.png`}
-                    alt={hero.name}
-                    height={1548}
-                    width={1000}
-                    className="object-cover"
-                  />
-                </div>
-              </Card>
+              <Link key={hero.id} href={`/Heroes/${hero.id}`} className="block">
+                <Card
+                  key={hero.name}
+                  className="bg-secondary border-border shadow-md rounded-lg overflow-hidden flex flex-col justify-between hover:scale-105 transform transition-transform duration-300"
+                >
+                  <CardHeader>
+                    <CardTitle>{hero.name}</CardTitle>
+                    <CardDescription className="flex-1">
+                      {hero.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <div className="w-full h-full relative">
+                    <Image
+                      src={`/heroes/${hero.name}.png`}
+                      alt={hero.name}
+                      height={1548}
+                      width={1000}
+                      className="object-cover"
+                    />
+                  </div>
+                </Card>
+              </Link>
             ))}
           </section>
         </section>

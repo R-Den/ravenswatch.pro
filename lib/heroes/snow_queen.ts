@@ -1,4 +1,4 @@
-import { Hero } from "@/lib/types";
+ import { Hero } from "@/lib/types";
 import { snow_queen_abilities } from "../abilities/snow_queen";
 import { snow_queen_talents } from "../talents/snow_queen";
 
