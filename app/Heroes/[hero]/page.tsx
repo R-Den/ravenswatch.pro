@@ -1,14 +1,7 @@
 import { getHero } from "@/lib/registry";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  CardTitle,
-  CardDescription,
-  CardFooter,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import TableOfContents from "@/components/ui/toc";
 
 interface HeroPageProps {
@@ -96,8 +89,8 @@ export default async function HeroPage({ params }: HeroPageProps) {
                   <CardHeader className="flex justify-between items-center">
                     <CardTitle>{talent.name}</CardTitle>
                     <span className="text-sm text-gray-500 ml-2">
-                      Type: {talent.type} | Unlock: Rank {talent.unlock_rank} | On
-                      upgrade: {talent.upgrade_changes}
+                      Type: {talent.type} | Unlock: Rank {talent.unlock_rank} |
+                      On upgrade: {talent.upgrade_changes}
                     </span>
                   </CardHeader>
                   <CardContent className="flex items-center">

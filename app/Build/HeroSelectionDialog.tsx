@@ -9,13 +9,21 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 
+interface HeroSelectionDialogProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onClearAll: () => void;
+  onClearTalentsOnly: () => void;
+  selectedHeroName: string;
+}
+
 export const HeroSelectionDialog = ({
   isOpen,
   onClose,
   onClearAll,
   onClearTalentsOnly,
   selectedHeroName,
-}) => {
+}: HeroSelectionDialogProps) => {
   return (
     <AlertDialog open={isOpen} onOpenChange={onClose}>
       <AlertDialogContent>
