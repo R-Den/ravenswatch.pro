@@ -7,14 +7,14 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import { TalentButtonProps } from "@/lib/types";
+import { AbilityButtonProps } from "@/lib/types";
 
-export const TalentButton = ({
-  talent,
+export const AbilityButton = ({
+  ability,
   onClick,
   isDisabled,
   isSelected,
-}: TalentButtonProps) => (
+}: AbilityButtonProps) => (
   <motion.div
     whileHover={{ scale: 1.05 }}
     className="flex flex-col items-center space-y-1"
@@ -28,10 +28,10 @@ export const TalentButton = ({
           disabled={isDisabled || isSelected}
         >
           <Image
-            src={`/talents/${talent.hero}/${talent.name}.png`}
+            src={`/abilities/${ability.hero}/${ability.name}.png`}
             width={104}
             height={104}
-            alt={talent.name}
+            alt={ability.name}
             className={cn(
               "w-full h-full object-cover rounded",
               isSelected && "opacity-50",
@@ -41,16 +41,11 @@ export const TalentButton = ({
       </TooltipTrigger>
       <TooltipContent side="top">
         <div className="space-y-2">
-          <h4 className="font-bold">{talent.name}</h4>
-          <p>{talent.description}</p>
-          {talent.upgrade_changes && (
-            <p className="text-sm text-muted-foreground">
-              Upgrade: {talent.upgrade_changes}
-            </p>
-          )}
+          <h4 className="font-bold">{ability.name}</h4>
+          <p>{ability.description}</p>
         </div>
       </TooltipContent>
     </Tooltip>
-    <span className="text-xs text-center font-medium">{talent.name}</span>
+    <span className="text-xs text-center font-medium">{ability.name}</span>
   </motion.div>
 );

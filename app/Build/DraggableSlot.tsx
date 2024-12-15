@@ -17,9 +17,11 @@ export const DraggableSlot = ({
   listeners,
 }: DraggableSlotProps) => {
   const { isDragging, setNodeRef } = useSortable({
-    id: slot.level.toString(),
+    id: slot.id,
     disabled: slot.type !== "normal",
   });
+
+  if (!slot.content) return null;
 
   return (
     <motion.div
@@ -30,9 +32,10 @@ export const DraggableSlot = ({
       className="relative"
       style={{
         opacity: isDragging ? 0.5 : 1,
+        ...(attributes?.style || {}),
       }}
-      {...attributes}
-      {...listeners}
+      {...(attributes || {})}
+      {...(listeners || {})}
     >
       <Tooltip>
         <TooltipTrigger asChild>
@@ -41,17 +44,17 @@ export const DraggableSlot = ({
               <Image
                 src={
                   slot.type === "ultimate"
-                    ? `/abilities/${slot.content!.name}.png`
-                    : `/talents/${slot.content!.hero}/${slot.content?.name}.png`
+                    ? `/abilities/${slot.content.hero}/${slot.content.name}.png`
+                    : `/talents/${slot.content.hero}/${slot.content.name}.png`
                 }
                 width={104}
                 height={104}
-                alt={slot.content!.name}
+                alt={slot.content.name}
                 className="w-full h-full object-cover rounded"
               />
             </div>
             <div className="text-xs text-center mt-1 font-medium truncate px-1">
-              {slot.content!.name}
+              {slot.content.name}
             </div>
             <Button
               variant="ghost"
@@ -68,12 +71,12 @@ export const DraggableSlot = ({
         </TooltipTrigger>
         <TooltipContent>
           <div className="space-y-2">
-            <h4 className="font-bold">{slot.content!.name}</h4>
-            <p>{slot.content!.description}</p>
-            {"upgrade_changes" in slot.content! &&
-              slot.content!.upgrade_changes && (
+            <h4 className="font-bold">{slot.content.name}</h4>
+            <p>{slot.content.description}</p>
+            {"upgrade_changes" in slot.content &&
+              slot.content.upgrade_changes && (
                 <p className="text-sm text-muted-foreground">
-                  Upgrade: {slot.content!.upgrade_changes}
+                  Upgrade: {slot.content.upgrade_changes}
                 </p>
               )}
           </div>

@@ -231,6 +231,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "ultimate",
     upgrade_changes: "",
+    prerequisite: "Dream Wish",
   },
   {
     id: "aladdin-infinite-wishes",
@@ -241,6 +242,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "ultimate",
     upgrade_changes: "",
+    prerequisite: "Dream Wish",
   },
   {
     id: "aladdin-dream-stride",
@@ -251,6 +253,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "ultimate",
     upgrade_changes: "",
+    prerequisite: "Magic Carpet",
   },
   {
     id: "aladdin-quick-ride",
@@ -261,5 +264,6 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "ultimate",
     upgrade_changes: "",
+    prerequisite: "Magic Carpet",
   },
 ];
