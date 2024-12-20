@@ -42,17 +42,13 @@ const ItemBoard = ({
     onItemAdd(itemId);
   };
 
-  const itemCount = selectedItems.size;
-  const gridRows = Math.ceil((itemCount + 1) / 2);
-  const gridHeight = gridRows * 96 + (gridRows - 1) * 16;
-
   return (
-    <Card className="w-[208px]">
+    <Card className="w-auto md:w-[250px] bg-secondary ">
       <CardHeader className="p-4">
         <h3 className="font-bold text-lg">Selected Items</h3>
       </CardHeader>
       <CardContent className="p-4">
-        <div className="grid grid-cols-2 gap-4" style={{ height: gridHeight }}>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(80px,1fr))] gap-4 auto-rows-min justify-items-center">
           {Array.from(selectedItems.entries()).map(([itemId, count]) => {
             const item = getItemById(itemId);
             if (!item) return null;
