@@ -225,6 +225,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "ultimate",
     upgrade_changes: "+10% damage",
+    prerequisite: "Impalement",
   },
   {
     id: "carmilla-heartbreak",
@@ -235,6 +236,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "ultimate",
     upgrade_changes: "+10% ULTIMATE damage",
+    prerequisite: "Impalement",
   },
   {
     id: "carmilla-mistress-of-pain",
@@ -245,6 +247,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "ultimate",
     upgrade_changes: "+2 ATTACKS transformed",
+    prerequisite: "Blood Lash",
   },
   {
     id: "carmilla-mass-punishment",
@@ -255,5 +258,6 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "ultimate",
     upgrade_changes: "+60% area damage",
+    prerequisite: "Blood Lash",
   },
 ];

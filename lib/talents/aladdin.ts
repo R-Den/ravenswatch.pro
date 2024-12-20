@@ -219,7 +219,7 @@ export const aladdin_talents: Talents[] = [
       "POWER can consume up to 5 ENCHANTMENT points to increase its Crit Chance by 10% per point. The maximum number of ENCHANTMENT points is increased by 5/10/15/20",
     unlock_rank: 8,
     hero: HERO_IDS.ALADDIN,
-    type: "ultimate",
+    type: "normal",
     upgrade_changes: "+5 maximum ENCHANTMENT points",
   },
   {
