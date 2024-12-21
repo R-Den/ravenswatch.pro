@@ -43,7 +43,7 @@ const ItemBoard = ({
   };
 
   return (
-    <Card className="w-auto md:w-[250px] bg-secondary ">
+    <Card className="w-auto md:w-[250px] border-0 ">
       <CardHeader className="p-4">
         <h3 className="font-bold text-lg">Selected Items</h3>
       </CardHeader>
@@ -119,7 +119,7 @@ const ItemBoard = ({
             <TooltipTrigger asChild>
               <Button
                 variant="outline"
-                className="w-20 h-20"
+                className="w-20 h-20 border-dashed border-2 hover:bg-primary"
                 onClick={onShowItemBar}
               >
                 <Plus className="w-8 h-8" />

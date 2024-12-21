@@ -17,7 +17,6 @@ import { BuildTalentBoard } from "./BuildTalentBoard";
 import ItemBoard from "./BuildItemBoard";
 import { ItemSelectionBar } from "./ItemSelectionBar";
 import { TalentSelectionBar } from "./TalentSelectionBar";
-import { DragEndEvent } from "@dnd-kit/core";
 import { Book, Sword, Save, Eraser } from "lucide-react";
 
 // when implementing sharing / editing builds from can populate this
@@ -192,36 +191,6 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
       setShowTalentBar(false);
     }
   };
-  const handleDragEnd = (event: DragEndEvent) => {
-    const { active, over } = event;
-    if (!over) return;
-
-    const activeId = active.id as string;
-    const overId = over.id as string;
-
-    if (activeId === overId) return;
-
-    setBuildSlots((prev) => {
-      const oldIndex = prev.findIndex((slot) => slot.id === activeId);
-      const newIndex = prev.findIndex((slot) => slot.id === overId);
-
-      if (oldIndex === -1 || newIndex === -1) return prev;
-
-      const activeSlot = prev[oldIndex];
-      const overSlot = prev[newIndex];
-
-      // Don't allow moving starter, ultimate, or ultimate upgrade slots
-      if (activeSlot.type !== "normal" || overSlot.type !== "normal")
-        return prev;
-
-      // Create a new array with the updated order
-      const updatedSlots = [...prev];
-      const [removed] = updatedSlots.splice(oldIndex, 1);
-      updatedSlots.splice(newIndex, 0, removed);
-
-      return updatedSlots;
-    });
-  };
 
   return (
     <TooltipProvider>
@@ -284,7 +253,6 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
                 <BuildTalentBoard
                   buildSlots={buildSlots}
                   onSlotUpdate={handleTalentSlotUpdate}
-                  onDragEnd={handleDragEnd}
                   onShowTalentBar={handleTalentBarOpen}
                   alternativeTalents={alternativeTalents}
                 />
