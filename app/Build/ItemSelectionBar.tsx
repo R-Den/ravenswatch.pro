@@ -25,9 +25,10 @@ export const ItemSelectionBar = ({
   };
 
   return (
-    <Card className="fixed bottom-0 left-0 right-0 bg-background border-t">
+    <Card className="fixed bottom-0 left-0 right-0 bg-background border-t max-h-[80vh] overflow-y-auto">
       <CardContent className="p-4">
-        <div className="flex justify-between items-center mb-4">
+        {/* Header */}
+        <div className="flex justify-between items-center mb-4 sticky top-0 bg-background z-10">
           <h3 className="font-bold text-lg">Magical Objects</h3>
           <Button
             variant="ghost"
@@ -38,19 +39,19 @@ export const ItemSelectionBar = ({
             <X className="w-4 h-4" />
           </Button>
         </div>
-        <div className="grid grid-cols-15 gap-8">
-          <div className="col-span-6 relative">
-            <div className="grid grid-cols-12 gap-4">
-              {magical_objects.map((magical_object) => (
-                <ItemButton
-                  key={magical_object.id}
-                  magical_object={magical_object}
-                  onClick={() => onItemUpdate(magical_object)}
-                  isDisabled={isItemDisabled(magical_object)}
-                  isSelected={isItemDisabled(magical_object)}
-                />
-              ))}
-            </div>
+
+        {/* Grid Container */}
+        <div className="w-full">
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(80px,1fr))] gap-4 justify-items-center">
+            {magical_objects.map((magical_object) => (
+              <ItemButton
+                key={magical_object.id}
+                magical_object={magical_object}
+                onClick={() => onItemUpdate(magical_object)}
+                isDisabled={isItemDisabled(magical_object)}
+                isSelected={isItemDisabled(magical_object)}
+              />
+            ))}
           </div>
         </div>
       </CardContent>

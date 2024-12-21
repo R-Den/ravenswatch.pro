@@ -27,33 +27,39 @@ const Card = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        "rounded-lg border bg-card text-card-foreground shadow-sm",
-        isCollapsed ? "h-16" : "h-auto", // Apply a tiny height when collapsed
+        "rounded-lg border bg-card text-card-foreground shadow-sm w-full",
+        isCollapsed ? "h-16" : "h-auto",
         className,
       )}
       {...props}
     >
-      <div className="flex justify-between items-center p-4">
-        <div className="flex items-center">
-          {isCollapsed && selectedHero && (
-            <div className="w-8 h-8 mr-4">
-              <Image
-                src={`/heroes/thumbnail/${selectedHero.id}.png`}
-                width={32}
-                height={32}
-                alt={selectedHero.name}
-                className="rounded"
-              />
+      <button onClick={toggleCollapse} className="w-full text-left">
+        <div className="flex justify-between items-center p-4">
+          <div className="flex items-center flex-1 min-w-0">
+            {isCollapsed && selectedHero && (
+              <div className="flex-shrink-0 w-8 h-8 mr-4">
+                <Image
+                  src={`/heroes/thumbnail/${selectedHero.id}.png`}
+                  width={32}
+                  height={32}
+                  alt={selectedHero.name}
+                  className="rounded"
+                />
+              </div>
+            )}
+            <div className="text-lg md:text-2xl font-semibold leading-none tracking-tight truncate">
+              Select Hero
             </div>
-          )}
-          <div className="text-2xl font-semibold leading-none tracking-tight text-center flex-1">
-            Select Hero
+            <div className="flex-shrink-0 ml-2">
+              {isCollapsed ? (
+                <ChevronDown size={20} />
+              ) : (
+                <ChevronUp size={20} />
+              )}
+            </div>
           </div>
-          <button onClick={toggleCollapse} className="ml-2 text-sm">
-            {isCollapsed ? <ChevronDown size={20} /> : <ChevronUp size={20} />}
-          </button>
         </div>
-      </div>
+      </button>
       {!isCollapsed && <div className="p-4">{children}</div>}
     </div>
   );
@@ -75,7 +81,7 @@ const CardTitle = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
+      "text-lg md:text-2xl font-semibold leading-none tracking-tight truncate",
       className,
     )}
     {...props}
