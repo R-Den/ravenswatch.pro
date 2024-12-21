@@ -18,7 +18,7 @@ interface TalentSelectionBarProps {
   buildSlots: BuildSlot[];
   onSlotUpdate: (slotId: string, content: Talents | Abilities | null) => void;
   selectedIds: string[];
-  defaultTab?: "core" | "alternative" | undefined;
+  defaultTab?: "core" | "alternative";
   onClose: () => void;
 }
 
@@ -33,6 +33,7 @@ export const TalentSelectionBar = ({
   onClose,
 }: TalentSelectionBarProps) => {
   const [activeTab, setActiveTab] = useState<TabValue>(defaultTab);
+
   const getSelectedNormalTalents = () =>
     buildSlots.filter((slot) => slot.type === "normal" && slot.content).length;
 
@@ -45,32 +46,29 @@ export const TalentSelectionBar = ({
       setActiveTab(value);
     }
   };
+
   const handleTalentSelect = (
     talent: Talents | Abilities,
     type: "core" | "alternative",
   ) => {
     if (type === "core") {
-      // Only add to core if we haven't hit the limit
       if (getSelectedNormalTalents() >= 7) return;
-
-      // Find the first empty core slot
       const emptySlot = buildSlots.find(
         (slot) => slot.type === "normal" && !slot.content,
       );
-
       if (emptySlot) {
         onSlotUpdate(emptySlot.id, talent);
       }
     } else {
-      // Add to alternatives with a unique timestamp ID
       onSlotUpdate(`alternative-${Date.now()}`, talent);
     }
   };
 
   return (
-    <Card className="fixed bottom-0 left-0 right-0 bg-background border-t">
-      <CardContent className="p-4">
-        <div className="flex justify-between items-center mb-4">
+    <Card className="fixed inset-0 md:inset-auto md:bottom-0 md:left-0 md:right-0 bg-background/80 backdrop-blur-sm md:backdrop-blur-none md:bg-background overflow-y-auto md:max-h-[600px]">
+      <CardContent className="p-4 max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="flex justify-between items-center mb-4 sticky top-0 bg-background z-10 p-2">
           <h3 className="font-bold text-lg">Talent Selection</h3>
           <Button
             variant="ghost"
@@ -81,11 +79,13 @@ export const TalentSelectionBar = ({
             <X className="w-4 h-4" />
           </Button>
         </div>
-        <div className="grid grid-cols-12 gap-8">
-          {/* Starter Talents */}
-          <div className="col-span-3 border-r pr-4">
+
+        {/* Main Content */}
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Starter Talents Section */}
+          <div className="w-full lg:w-1/4 lg:border-r lg:pr-4">
             <h3 className="font-bold mb-3">Starter Talents</h3>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-2">
               {selectedHero.talents
                 .filter((talent) => talent.type === "starter")
                 .map((talent) => (
@@ -110,9 +110,9 @@ export const TalentSelectionBar = ({
             </div>
           </div>
 
-          {/* Normal Talents */}
-          <div className="col-span-6">
-            <div className="flex justify-between items-center mb-3">
+          {/* Normal Talents Section */}
+          <div className="w-full lg:w-2/4">
+            <div className="flex flex-wrap justify-between items-center gap-2 mb-3">
               <div className="flex items-center gap-2">
                 <h3 className="font-bold">Normal Talents</h3>
                 <Tooltip>
@@ -134,7 +134,7 @@ export const TalentSelectionBar = ({
               onValueChange={handleTabChange}
               className="w-full"
             >
-              <TabsList className="mb-4">
+              <TabsList className="mb-4 w-full justify-start">
                 <TabsTrigger value="core">Add to Core</TabsTrigger>
                 <TabsTrigger value="alternative">
                   Add as Alternative
@@ -142,7 +142,7 @@ export const TalentSelectionBar = ({
               </TabsList>
 
               <TabsContent value="core">
-                <div className="grid grid-cols-6 gap-4">
+                <div className="grid grid-cols-[repeat(auto-fill,minmax(100px,1fr))] gap-4">
                   {selectedHero.talents
                     .filter((talent) => talent.type === "normal")
                     .map((talent) => (
@@ -158,7 +158,7 @@ export const TalentSelectionBar = ({
               </TabsContent>
 
               <TabsContent value="alternative">
-                <div className="grid grid-cols-6 gap-4">
+                <div className="grid grid-cols-[repeat(auto-fill,minmax(100px,1fr))] gap-4">
                   {selectedHero.talents
                     .filter((talent) => talent.type === "normal")
                     .map((talent) => (
@@ -177,11 +177,11 @@ export const TalentSelectionBar = ({
             </Tabs>
           </div>
 
-          {/* Ultimate and Upgrades */}
-          <div className="col-span-3 border-l pl-4">
+          {/* Ultimate & Upgrades Section */}
+          <div className="w-full lg:w-1/4 lg:border-l lg:pl-4">
             <h3 className="font-bold mb-3">Ultimate & Upgrade</h3>
             <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-2">
                 {selectedHero.abilities
                   .filter((ability) => ability.type === "ultimate")
                   .map((ultimate) => (
@@ -206,7 +206,7 @@ export const TalentSelectionBar = ({
               </div>
 
               {buildSlots.find((slot) => slot.type === "ultimate")?.content && (
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-2">
                   {selectedHero.talents
                     .filter(
                       (talent) =>

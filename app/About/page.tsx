@@ -13,7 +13,7 @@ export default async function AboutPage() {
           <Card className="bg-secondary">
             <CardContent className="pt-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Ravenswatch is a fan-made website for the game{" "}
+                Ravenswatch.pro is a fan-made website for the game{" "}
                 <a
                   href="https://ravenswatch.com"
                   className="text-primary hover:text-primary/90 underline underline-offset-4"

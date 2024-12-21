@@ -39,14 +39,15 @@ export interface Magical_Objects {
 }
 
 export interface Build {
+  version: string;
   name: string;
   description: string;
-  hero: Hero;
-  tier: "S" | "A" | "B" | "C" | "D";
+  hero: string;
   core_talents: Talents[];
   secondary_talents: Talents[];
-  core_magical_objects: Magical_Objects[];
-  secondary_magical_objects: Magical_Objects[];
+  magical_objects: Magical_Objects[];
+  tips: string;
+  tags?: string[];
 }
 export interface BuildSlot {
   type: "starter" | "normal" | "ultimate" | "ultimate-upgrade";
