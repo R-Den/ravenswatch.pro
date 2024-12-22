@@ -43,9 +43,9 @@ export interface Build {
   name: string;
   description: string;
   hero: string;
-  core_talents: Talents[];
-  secondary_talents: Talents[];
-  magical_objects: Magical_Objects[];
+  core_talents: string[];
+  secondary_talents: string[];
+  magical_objects: string[];
   tips: string;
   tags?: string[];
 }
