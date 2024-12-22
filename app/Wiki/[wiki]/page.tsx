@@ -19,7 +19,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
   }
 
   // Find the specific item by slug or ID
-  const item = magicalObjects.find((obj) => obj.name === params.wiki);
+  const item = magicalObjects.find((obj) => obj.id === params.wiki);
   if (!item) {
     return notFound();
   }
