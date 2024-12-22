@@ -5,6 +5,7 @@ export interface Hero {
   description?: string;
   talents: Talents[];
   abilities: Abilities[];
+  type: "heroes";
 }
 
 export interface Talents {
@@ -36,6 +37,12 @@ export interface Magical_Objects {
   rarity: "common" | "rare" | "epic" | "legendary" | "cursed";
   super_effect?: string;
   stacks_to_effect?: 3 | 4 | 5;
+}
+
+export interface WikiEntry<T> {
+  entity: T;
+  tips: string;
+  notes: string;
 }
 
 export interface Build {

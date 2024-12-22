@@ -10,4 +10,5 @@ export const melusine: Hero = {
     "Melusine the Siren commands the waters and uses them to infuse the will-o-wisps at her side to submerge those foolish enough to be caught within her captivating song.",
   talents: melusine_talents,
   abilities: melusine_abilities,
+  type: "heroes",
 };
