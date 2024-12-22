@@ -11,6 +11,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "starter",
     upgrade_changes: "+20% of ATTACK's damage",
+    encoding_id: "a",
   },
   {
     id: "melusine-bewitching-song",
@@ -21,6 +22,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "starter",
     upgrade_changes: "+1 second",
+    encoding_id: "b",
   },
   {
     id: "melusine-sea-dance",
@@ -31,6 +33,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "starter",
     upgrade_changes: "+2 Health + Hero Level",
+    encoding_id: "c",
   },
   {
     id: "melusine-spring-water",
@@ -41,6 +44,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "starter",
     upgrade_changes: "+0.5 Health + Hero Level",
+    encoding_id: "d",
   },
   {
     id: "melusine-power-dive",
@@ -51,6 +55,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "aa",
   },
   {
     id: "melusine-protective-flow",
@@ -60,6 +65,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+3 SHIELD + Hero Level",
+    encoding_id: "ab",
   },
   {
     id: "melusine-water-bubble",
@@ -70,6 +76,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "",
+    encoding_id: "ac",
   },
   {
     id: "melusine-underwater-predation",
@@ -80,6 +87,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+1 second",
+    encoding_id: "ad",
   },
   {
     id: "melusine-aftershock",
@@ -90,6 +98,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+10% damage",
+    encoding_id: "ae",
   },
   {
     id: "melusine-backwash",
@@ -100,6 +109,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+15% damage",
+    encoding_id: "af",
   },
   {
     id: "melusine-freezing-splash",
@@ -109,6 +119,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+5% range",
+    encoding_id: "ag",
   },
   {
     id: "melusine-tidal-wave",
@@ -118,6 +129,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+5% wider and longer",
+    encoding_id: "ah",
   },
   {
     id: "melusine-submerging-attack",
@@ -128,6 +140,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+1% damage increase",
+    encoding_id: "ai",
   },
   {
     id: "melusine-geyser",
@@ -137,6 +150,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+10% damage",
+    encoding_id: "aj",
   },
   {
     id: "melusine-water-communion",
@@ -147,6 +161,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+10% damage",
+    encoding_id: "ak",
   },
   {
     id: "melusine-soothing-presence",
@@ -157,6 +172,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+1 Health + Hero Level",
+    encoding_id: "al",
   },
   {
     id: "melusine-razor-tail",
@@ -167,6 +183,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+100% of ATTACK damage",
+    encoding_id: "am",
   },
   {
     id: "melusine-wisp-surge",
@@ -176,6 +193,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+10% ATTACK SPEED",
+    encoding_id: "an",
   },
   {
     id: "melusine-waterlogging",
@@ -186,6 +204,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+5% damage increase",
+    encoding_id: "ao",
   },
   {
     id: "melusine-final-burst",
@@ -196,6 +215,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "",
+    encoding_id: "ap",
   },
   {
     id: "melusine-shimmering-scales",
@@ -206,6 +226,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+2 ARMOR",
+    encoding_id: "aq",
   },
   {
     id: "melusine-enduring-wisp",
@@ -216,6 +237,7 @@ export const melusine_talents: Talents[] = [
     hero: HERO_IDS.MELUSINE,
     type: "normal",
     upgrade_changes: "+1 more time(s)",
+    encoding_id: "ar",
   },
   {
     id: "melusine-vortex-bomb",
@@ -227,6 +249,7 @@ export const melusine_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Water Bomb",
+    encoding_id: "g0",
   },
   {
     id: "melusine-healing-blast",
@@ -238,6 +261,7 @@ export const melusine_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+1 REGENERATION",
     prerequisite: "Water Bomb",
+    encoding_id: "g1",
   },
   {
     id: "melusine-crescendo",
@@ -249,6 +273,7 @@ export const melusine_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+1 additional WISP",
     prerequisite: "Wisp Ballet",
+    encoding_id: "g0",
   },
   {
     id: "melusine-overtone-singing",
@@ -260,5 +285,6 @@ export const melusine_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+10% damage",
     prerequisite: "Wisp Ballet",
+    encoding_id: "g1",
   },
 ];

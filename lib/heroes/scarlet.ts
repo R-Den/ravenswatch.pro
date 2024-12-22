@@ -10,4 +10,5 @@ export const scarlet: Hero = {
     " In the daytime, Scarlet uses her elusive prowess to swiftly bring her enemies to their end, though when night falls; her curse transforms her into a deadly werewolf—brutalizing and overpowering those who dare stand in her way.",
   talents: scarlet_talents,
   abilities: scarlet_abilities,
+  encoding_id: "g",
 };

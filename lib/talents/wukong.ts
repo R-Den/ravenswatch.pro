@@ -11,6 +11,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "starter",
     upgrade_changes: "+25% of the blocked damage",
+    encoding_id: "a",
   },
   {
     id: "wukong-thirst-for-immortality",
@@ -21,6 +22,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "starter",
     upgrade_changes: "+25 VITALITY",
+    encoding_id: "b",
   },
   {
     id: "wukong-supreme-polarity",
@@ -31,6 +33,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "starter",
     upgrade_changes: "+1% LIFE ON HIT and +5% damage",
+    encoding_id: "c",
   },
   {
     id: "wukong-way-of-awakening",
@@ -41,6 +44,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "starter",
     upgrade_changes: "Duration +3 second(s)",
+    encoding_id: "d",
   },
   {
     id: "wukong-mantra-of-balance",
@@ -51,6 +55,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+1 second of VULNERABLE. +2 second(s) of WEAKENED",
+    encoding_id: "aa",
   },
   {
     id: "wukong-celestial-pillar",
@@ -61,6 +66,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+25 damage + Hero Level + DMG",
+    encoding_id: "ab",
   },
   {
     id: "wukong-stick-twirl",
@@ -71,6 +77,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+15% area damage",
+    encoding_id: "ac",
   },
   {
     id: "wukong-sprint",
@@ -81,6 +88,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+2% Move Speed",
+    encoding_id: "ad",
   },
   {
     id: "wukong-resonance",
@@ -91,6 +99,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "ae",
   },
   {
     id: "wukong-airbender",
@@ -100,6 +109,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+1 more time",
+    encoding_id: "af",
   },
   {
     id: "wukong-om",
@@ -110,6 +120,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+6% radius",
+    encoding_id: "ag",
   },
   {
     id: "wukong-ringing-beads",
@@ -120,6 +131,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+5% of ATTACK damage",
+    encoding_id: "ah",
   },
   {
     id: "wukong-thundercloud",
@@ -130,6 +142,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "ai",
   },
   {
     id: "wukong-mind-fortress",
@@ -140,6 +153,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "lasts +15% longer",
+    encoding_id: "aj",
   },
   {
     id: "wukong-one-inch-punch",
@@ -150,6 +164,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+150% damage",
+    encoding_id: "ak",
   },
   {
     id: "wukong-fiery-dragon",
@@ -160,6 +175,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+15 area damage + Hero Level + DMG",
+    encoding_id: "al",
   },
   {
     id: "wukong-frost-tiger",
@@ -170,6 +186,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+11 area damage + Hero Level + DMG",
+    encoding_id: "am",
   },
   {
     id: "wukong-divine-palm",
@@ -180,6 +197,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+1 Health. +30 area damage + Hero Level + DMG",
+    encoding_id: "an",
   },
   {
     id: "wukong-focused-strikes",
@@ -190,6 +208,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+4% damage",
+    encoding_id: "ao",
   },
   {
     id: "wukong-sacred-seal",
@@ -200,6 +219,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+35 area damage + Hero Level + DMG",
+    encoding_id: "ap",
   },
   {
     id: "wukong-chi-outburst",
@@ -210,6 +230,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+55% POWER damage",
+    encoding_id: "aq",
   },
   {
     id: "wukong-fiery-golden-eyes",
@@ -220,6 +241,7 @@ export const wukong_talents: Talents[] = [
     hero: HERO_IDS.SUN_WUKONG,
     type: "normal",
     upgrade_changes: "+5% Personal Dream Shard(s)",
+    encoding_id: "ar",
   },
   {
     id: "wukong-army-of-monkeys",
@@ -230,6 +252,7 @@ export const wukong_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Monkey Clones",
+    encoding_id: "g0",
   },
   {
     id: "wukong-mantra-of-replication",
@@ -241,6 +264,7 @@ export const wukong_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Monkey Clones",
+    encoding_id: "g1",
   },
   {
     id: "wukong-perfect-copy",
@@ -252,6 +276,7 @@ export const wukong_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+1 more second(s)",
     prerequisite: "Transfiguration",
+    encoding_id: "g0",
   },
   {
     id: "wukong-divine-beverage",
@@ -263,5 +288,6 @@ export const wukong_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Transfiguration",
+    encoding_id: "g1",
   },
 ];
