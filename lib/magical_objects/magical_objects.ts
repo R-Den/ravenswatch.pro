@@ -9,6 +9,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "common",
     super_effect: "Rerolling a choice is free the first time",
     stacks_to_effect: 5,
+    encoding_id: "aaa",
   },
   {
     id: "dreamcatcher",
@@ -17,6 +18,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "common",
     super_effect: "One free purchase at the Sandman per chapter",
     stacks_to_effect: 5,
+    encoding_id: "aab",
   },
   {
     id: "goldilocks-porridge",
@@ -25,6 +27,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "common",
     super_effect: "+20 DMG while STRENGTH status is active",
     stacks_to_effect: 5,
+    encoding_id: "aac",
   },
   {
     id: "voodoo-doll",
@@ -33,6 +36,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "common",
     super_effect: "Any damage kills Bosses once they have less than 5% Health",
     stacks_to_effect: 5,
+    encoding_id: "aad",
   },
   {
     id: "mermaid-tears",
@@ -41,6 +45,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "common",
     super_effect: "+30 VITALITY",
     stacks_to_effect: 5,
+    encoding_id: "aae",
   },
   {
     id: "eternal-rose",
@@ -49,6 +54,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "common",
     super_effect: "Critical Hits deal +50% damage",
     stacks_to_effect: 5,
+    encoding_id: "aaf",
   },
   {
     id: "ogre-blood",
@@ -57,6 +63,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "common",
     super_effect: "+20% Crit Chance",
     stacks_to_effect: 5,
+    encoding_id: "aag",
   },
   {
     id: "green-armor",
@@ -65,6 +72,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "common",
     super_effect: "Rare Magical Objects also count",
     stacks_to_effect: 5,
+    encoding_id: "aah",
   },
   {
     id: "horn-of-plenty",
@@ -73,6 +81,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "common",
     super_effect: "+10 DMG, +20 VITALITY, +20 ARMOR",
     stacks_to_effect: 5,
+    encoding_id: "aai",
   },
   {
     id: "fairy-dust",
@@ -82,6 +91,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "rare",
     super_effect: "+50% to any SHIELD applied or received",
     stacks_to_effect: 4,
+    encoding_id: "aaj",
   },
   {
     id: "queen-of-hearts-card",
@@ -91,6 +101,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "rare",
     super_effect: "+30 DMG when at full Health",
     stacks_to_effect: 4,
+    encoding_id: "aak",
   },
   {
     id: "unicorn-horn",
@@ -100,6 +111,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "rare",
     super_effect: "+50 DMG when under a REGENERATION effect",
     stacks_to_effect: 4,
+    encoding_id: "aal",
   },
   {
     id: "vajra",
@@ -108,6 +120,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "rare",
     super_effect: "DASH casts a lightning strike at starting location",
     stacks_to_effect: 4,
+    encoding_id: "aam",
   },
   {
     id: "jack-of-diamonds-card",
@@ -116,6 +129,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "rare",
     super_effect: "SPECIAL has a +40% Crit Chance",
     stacks_to_effect: 4,
+    encoding_id: "aan",
   },
   {
     id: "king-of-clubs-card",
@@ -124,6 +138,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "rare",
     super_effect: "POWER has a +40% Crit Chance",
     stacks_to_effect: 4,
+    encoding_id: "aao",
   },
   {
     id: "ace-of-spades-card",
@@ -132,6 +147,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "rare",
     super_effect: "+15% ATTACK SPEED",
     stacks_to_effect: 4,
+    encoding_id: "aap",
   },
   {
     id: "dragon-hide",
@@ -140,6 +156,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "rare",
     super_effect: "ARMOR grants 40% of its value as DMG",
     stacks_to_effect: 4,
+    encoding_id: "aaq",
   },
   {
     id: "golden-egg",
@@ -149,6 +166,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "rare",
     super_effect: "+30% to any Dream Shard gains",
     stacks_to_effect: 4,
+    encoding_id: "aar",
   },
   {
     id: "thunderstone",
@@ -157,6 +175,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "epic",
     super_effect: "SPECIAL casts a Lightning Strike upon the 3 closest enemies",
     stacks_to_effect: 3,
+    encoding_id: "aas",
   },
   {
     id: "raven-eye",
@@ -165,6 +184,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "epic",
     super_effect: "ULTIMATE clears POWER, SPECIAL and DEFENSE cooldowns",
     stacks_to_effect: 3,
+    encoding_id: "aat",
   },
   {
     id: "raven-beak",
@@ -173,6 +193,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "epic",
     super_effect: "SPECIAL has +40% damage",
     stacks_to_effect: 3,
+    encoding_id: "aau",
   },
   {
     id: "raven-claw",
@@ -181,6 +202,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "epic",
     super_effect: "POWER has +40% damage",
     stacks_to_effect: 3,
+    encoding_id: "aav",
   },
   {
     id: "raven-skull",
@@ -189,6 +211,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "epic",
     super_effect: "+40 ARMOR",
     stacks_to_effect: 3,
+    encoding_id: "aaw",
   },
   {
     id: "raven-wing",
@@ -197,6 +220,7 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "epic",
     super_effect: "+15% Move Speed",
     stacks_to_effect: 3,
+    encoding_id: "aax",
   },
   {
     id: "flaming-pearl",
@@ -206,6 +230,7 @@ export const magical_objects: Magical_Objects[] = [
     super_effect:
       "POWER deals +15% damage to enemies for each Negative Status they have",
     stacks_to_effect: 3,
+    encoding_id: "aay",
   },
   {
     id: "adder-stone",
@@ -215,6 +240,7 @@ export const magical_objects: Magical_Objects[] = [
     super_effect:
       "After a DEFENSE, gain +40% Move Speed decaying over 3 seconds",
     stacks_to_effect: 3,
+    encoding_id: "aaz",
   },
   {
     id: "charmstone",
@@ -224,6 +250,7 @@ export const magical_objects: Magical_Objects[] = [
     super_effect:
       "DASH grants 10 SHIELD (Amount scales with the current hero level) for 6 seconds",
     stacks_to_effect: 3,
+    encoding_id: "aba",
   },
   {
     id: "philosophers-stone",
@@ -231,6 +258,7 @@ export const magical_objects: Magical_Objects[] = [
     description: "Gain +1 VITALITY each time you collect a Healing Orb",
     rarity: "legendary",
     super_effect: "",
+    encoding_id: "abb",
   },
   {
     id: "nibelungen-ring",
@@ -238,6 +266,7 @@ export const magical_objects: Magical_Objects[] = [
     description: "ULTIMATE gains an extra charge",
     rarity: "legendary",
     super_effect: "",
+    encoding_id: "abc",
   },
   {
     id: "vorpal-blade",
@@ -246,6 +275,7 @@ export const magical_objects: Magical_Objects[] = [
       "Any damage you deal kills standard enemies below 20% Health or elite enemies below 10% Health",
     rarity: "legendary",
     super_effect: "",
+    encoding_id: "abd",
   },
   {
     id: "water-of-life",
@@ -253,6 +283,7 @@ export const magical_objects: Magical_Objects[] = [
     description: "+25 VITALITY\nFully Heal the start of each DAY or NIGHT",
     rarity: "legendary",
     super_effect: "",
+    encoding_id: "abe",
   },
   {
     id: "tamatebako",
@@ -261,6 +292,7 @@ export const magical_objects: Magical_Objects[] = [
       "+2 Star(s) of Fate\nGet +1 choice when obtaining Magical Objects",
     rarity: "legendary",
     super_effect: "",
+    encoding_id: "abf",
   },
   {
     id: "holy-grail",
@@ -269,6 +301,7 @@ export const magical_objects: Magical_Objects[] = [
       "When in combat, DEFENSE heals all nearby heroes for 10 health (Max. every 5 seconds. Amount scales with the current hero level)",
     rarity: "legendary",
     super_effect: "",
+    encoding_id: "abg",
   },
   {
     id: "swan-cloak",
@@ -277,6 +310,7 @@ export const magical_objects: Magical_Objects[] = [
       "DASH heals for +50% of damage taken over the last 2 second(s)",
     rarity: "legendary",
     super_effect: "",
+    encoding_id: "abh",
   },
   {
     id: "ring-of-dispel",
@@ -284,6 +318,7 @@ export const magical_objects: Magical_Objects[] = [
     description: "DASH applies VULNERABLE for 3 seconds to enemies hit",
     rarity: "legendary",
     super_effect: "",
+    encoding_id: "abi",
   },
   {
     id: "excalibur",
@@ -291,6 +326,7 @@ export const magical_objects: Magical_Objects[] = [
     description: "+10 DMG for each Legendary Talent you have",
     rarity: "legendary",
     super_effect: "",
+    encoding_id: "abj",
   },
   {
     id: "seven-league-boots",
@@ -299,6 +335,7 @@ export const magical_objects: Magical_Objects[] = [
       "Clear DASH's cooldown whenever you use POWER, SPECIAL, or DEFENSE",
     rarity: "legendary",
     super_effect: "",
+    encoding_id: "abk",
   },
   {
     id: "golden-coat-of-chainmail",
@@ -307,6 +344,7 @@ export const magical_objects: Magical_Objects[] = [
       "Damage taken within 1 second(s) cannot exceed +50% of your maximum health",
     rarity: "legendary",
     super_effect: "",
+    encoding_id: "abl",
   },
   {
     id: "raven-effigy",
@@ -314,6 +352,7 @@ export const magical_objects: Magical_Objects[] = [
     description: "POWER and SPECIAL gain +1 charge(s)",
     rarity: "legendary",
     super_effect: "",
+    encoding_id: "abm",
   },
   {
     id: "father-times-hourglass",
@@ -322,6 +361,7 @@ export const magical_objects: Magical_Objects[] = [
       "POWER, SPECIAL, DEFENSE have a 10% reduced cooldown for each 20% Health missing",
     rarity: "legendary",
     super_effect: "",
+    encoding_id: "abn",
   },
   {
     id: "hungry-grass",
@@ -329,6 +369,7 @@ export const magical_objects: Magical_Objects[] = [
     description: "Healing Orbs grant +1 DMG\nStacks are lost at Death's Door",
     rarity: "cursed",
     super_effect: "",
+    encoding_id: "abo",
   },
   {
     id: "fast-walker-boots",
@@ -336,6 +377,7 @@ export const magical_objects: Magical_Objects[] = [
     description: "+20% Move Speed, -25 ARMOR",
     rarity: "cursed",
     super_effect: "",
+    encoding_id: "abp",
   },
   {
     id: "cauldron-of-dyrnwch",
@@ -343,6 +385,7 @@ export const magical_objects: Magical_Objects[] = [
     description: "+60 VITALITY, all healing effects are reduced by 25%",
     rarity: "cursed",
     super_effect: "",
+    encoding_id: "abq",
   },
   {
     id: "mad-hat",
@@ -351,6 +394,7 @@ export const magical_objects: Magical_Objects[] = [
       "Taking damage earns 10% of their value as Dream Shards DreamShards",
     rarity: "cursed",
     super_effect: "",
+    encoding_id: "abr",
   },
   {
     id: "hope-diamond",
@@ -359,6 +403,7 @@ export const magical_objects: Magical_Objects[] = [
       "Gain extra 50% the amount of collected Dream Shards but lose all Dream Shards at Death's Door",
     rarity: "cursed",
     super_effect: "",
+    encoding_id: "abs",
   },
   {
     id: "witchs-broom",
@@ -367,6 +412,7 @@ export const magical_objects: Magical_Objects[] = [
       "DASH makes the hero INTANGIBLE but any damage taken is increased by +25%",
     rarity: "cursed",
     super_effect: "",
+    encoding_id: "abt",
   },
   {
     id: "oni-mask",
@@ -375,6 +421,7 @@ export const magical_objects: Magical_Objects[] = [
       "+15 DMG for each Cursed Magical Object, -10 VITALITY for each Legendary Magical Object",
     rarity: "cursed",
     super_effect: "",
+    encoding_id: "abu",
   },
   {
     id: "black-lotus",
@@ -383,6 +430,7 @@ export const magical_objects: Magical_Objects[] = [
       "ATTACK gains +5% Lifesteal but Healing Orbs don't affect you anymore",
     rarity: "cursed",
     super_effect: "",
+    encoding_id: "abv",
   },
   {
     id: "nightmare-ichor",
@@ -390,6 +438,7 @@ export const magical_objects: Magical_Objects[] = [
     description: "SPECIAL deals +100% damage but has a +50% increased cooldown",
     rarity: "cursed",
     super_effect: "",
+    encoding_id: "abw",
   },
   {
     id: "nightmare-thorn",
@@ -397,6 +446,7 @@ export const magical_objects: Magical_Objects[] = [
     description: "POWER deals +100% damage but has a +50% increased cooldown",
     rarity: "cursed",
     super_effect: "",
+    encoding_id: "abx",
   },
   {
     id: "baba-yagas-mortar",
@@ -405,6 +455,7 @@ export const magical_objects: Magical_Objects[] = [
       "Prevents lethal damage and restores all health instead (only works once)",
     rarity: "cursed",
     super_effect: "",
+    encoding_id: "aby",
   },
   {
     id: "balors-eye",
@@ -413,6 +464,7 @@ export const magical_objects: Magical_Objects[] = [
       "When picked up, remove all current and future charges of POWER and SPECIAL to make them deal +100% damage per charge removed",
     rarity: "cursed",
     super_effect: "",
+    encoding_id: "abz",
   },
   {
     id: "bloody-marys-mirror",
@@ -420,5 +472,6 @@ export const magical_objects: Magical_Objects[] = [
     description: "DMG and ARMOR stats are swapped",
     rarity: "cursed",
     super_effect: "",
+    encoding_id: "aca",
   },
 ];

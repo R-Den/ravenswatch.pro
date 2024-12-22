@@ -11,6 +11,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "starter",
     upgrade_changes: "+3 SHIELD + Hero Level",
+    encoding_id: "a",
   },
   {
     id: "piper-explosive-rats",
@@ -20,6 +21,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "starter",
     upgrade_changes: "+1.5 damage",
+    encoding_id: "b",
   },
   {
     id: "piper-freezing-trap",
@@ -30,6 +32,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "starter",
     upgrade_changes: "+5% damage",
+    encoding_id: "c",
   },
   {
     id: "piper-virtuoso",
@@ -40,6 +43,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "starter",
     upgrade_changes: "+5% ATTACK Speed",
+    encoding_id: "d",
   },
   {
     id: "piper-grand-finale",
@@ -50,6 +54,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+20 damage + Hero Level + DMG",
+    encoding_id: "aa",
   },
   {
     id: "piper-giant-rats",
@@ -59,6 +64,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "ab",
   },
   {
     id: "piper-sniper",
@@ -69,6 +75,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "ac",
   },
   {
     id: "piper-horde",
@@ -79,6 +86,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+2 maximum rats",
+    encoding_id: "ad",
   },
   {
     id: "piper-explosive-blast",
@@ -88,6 +96,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+10 damage",
+    encoding_id: "ae",
   },
   {
     id: "piper-sforzando",
@@ -98,6 +107,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+5% range",
+    encoding_id: "af",
   },
   {
     id: "piper-extra-measure",
@@ -108,6 +118,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+1 wave(s) of notes",
+    encoding_id: "ag",
   },
   {
     id: "piper-quintuplets",
@@ -118,6 +129,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "ah",
   },
   {
     id: "piper-perfect-harmony",
@@ -128,6 +140,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+2 Health restored + Hero Level",
+    encoding_id: "ai",
   },
   {
     id: "piper-low-notes",
@@ -138,6 +151,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+15% damage",
+    encoding_id: "aj",
   },
   {
     id: "piper-acoustic-pulses",
@@ -147,6 +161,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+3 damage + Hero Level + DMG",
+    encoding_id: "ak",
   },
   {
     id: "piper-spinning-solo",
@@ -157,6 +172,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+10% Crit Chance",
+    encoding_id: "al",
   },
   {
     id: "piper-stimulant-vibes",
@@ -167,6 +183,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "am",
   },
   {
     id: "piper-music-of-the-spheres",
@@ -177,6 +194,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+1 POWER music note",
+    encoding_id: "an",
   },
   {
     id: "piper-invasive-blast",
@@ -187,6 +205,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+1 more time",
+    encoding_id: "ao",
   },
   {
     id: "piper-chorus",
@@ -198,6 +217,7 @@ export const piper_talents: Talents[] = [
     type: "normal",
     upgrade_changes:
       "Rare: -0.2 second(s), Epic: -0.15 second(s), Legendary: -0.1 second(s)",
+    encoding_id: "ap",
   },
   {
     id: "piper-ghost-notes",
@@ -209,6 +229,7 @@ export const piper_talents: Talents[] = [
     type: "normal",
     upgrade_changes:
       "Rare: -2 notes threshold, Epic and Legendary: -1 note(s) threshold",
+    encoding_id: "aq",
   },
   {
     id: "piper-leeching-charm",
@@ -219,6 +240,7 @@ export const piper_talents: Talents[] = [
     hero: HERO_IDS.THE_PIED_PIPER,
     type: "normal",
     upgrade_changes: "+ 1 Health + Hero Level",
+    encoding_id: "ar",
   },
   {
     id: "piper-jig",
@@ -229,6 +251,7 @@ export const piper_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+1 ULTIMATE note(s)",
     prerequisite: "Unchained Melody",
+    encoding_id: "g0",
   },
   {
     id: "piper-rain-of-notes",
@@ -240,6 +263,7 @@ export const piper_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Unchained Melody",
+    encoding_id: "g1",
   },
   {
     id: "piper-vermin-massacre",
@@ -251,6 +275,7 @@ export const piper_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Plague of Rats",
+    encoding_id: "g0",
   },
   {
     id: "piper-rat-king",
@@ -262,5 +287,6 @@ export const piper_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+5% chance",
     prerequisite: "Plague of Rats",
+    encoding_id: "g1",
   },
 ];

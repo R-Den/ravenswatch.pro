@@ -11,6 +11,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "starter",
     upgrade_changes: "+10% damage",
+    encoding_id: "a",
   },
   {
     id: "carmilla-life-essence",
@@ -21,6 +22,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "starter",
     upgrade_changes: "+15 Health + Hero Level",
+    encoding_id: "b",
   },
   {
     id: "carmilla-blood-rage",
@@ -31,6 +33,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "starter",
     upgrade_changes: "+20% POWER explosion damage",
+    encoding_id: "c",
   },
   {
     id: "carmilla-life-tap",
@@ -41,6 +44,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "starter",
     upgrade_changes: "+10 BLOOD points",
+    encoding_id: "d",
   },
   {
     id: "carmilla-razor-claws",
@@ -50,6 +54,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "+10% damage as BLEED",
+    encoding_id: "aa",
   },
   {
     id: "carmilla-puncture",
@@ -59,6 +64,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "",
+    encoding_id: "ab",
   },
   {
     id: "carmilla-dispersion",
@@ -69,6 +75,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "",
+    encoding_id: "ac",
   },
   {
     id: "carmilla-sadism",
@@ -78,6 +85,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "+10% damage",
+    encoding_id: "ad",
   },
   {
     id: "carmilla-boiling-blood",
@@ -88,6 +96,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "+1 REGENERATION",
+    encoding_id: "ae",
   },
   {
     id: "carmilla-furious-tempest",
@@ -98,6 +107,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "+10% damage",
+    encoding_id: "af",
   },
   {
     id: "carmilla-go-for-the-throat",
@@ -108,6 +118,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "+10% Crit Chance",
+    encoding_id: "ag",
   },
   {
     id: "carmilla-victimization",
@@ -118,6 +129,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "+2.0 seconds",
+    encoding_id: "ah",
   },
   {
     id: "carmilla-gust",
@@ -127,6 +139,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "+50 damage + Hero Level + DMG",
+    encoding_id: "ai",
   },
   {
     id: "carmilla-aggressive-flock",
@@ -137,6 +150,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "",
+    encoding_id: "aj",
   },
   {
     id: "carmilla-blood-reserve",
@@ -146,6 +160,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "+5% maximum BLOOD reserve",
+    encoding_id: "ak",
   },
   {
     id: "carmilla-flesh-rip",
@@ -155,6 +170,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "+10% Crit Chance",
+    encoding_id: "al",
   },
   {
     id: "carmilla-onslaught",
@@ -165,6 +181,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "+200% ATTACK damage",
+    encoding_id: "am",
   },
   {
     id: "carmilla-seductive-provocation",
@@ -175,6 +192,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "+1 non-boss enemy",
+    encoding_id: "an",
   },
   {
     id: "carmilla-cruel-strike",
@@ -185,6 +203,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "",
+    encoding_id: "ao",
   },
   {
     id: "carmilla-angel-and-demon",
@@ -195,6 +214,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "+10 health + Hero Level, +1.0 second of STRENGTH",
+    encoding_id: "ap",
   },
   {
     id: "carmilla-wild-heart",
@@ -205,6 +225,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "+5% range",
+    encoding_id: "aq",
   },
   {
     id: "carmilla-injection",
@@ -215,6 +236,7 @@ export const carmilla_talents: Talents[] = [
     hero: HERO_IDS.CARMILLA,
     type: "normal",
     upgrade_changes: "+20% area damage",
+    encoding_id: "ar",
   },
   {
     id: "carmilla-torture-of-the-pale",
@@ -226,6 +248,7 @@ export const carmilla_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+10% damage",
     prerequisite: "Impalement",
+    encoding_id: "g0",
   },
   {
     id: "carmilla-heartbreak",
@@ -237,6 +260,7 @@ export const carmilla_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+10% ULTIMATE damage",
     prerequisite: "Impalement",
+    encoding_id: "g1",
   },
   {
     id: "carmilla-mistress-of-pain",
@@ -248,6 +272,7 @@ export const carmilla_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+2 ATTACKS transformed",
     prerequisite: "Blood Lash",
+    encoding_id: "g0",
   },
   {
     id: "carmilla-mass-punishment",
@@ -259,5 +284,6 @@ export const carmilla_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+60% area damage",
     prerequisite: "Blood Lash",
+    encoding_id: "g1",
   },
 ];

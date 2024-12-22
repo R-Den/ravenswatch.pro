@@ -11,6 +11,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "starter",
     upgrade_changes: "+25% damage",
+    encoding_id: "a",
   },
   {
     id: "beowulf-explosive-fire",
@@ -21,6 +22,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "starter",
     upgrade_changes: "+5 damage",
+    encoding_id: "b",
   },
   {
     id: "beowulf-rampart",
@@ -31,6 +33,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "starter",
     upgrade_changes: "+10% more healing",
+    encoding_id: "c",
   },
   {
     id: "beowulf-draconic-binds",
@@ -41,6 +44,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "starter",
     upgrade_changes: "+5% Wyrm ability damage",
+    encoding_id: "d",
   },
   {
     id: "beowulf-eruption",
@@ -51,6 +55,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+15% additional damage",
+    encoding_id: "aa",
   },
   {
     id: "beowulf-breath-of-fire",
@@ -61,6 +66,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+50% damage",
+    encoding_id: "ab",
   },
   {
     id: "beowulf-blademaster",
@@ -71,6 +77,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+2% ATTACK SPEED",
+    encoding_id: "ac",
   },
   {
     id: "beowulf-heavy-strikes",
@@ -81,6 +88,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+10% damage",
+    encoding_id: "ad",
   },
   {
     id: "beowulf-fiery-seismo",
@@ -91,6 +99,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "ae",
   },
   {
     id: "beowulf-bladestorm",
@@ -100,6 +109,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+1 additional spin",
+    encoding_id: "af",
   },
   {
     id: "beowulf-double-shock",
@@ -110,6 +120,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "ag",
   },
   {
     id: "beowulf-furnace",
@@ -119,6 +130,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+8% damage",
+    encoding_id: "ah",
   },
   {
     id: "beowulf-blazing-runes",
@@ -129,6 +141,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+10% Crit Chance",
+    encoding_id: "ai",
   },
   {
     id: "beowulf-fire-wings",
@@ -139,6 +152,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+5 damage + Hero Level + DMG",
+    encoding_id: "aj",
   },
   {
     id: "beowulf-scorched-earth",
@@ -149,6 +163,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+20 damage + Hero Level + DMG",
+    encoding_id: "ak",
   },
   {
     id: "beowulf-retaliation",
@@ -159,6 +174,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+90% damage",
+    encoding_id: "al",
   },
   {
     id: "beowulf-sparkling-shield",
@@ -169,6 +185,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+30% of blocked damage",
+    encoding_id: "am",
   },
   {
     id: "beowulf-fiery-slash",
@@ -179,6 +196,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+100% damage",
+    encoding_id: "an",
   },
   {
     id: "beowulf-secondary-tremor",
@@ -188,6 +206,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+30% POWER damage",
+    encoding_id: "ao",
   },
   {
     id: "beowulf-battle-cry",
@@ -198,6 +217,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+4 SHIELD + Hero Level",
+    encoding_id: "ap",
   },
   {
     id: "beowulf-furious-blows",
@@ -208,6 +228,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+25% damage",
+    encoding_id: "aq",
   },
   {
     id: "beowulf-runes-of-war",
@@ -218,6 +239,7 @@ export const beowulf_talents: Talents[] = [
     hero: HERO_IDS.BEOWULF,
     type: "normal",
     upgrade_changes: "+5 area damage + Hero Level + DMG",
+    encoding_id: "ar",
   },
   {
     id: "beowulf-immolation",
@@ -229,6 +251,7 @@ export const beowulf_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Dragon's Flight",
+    encoding_id: "g0",
   },
   {
     id: "beowulf-sudden-growth",
@@ -240,6 +263,7 @@ export const beowulf_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+5% damage",
     prerequisite: "Dragon's Flight",
+    encoding_id: "g1",
   },
   {
     id: "beowulf-volcanic-rage",
@@ -251,6 +275,7 @@ export const beowulf_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+1 fiery rock(s)",
     prerequisite: "Raging Chain",
+    encoding_id: "g0",
   },
   {
     id: "beowulf-fireball",
@@ -262,5 +287,6 @@ export const beowulf_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Raging Chain",
+    encoding_id: "g1",
   },
 ];
