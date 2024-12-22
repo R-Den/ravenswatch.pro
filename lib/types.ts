@@ -5,7 +5,11 @@ export interface Hero {
   description?: string;
   talents: Talents[];
   abilities: Abilities[];
+<<<<<<< HEAD
   encoding_id: string;
+=======
+  type: "heroes";
+>>>>>>> 5db9c0c (Add hero type property and update image path retrieval in hero pages)
 }
 
 export interface Talents {
@@ -40,6 +44,12 @@ export interface Magical_Objects {
   super_effect?: string;
   stacks_to_effect?: 3 | 4 | 5;
   encoding_id: string;
+}
+
+export interface WikiEntry<T> {
+  entity: T;
+  tips: string;
+  notes: string;
 }
 
 export interface Build {

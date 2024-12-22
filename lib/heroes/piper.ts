@@ -10,5 +10,9 @@ export const piper: Hero = {
     " The Pied Piper uses his cursed music to attack his enemies with ear-splitting notes, sending them dancing to their graves or falling prey to the horde of rats at his call.",
   talents: piper_talents,
   abilities: piper_abilities,
+<<<<<<< HEAD
   encoding_id: "f",
+=======
+  type: "heroes",
+>>>>>>> 5db9c0c (Add hero type property and update image path retrieval in hero pages)
 };

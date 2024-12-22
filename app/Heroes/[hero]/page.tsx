@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import TableOfContents from "@/components/ui/toc";
-
+import { getImagePath } from "@/lib/registry";
 interface HeroPageProps {
   params: {
     hero: string;
@@ -44,13 +44,14 @@ export default async function HeroPage({ params }: HeroPageProps) {
             <h2 className="text-3xl font-bold mb-4">Introduction</h2>
             <div className="flex flex-col md:flex-row items-center md:items-start">
               <Image
-                src={`/heroes/${hero.id}.png`}
+                src={getImagePath(hero.type, hero.id)} ///heroes/${hero.id}.png
                 alt={hero.name}
                 height={300}
                 width={200}
                 className="object-cover rounded mb-4 md:mb-0 md:mr-8"
               />
               <p className="text-lg">{hero.description}</p>
+              <p className="text-lg">{getImagePath(hero.type, hero.id)}</p>
             </div>
           </section>
 

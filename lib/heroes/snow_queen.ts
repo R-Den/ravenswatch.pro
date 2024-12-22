@@ -10,5 +10,9 @@ export const snow_queen: Hero = {
     "Sun snow_queen is the 8th Hero from the Ravenswatch. The Monkey King Sun snow_queen battles with his magical staff and stances to withstand powerful blows or crush ignorant foes dissuaded by his playful demeanor.",
   talents: snow_queen_talents,
   abilities: snow_queen_abilities,
+<<<<<<< HEAD
   encoding_id: "h",
+=======
+  type: "heroes",
+>>>>>>> 5db9c0c (Add hero type property and update image path retrieval in hero pages)
 };

@@ -1,8 +1,9 @@
 import { getAllMagicalObjects } from "@/lib/registry";
 import Image from "next/image";
-import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import TableOfContents from "@/components/ui/toc";
 import { notFound } from "next/navigation";
+import { InfoBox } from "@/app/Wiki/infobox"; // <-- import the component
+import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 
 interface WikiPageProps {
   params: {
@@ -17,52 +18,87 @@ export default async function WikiPage({ params }: WikiPageProps) {
     return notFound();
   }
 
+  // Find the specific item by slug or ID
+  const item = magicalObjects.find((obj) => obj.name === params.wiki);
+  if (!item) {
+    return notFound();
+  }
+
   const sections = [
-    { id: "magical-objects", title: "Magical Objects" },
-    // Add more sections here for enemies, locations, etc.
+    { id: "overview", title: "Overview" },
+    { id: "stats", title: "Stats & Usage" },
+    { id: "acquisition", title: "Acquisition" },
   ];
 
   return (
-    <div className="min-h-screen bg-background p-8 relative flex flex-col lg:flex-row">
-      <div className="lg:w-64 lg:block hidden">
+    <div className="min-h-screen bg-background p-8 relative grid grid-cols-1 lg:grid-cols-[220px,1fr,300px] gap-8">
+      {/* LEFT COLUMN: Table of Contents */}
+      <aside className="hidden lg:block">
         <TableOfContents sections={sections} />
-      </div>
-      <div className="flex-1 lg:ml-8">
+      </aside>
+
+      {/* CENTER COLUMN: Main Content */}
+      <div className="flex flex-col">
         <header className="text-center my-8">
-          <h1 className="text-4xl font-bold mb-4">Wiki</h1>
-          <p className="text-lg">Your go-to resource for all information.</p>
+          <h1 className="text-4xl font-bold mb-4">{item.name}</h1>
+          <p className="text-lg">
+            Everything you need to know about this magical object.
+          </p>
         </header>
 
-        <main className="w-full max-w-6xl mx-auto">
-          <section id="magical-objects" className="mb-8">
-            <h2 className="text-3xl font-bold mb-4">Magical Objects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {magicalObjects.map((object) => (
-                <Card
-                  key={object.id}
-                  className="bg-secondary border-border shadow-md rounded-lg overflow-hidden"
-                >
-                  <CardHeader className="flex justify-between items-center">
-                    <CardTitle>{object.name}</CardTitle>
-                    <span className="text-sm text-gray-500 ml-2">
-                      Rarity: {object.rarity}
-                    </span>
-                  </CardHeader>
-                  <CardContent className="flex items-center">
-                    <Image
-                      src={object.image}
-                      alt={object.name}
-                      width={50}
-                      height={50}
-                      className="rounded-full"
-                    />
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
+        <main className="w-full max-w-4xl mx-auto">
+          {/* Overview */}
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle>Overview</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <section id="overview">
+                <p>{item.description}</p>
+              </section>
+            </CardContent>
+          </Card>
+
+          {/* Stats & Usage */}
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle>Stats & Usage</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <section id="stats">
+                <p>Rarity: {item.rarity}</p>
+                {/* Add more fields if needed */}
+              </section>
+            </CardContent>
+          </Card>
+
+          {/* Acquisition */}
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle>Acquisition</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <section id="acquisition">
+                <p>
+                  {/* Explain how the user can obtain this item */}
+                  Learn how to acquire {item.name} in-game...
+                </p>
+              </section>
+            </CardContent>
+          </Card>
         </main>
       </div>
+
+      {/* RIGHT COLUMN: Infobox / Key Details */}
+      <aside className="hidden lg:block">
+        <InfoBox
+          imageUrl={item.image}
+          altText={item.name}
+          name={item.name}
+          rarity={item.rarity}
+          // Add other props here if you expanded InfoBox
+        />
+      </aside>
     </div>
   );
 }
