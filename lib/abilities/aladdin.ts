@@ -4,41 +4,41 @@ import { HERO_IDS } from "../hero-ids";
 export const aladdin_abilities: Abilities[] = [
   {
     id: "aladdin-trait",
-    name: "Taiji",
+    name: "Jinniya of the Lamp",
     description:
-      "Switch between YIN STANCE and YANG STANCE. YIN: All abilities and ATTACKS gain 10% LIFE ON HIT, on activation all heroes around gain 15 SHIELD for 6 seconds. YANG: Sun aladdin deals and takes 100% more damage, on activation all heroes around gain STRENGTH for 4 seconds",
+      "Call Jinniya of the Lamp for a wish. Next ability grants the wish (3 charges). While calling for a wish, Aladdin is INTANGIBLE. POWER: Deals 250 damage all around. SPECIAL: Make 15 to 25 Dream Shards and 1 Consumable(s) appear. DEFENSE: Fully heals or revive all nearby Heroes with a permanent 30 SHIELD",
     hero: HERO_IDS.ALADDIN,
     type: "trait",
   },
   {
     id: "aladdin-attack",
-    name: "Ruyi Jingu Bang",
+    name: "Scimitars",
     description:
-      "Chain attacks with the staff, with each successive move increasing its range and power. The full chain deals a total of 162 damage",
+      "Chain together a series of attacks with the scimitars, dealing 16 damage. Last attack hits all around. Each attack can consume ENCHANTMENT points to strike twice with increased damage",
     hero: HERO_IDS.ALADDIN,
     type: "attack",
   },
   {
     id: "aladdin-power",
-    name: "Jindou Yun",
+    name: "Ring Jinn",
     description:
-      "Rush toward a nearby enemy then strike it for 60 damage. If other enemies are nearby, this ability chains up to two more times while INTANGIBLE. After landing POWER, Sun aladdin is briefly INTANGIBLE while leaping backwards",
+      "Summon Jinn of the Ring to fly forward and deliver a powerful blow that deals 80 damage. Can be held to move farther and increase damage up to +50%",
     hero: HERO_IDS.ALADDIN,
     type: "power",
   },
   {
     id: "aladdin-special",
-    name: "Mantra",
+    name: "Enchanted Blades",
     description:
-      "Launch prayer beads that orbit Sun aladdin for 5 second(s), dealing 32 damage per second to enemies affected",
+      "Throw scimitars: they move forward, stop to spin then return to Aladdin, dealing up to 60 damage. Scimitars gain ENCHANTMENT points for each enemy hit. Aladdin cannot use Scimitars while Enchanted Blades are in flight",
     hero: HERO_IDS.ALADDIN,
     type: "special",
   },
   {
     id: "aladdin-defence",
-    name: "Empty Palm",
+    name: "Somersault",
     description:
-      "Block any attack for 0.5 seconds. If an attack is blocked, the blocking time is reset and Empty Palm's cooldown is refreshed. Blocking multiple attacks with one DEFENSE activation does not stack progression of Talents/Quests. On a successful block, if the attack still going then automaticlly block those attacks without pressing DEFENSE again",
+      "Jump quickly to turn INTANGIBLE. Enemies passed become VULNERABLE for 3 second(s)",
     hero: HERO_IDS.ALADDIN,
     type: "defence",
   },
@@ -46,7 +46,7 @@ export const aladdin_abilities: Abilities[] = [
     id: "aladdin-ultimate1",
     name: "Dream Wish",
     description:
-      "Sun aladdin becomes INTANGIBLE and summons 6 clones in the area, which will fight nearby enemies and attract their attention. Clones copy Sun aladdin's VITALITY and DMG and disappear after 10 second",
+      "Consume 150 Dream Shards to earn an additional TRAIT charge. Aladdin can still be damaged while channeling Dream Wish",
     hero: HERO_IDS.ALADDIN,
     type: "ultimate",
   },
@@ -54,7 +54,7 @@ export const aladdin_abilities: Abilities[] = [
     id: "aladdin-ultimate2",
     name: "Magic Carpet",
     description:
-      "Sun aladdin transforms for 20 seconds into a copy of another random hero, with all their standard Talents activated, of Epic quality. When transformed as Aladdin, TRAIT can only be activated once per transformation",
+      "Ride The Magic Carpet, turning INTANGIBLE and dealing 100 damage to enemies passed. Movement is forced but the direction can be controlled",
     hero: HERO_IDS.ALADDIN,
     type: "ultimate",
   },

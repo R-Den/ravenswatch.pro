@@ -23,12 +23,12 @@ export const TalentButton = ({
       <TooltipTrigger asChild>
         <Button
           variant="outline"
-          className="w-16 h-16"
+          className="w-16 h-16 p-0"
           onClick={onClick}
           disabled={isDisabled || isSelected}
         >
           <Image
-            src={`/talents/${talent.hero}/${talent.name}.png`}
+            src={`/talents/${talent.hero}/${talent.id}.png`}
             width={104}
             height={104}
             alt={talent.name}

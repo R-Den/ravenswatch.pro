@@ -1,5 +1,4 @@
 import { Hero } from "@/lib/types";
-//import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Card, CardContent, CardHeader } from "@/app/Build/cardCollapsible";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,21 +19,24 @@ export const HeroSelection = ({
   selectedHero,
   onHeroSelect,
 }: HeroSelectionProps) => (
-  <Card>
-    <CardHeader>
-    </CardHeader>
+  <Card
+    selectedHero={selectedHero}
+    className="w-auto md:w-[280px]"
+    autoCollapse={true}
+  >
+    <CardHeader></CardHeader>
     <CardContent>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(96px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(96px,96px))] justify-center gap-4">
         {heroes.map((hero) => (
           <Tooltip key={hero.id}>
             <TooltipTrigger asChild>
               <Button
                 variant={selectedHero?.id === hero.id ? "default" : "outline"}
-                className="w-full aspect-square p-2 size-24"
+                className="w-full h-full aspect-square p-2"
                 onClick={() => onHeroSelect(hero)}
               >
                 <Image
-                  src={`/heroes/thumbnail/${hero.name}.png`}
+                  src={`/heroes/thumbnail/${hero.id}.png`}
                   width={500}
                   height={500}
                   alt={hero.name}

@@ -32,7 +32,7 @@ const INITIAL_BUILD_SLOTS: BuildSlot[] = [
   { id: "core-7", type: "normal", content: null },
   { id: "ultimate-upgrade", type: "ultimate-upgrade", content: null },
 ];
-const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
+const MobileBuildCreator = ({ heroes }: { heroes: Hero[] }) => {
   const [selectedHero, setSelectedHero] = useState<Hero | null>(null);
   const [buildSlots, setBuildSlots] =
     useState<BuildSlot[]>(INITIAL_BUILD_SLOTS);
@@ -201,95 +201,123 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
         onClearTalentsOnly={handleClearTalentsOnly}
         selectedHeroName={pendingHeroSelection?.name || ""}
       />
-      <div className="container mx-auto p-4 space-y-6">
-        <div className="flex space-x-6">
-          <HeroSelection
-            heroes={heroes}
-            selectedHero={selectedHero}
-            onHeroSelect={handleHeroSelect}
-          />
 
-          {selectedHero && (
-            <>
-              <div className="flex-1">
-                <div className="flex justify-end space-x-2 mb-4">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => toggleBar("talent")}
-                    className="flex items-center space-x-1"
-                  >
-                    <Book className="w-4 h-4" />
-                    <span>Talents</span>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => toggleBar("item")}
-                    className="flex items-center space-x-1"
-                  >
-                    <Sword className="w-4 h-4" />
-                    <span>Items</span>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => handleHeroSelect(selectedHero)}
-                    className="flex items-center space-x-1"
-                  >
-                    <Eraser className="w-4 h-4" />
-                    <span>Clear</span>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => toggleBar("item")}
-                    className="flex items-center space-x-1"
-                  >
-                    <Save className="w-4 h-4" />
-                    <span>Save</span>
-                  </Button>
-                </div>
+      <div className="min-h-screen bg-background">
+        {/* Fixed Header with Hero Selection */}
+        <div className="sticky top-0 z-50 bg-background border-b">
+          <div className="p-4">
+            <HeroSelection
+              heroes={heroes}
+              selectedHero={selectedHero}
+              onHeroSelect={handleHeroSelect}
+            />
+          </div>
+        </div>
+
+        {selectedHero && (
+          <div className="p-4 space-y-4">
+            {/* Action Buttons */}
+            <div className="flex justify-center gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => toggleBar("talent")}
+                className="flex items-center space-x-1"
+              >
+                <Book className="w-4 h-4" />
+                <span>Talents</span>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => toggleBar("item")}
+                className="flex items-center space-x-1"
+              >
+                <Sword className="w-4 h-4" />
+                <span>Items</span>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => handleHeroSelect(selectedHero)}
+                className="flex items-center space-x-1"
+              >
+                <Eraser className="w-4 h-4" />
+                <span>Clear</span>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex items-center space-x-1"
+              >
+                <Save className="w-4 h-4" />
+                <span>Save</span>
+              </Button>
+            </div>
+
+            {/* Talents Section */}
+            <div className="space-y-2">
+              <div className="space-y-4">
                 <BuildTalentBoard
                   buildSlots={buildSlots}
                   onSlotUpdate={handleTalentSlotUpdate}
                   onShowTalentBar={handleTalentBarOpen}
                   alternativeTalents={alternativeTalents}
                 />
+                <br />
+                <Button
+                  className="w-full"
+                  onClick={() => setShowTalentBar(true)}
+                >
+                  Select Talents
+                </Button>
               </div>
-              {/* Right side - Item Board */}
-              <ItemBoard
-                selectedItems={selectedItems}
-                onItemRemove={handleItemRemove}
-                onItemAdd={handleItemUpdate}
-                onShowItemBar={() => toggleBar("item")}
-                items={getAllMagicalObjects()}
-              />
-            </>
-          )}
-        </div>
+            </div>
 
+            {/* Items Section */}
+            <div className="space-y-2">
+              <div className="space-y-4">
+                <ItemBoard
+                  selectedItems={selectedItems}
+                  onItemRemove={handleItemRemove}
+                  onItemAdd={handleItemUpdate}
+                  onShowItemBar={() => setShowItemBar(true)}
+                  items={getAllMagicalObjects()}
+                />
+                <Button className="w-full" onClick={() => setShowItemBar(true)}>
+                  Select Items
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Selection Bars - Full screen overlays */}
         {selectedHero && showTalentBar && (
-          <TalentSelectionBar
-            selectedHero={selectedHero}
-            buildSlots={buildSlots}
-            onSlotUpdate={handleTalentSlotUpdate}
-            selectedIds={selectedIds}
-            defaultTab={talentSelectionMode}
-            onClose={() => setShowTalentBar(false)}
-          />
+          <div className="fixed inset-0 z-50 bg-background/80">
+            <TalentSelectionBar
+              selectedHero={selectedHero}
+              buildSlots={buildSlots}
+              onSlotUpdate={handleTalentSlotUpdate}
+              selectedIds={selectedIds}
+              defaultTab={talentSelectionMode}
+              onClose={() => setShowTalentBar(false)}
+            />
+          </div>
         )}
 
         {selectedHero && showItemBar && (
-          <ItemSelectionBar
-            selectedItems={selectedItems}
-            onItemUpdate={handleItemUpdate}
-            onClose={() => setShowItemBar(false)}
-          />
+          <div className="fixed inset-0 z-50 bg-background/70">
+            <ItemSelectionBar
+              selectedItems={selectedItems}
+              onItemUpdate={handleItemUpdate}
+              onClose={() => setShowItemBar(false)}
+            />
+          </div>
         )}
       </div>
     </TooltipProvider>
   );
 };
 
-export default BuildCreator;
+export default MobileBuildCreator;

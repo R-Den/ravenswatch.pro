@@ -7,17 +7,17 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import { ItemButtonProps } from "@/lib/types";
+import { AbilityButtonProps } from "@/lib/types";
 
-export const ItemButton = ({
-  magical_object: item,
+export const AbilityButton = ({
+  ability,
   onClick,
   isDisabled,
   isSelected,
-}: ItemButtonProps) => (
+}: AbilityButtonProps) => (
   <motion.div
     whileHover={{ scale: 1.05 }}
-    className="flex flex-col items-center"
+    className="flex flex-col items-center space-y-1"
   >
     <Tooltip>
       <TooltipTrigger asChild>
@@ -28,10 +28,10 @@ export const ItemButton = ({
           disabled={isDisabled || isSelected}
         >
           <Image
-            src={`/items/${item.id}.png`}
+            src={`/abilities/${ability.hero}/${ability.id}.png`}
             width={104}
             height={104}
-            alt={item.name}
+            alt={ability.name}
             className={cn(
               "w-full h-full object-cover rounded",
               isSelected && "opacity-50",
@@ -41,16 +41,11 @@ export const ItemButton = ({
       </TooltipTrigger>
       <TooltipContent side="top">
         <div className="space-y-2">
-          <h4 className="font-bold">{item.name}</h4>
-          <p>{item.description}</p>
-          {item.super_effect && (
-            <p className="text-sm text-muted-foreground">
-              Super Effect ({item.stacks_to_effect}): {item.super_effect}
-            </p>
-          )}
+          <h4 className="font-bold">{ability.name}</h4>
+          <p>{ability.description}</p>
         </div>
       </TooltipContent>
     </Tooltip>
-    <span className="text-xs text-center font-medium">{item.name}</span>
+    <span className="text-xs text-center font-medium">{ability.name}</span>
   </motion.div>
 );

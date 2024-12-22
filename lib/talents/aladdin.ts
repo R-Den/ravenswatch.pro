@@ -219,7 +219,7 @@ export const aladdin_talents: Talents[] = [
       "POWER can consume up to 5 ENCHANTMENT points to increase its Crit Chance by 10% per point. The maximum number of ENCHANTMENT points is increased by 5/10/15/20",
     unlock_rank: 8,
     hero: HERO_IDS.ALADDIN,
-    type: "ultimate",
+    type: "normal",
     upgrade_changes: "+5 maximum ENCHANTMENT points",
   },
   {
@@ -231,6 +231,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "ultimate",
     upgrade_changes: "",
+    prerequisite: "Dream Wish",
   },
   {
     id: "aladdin-infinite-wishes",
@@ -241,6 +242,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "ultimate",
     upgrade_changes: "",
+    prerequisite: "Dream Wish",
   },
   {
     id: "aladdin-dream-stride",
@@ -251,6 +253,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "ultimate",
     upgrade_changes: "",
+    prerequisite: "Magic Carpet",
   },
   {
     id: "aladdin-quick-ride",
@@ -261,5 +264,6 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "ultimate",
     upgrade_changes: "",
+    prerequisite: "Magic Carpet",
   },
 ];
