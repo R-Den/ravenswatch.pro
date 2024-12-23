@@ -9,7 +9,11 @@ export interface Hero {
   encoding_id: string;
 =======
   type: "heroes";
+<<<<<<< HEAD
 >>>>>>> 5db9c0c (Add hero type property and update image path retrieval in hero pages)
+=======
+  readonly imagePath: string;
+>>>>>>> c30b0d6 (Add imagePath getter to hero objects and refactor image retrieval in HeroPage)
 }
 
 export interface Talents {
@@ -43,7 +47,26 @@ export interface Magical_Objects {
   rarity: "common" | "rare" | "epic" | "legendary" | "cursed";
   super_effect?: string;
   stacks_to_effect?: 3 | 4 | 5;
+<<<<<<< HEAD
   encoding_id: string;
+=======
+  readonly imagePath: string;
+}
+
+export function createMagical_Objects(
+  data: Omit<Magical_Objects, "imagePath">
+): Magical_Objects {
+  return {
+    ...data,
+    imagePath: `/items/${data.id}.png`,
+  };
+}
+
+export function createManyMagical_Objects(
+  dataArray: Array<Omit<Magical_Objects, "imagePath">>
+): Magical_Objects[] {
+  return dataArray.map((item) => createMagical_Objects(item));
+>>>>>>> c30b0d6 (Add imagePath getter to hero objects and refactor image retrieval in HeroPage)
 }
 
 export interface WikiEntry<T> {

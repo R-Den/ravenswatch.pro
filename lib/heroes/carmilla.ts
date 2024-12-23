@@ -17,5 +17,12 @@ export const carmilla: Hero = {
   encoding_id: "c",
 =======
   type: "heroes",
+<<<<<<< HEAD
 >>>>>>> 5db9c0c (Add hero type property and update image path retrieval in hero pages)
 };
+=======
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
+};
+>>>>>>> c30b0d6 (Add imagePath getter to hero objects and refactor image retrieval in HeroPage)
