@@ -92,7 +92,7 @@ export default function Items() {
                               cursor-pointer
                               relative
                               overflow-hidden
-                              bg-gradient-to-r from-primary to-transparent
+                              bg-gradient-to-r 
                               bg-[length:0%_100%]
                               bg-no-repeat
                               transition-[background-size] duration-500 ease-in-out

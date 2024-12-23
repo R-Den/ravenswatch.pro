@@ -25,7 +25,31 @@ export default function Home() {
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {heroes.map((hero) => (
             <Link key={hero.id} href={`/Heroes/${hero.id}`} className="block">
-              <Card className="bg-card border-border shadow-md rounded-lg overflow-hidden flex flex-col justify-between h-full transform transition-transform duration-300 hover:scale-105 hover:bg-input bg-gradient-to-br hover:from-primary hover:to-inpu hover:shadow-lg">
+              <Card
+                className="bg-input 
+                            border-border 
+                            shadow-md 
+                            rounded-lg 
+                            overflow-hidden 
+                            flex 
+                            flex-col 
+                            justify-between 
+                            h-full 
+                            transform 
+                            transition-all 
+                            duration-500 
+                            ease-in-out 
+                            hover:scale-105 
+                            bg-gradient-to-r 
+                            from-primary 
+                            to-transparent 
+                            bg-[length:0%_100%] 
+                            bg-no-repeat 
+                            hover:bg-[length:100%_100%] 
+                            hover:from-primary 
+                            hover:to-input 
+                            hover:shadow-lg"
+              >
                 <CardHeader>
                   <CardTitle>{hero.name}</CardTitle>
                   <CardDescription className="flex-1">
