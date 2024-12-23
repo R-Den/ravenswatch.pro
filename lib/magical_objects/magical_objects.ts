@@ -1,6 +1,6 @@
-import { Magical_Objects } from "../types";
+import { Magical_Objects, createManyMagical_Objects } from "../types";
 
-export const magical_objects: Magical_Objects[] = [
+export const magical_objects: Magical_Objects[] = createManyMagical_Objects([
   {
     id: "leprechaun-coin",
     name: "Leprechaun Coin",
@@ -421,4 +421,4 @@ export const magical_objects: Magical_Objects[] = [
     rarity: "cursed",
     super_effect: "",
   },
-];
+]);

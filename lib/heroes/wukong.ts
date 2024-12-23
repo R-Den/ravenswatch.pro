@@ -11,4 +11,7 @@ export const wukong: Hero = {
   talents: wukong_talents,
   abilities: wukong_abilities,
   type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
 };

@@ -11,4 +11,7 @@ export const geppetto: Hero = {
   talents: geppetto_talents,
   abilities: geppetto_abilities,
   type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
 };

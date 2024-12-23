@@ -66,18 +66,6 @@ export function getMagicalObject(
   return registry.magical_objects[objectId];
 }
 
-/**
- * Get image of entity.
- * @param entityType The type of entity to retrieve.
- * @param entityId The ID of the entity to retrieve.
- * @returns A path to the entity image.
- */
-export function getImagePath(entityType: string, entityId: string) {
-  // The string `entityType` should match the folder name: "heroes", "items", "enemies", etc.
-  // The `entityId` should match the filename (without extension or with .png if needed).
-  return `/${entityType}/${entityId}.png`;
-}
-
 //#endregion
 
 //#region wiki helpers

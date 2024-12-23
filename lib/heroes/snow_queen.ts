@@ -1,4 +1,4 @@
- import { Hero } from "@/lib/types";
+import { Hero } from "@/lib/types";
 import { snow_queen_abilities } from "../abilities/snow_queen";
 import { snow_queen_talents } from "../talents/snow_queen";
 
@@ -11,4 +11,7 @@ export const snow_queen: Hero = {
   talents: snow_queen_talents,
   abilities: snow_queen_abilities,
   type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
 };

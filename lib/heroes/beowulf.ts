@@ -11,4 +11,7 @@ export const beowulf: Hero = {
   talents: beowulf_talents,
   abilities: beowulf_abilities,
   type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
 };

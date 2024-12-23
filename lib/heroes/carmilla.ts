@@ -14,16 +14,7 @@ export const carmilla: Hero = {
   abilities: carmilla_abilities,
   talents: carmilla_talents,
   type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
 };
-
-//name: string;
-//  description: string;
-//  hero: Hero;
-//  type: "trait" | "attack" | "power" | "special" | "defence" | "ultimate";
-//  passive?: boolean;
-
-//name: string;
-//unlock_condition?: string;
-//description?: string;
-//talents: Talents[];
-//abilities: Abilities[];

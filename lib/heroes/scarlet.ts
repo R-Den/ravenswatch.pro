@@ -11,4 +11,7 @@ export const scarlet: Hero = {
   talents: scarlet_talents,
   abilities: scarlet_abilities,
   type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
 };
