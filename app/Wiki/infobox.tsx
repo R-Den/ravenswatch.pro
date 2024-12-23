@@ -11,7 +11,7 @@ interface InfoBoxProps {
 
 export function InfoBox({ imageUrl, altText, name, rarity }: InfoBoxProps) {
   return (
-    <Card className="sticky top-8 p-4 bg-background border border-border shadow-sm rounded-md">
+    <Card className="sticky top-8 p-4 bg-accent border border-border shadow-sm rounded-md">
       <CardHeader>
         <CardTitle className="text-xl font-bold mb-2">{name}</CardTitle>
         <Image
