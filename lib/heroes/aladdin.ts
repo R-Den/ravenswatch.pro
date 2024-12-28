@@ -10,4 +10,5 @@ export const aladdin: Hero = {
     "Aladdin is one of the nine currently playable heroes in the Ravenswatch. Aladdin is a master thief armed with magical scimitars, showcasing his years of experience with remarkable nimbleness and with his genie's three wishes—he's always prepared to overcome any obstacle.",
   talents: aladdin_talents,
   abilities: aladdin_abilities,
+  encoding_id: "a",
 };

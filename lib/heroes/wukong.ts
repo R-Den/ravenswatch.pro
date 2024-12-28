@@ -10,4 +10,5 @@ export const wukong: Hero = {
     "Sun Wukong is the 8th Hero from the Ravenswatch. The Monkey King Sun Wukong battles with his magical staff and stances to withstand powerful blows or crush ignorant foes dissuaded by his playful demeanor.",
   talents: wukong_talents,
   abilities: wukong_abilities,
+  encoding_id: "i",
 };
