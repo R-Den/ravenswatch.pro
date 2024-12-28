@@ -29,6 +29,7 @@ export interface Abilities {
   type: "trait" | "attack" | "power" | "special" | "defence" | "ultimate";
   passive?: boolean;
   tags?: string[]; // for future use in filtering. Could add things like "weaken", "heal", "damage", vulnerable, etc.
+  image?: string;
 }
 
 export interface Magical_Objects {
@@ -76,4 +77,19 @@ export interface AbilityButtonProps {
   onClick: () => void;
   isDisabled?: boolean;
   isSelected?: boolean;
+}
+
+export interface EncodedBuild {
+  hero: Hero;
+  talents: {
+    starter?: Talents;
+    ultimate?: Talents;
+    ultimate_upgrade?: Talents;
+    core?: Talents[];
+    alternative?: Talents[];
+  };
+  items?: Array<{
+    item: Magical_Objects;
+    quantity: number;
+  }>;
 }

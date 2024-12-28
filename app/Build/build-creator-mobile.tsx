@@ -39,7 +39,7 @@ const MobileBuildCreator = ({ heroes }: { heroes: Hero[] }) => {
   const [selectedItems, setSelectedItems] = useState<Map<string, number>>(
     new Map(),
   );
-  const [showTalentBar, setShowTalentBar] = useState(true);
+  const [showTalentBar, setShowTalentBar] = useState(false);
   const [showItemBar, setShowItemBar] = useState(false);
   const [alternativeTalents, setAlternativeTalents] = useState<BuildSlot[]>([]);
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
@@ -294,7 +294,7 @@ const MobileBuildCreator = ({ heroes }: { heroes: Hero[] }) => {
 
         {/* Selection Bars - Full screen overlays */}
         {selectedHero && showTalentBar && (
-          <div className="fixed inset-0 z-50 bg-background/80">
+          <div className="fixed inset-0 z-50 bg-background/70">
             <TalentSelectionBar
               selectedHero={selectedHero}
               buildSlots={buildSlots}

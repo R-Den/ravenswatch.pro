@@ -13,13 +13,10 @@ export default function BuildPage() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768); // Adjust breakpoint as needed
     };
-
     // Initial check
     checkMobile();
-
     // Add resize listener
     window.addEventListener("resize", checkMobile);
-
     // Cleanup
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
