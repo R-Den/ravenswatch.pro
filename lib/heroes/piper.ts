@@ -11,6 +11,7 @@ export const piper: Hero = {
   talents: piper_talents,
   abilities: piper_abilities,
 <<<<<<< HEAD
+<<<<<<< HEAD
   encoding_id: "f",
 =======
   type: "heroes",
@@ -21,4 +22,10 @@ export const piper: Hero = {
     return `/heroes/${this.id}.png`;
   },
 >>>>>>> c30b0d6 (Add imagePath getter to hero objects and refactor image retrieval in HeroPage)
+=======
+  type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
+>>>>>>> 767a2af1006244cf4aea16d1d7915ffcff6958f2
 };

@@ -6,6 +6,7 @@ export interface Hero {
   talents: Talents[];
   abilities: Abilities[];
 <<<<<<< HEAD
+<<<<<<< HEAD
   encoding_id: string;
 =======
   type: "heroes";
@@ -14,6 +15,10 @@ export interface Hero {
 =======
   readonly imagePath: string;
 >>>>>>> c30b0d6 (Add imagePath getter to hero objects and refactor image retrieval in HeroPage)
+=======
+  type: "heroes";
+  readonly imagePath: string;
+>>>>>>> 767a2af1006244cf4aea16d1d7915ffcff6958f2
 }
 
 export interface Talents {
@@ -48,8 +53,11 @@ export interface Magical_Objects {
   super_effect?: string;
   stacks_to_effect?: 3 | 4 | 5;
 <<<<<<< HEAD
+<<<<<<< HEAD
   encoding_id: string;
 =======
+=======
+>>>>>>> 767a2af1006244cf4aea16d1d7915ffcff6958f2
   readonly imagePath: string;
   type: "magical_objects";
 }
@@ -67,7 +75,10 @@ export function createManyMagical_Objects(
   dataArray: Array<Omit<Magical_Objects, "imagePath">>
 ): Magical_Objects[] {
   return dataArray.map((item) => createMagical_Objects(item));
+<<<<<<< HEAD
 >>>>>>> c30b0d6 (Add imagePath getter to hero objects and refactor image retrieval in HeroPage)
+=======
+>>>>>>> 767a2af1006244cf4aea16d1d7915ffcff6958f2
 }
 
 export interface WikiEntry<T> {

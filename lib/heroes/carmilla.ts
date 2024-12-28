@@ -14,6 +14,7 @@ export const carmilla: Hero = {
   abilities: carmilla_abilities,
   talents: carmilla_talents,
 <<<<<<< HEAD
+<<<<<<< HEAD
   encoding_id: "c",
 =======
   type: "heroes",
@@ -26,3 +27,10 @@ export const carmilla: Hero = {
   },
 };
 >>>>>>> c30b0d6 (Add imagePath getter to hero objects and refactor image retrieval in HeroPage)
+=======
+  type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
+};
+>>>>>>> 767a2af1006244cf4aea16d1d7915ffcff6958f2

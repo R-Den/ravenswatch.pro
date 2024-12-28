@@ -10,10 +10,15 @@ import { scarlet } from "./heroes/scarlet";
 import { snow_queen } from "./heroes/snow_queen";
 import { wukong } from "./heroes/wukong";
 import { magical_objects } from "./magical_objects/magical_objects";
+<<<<<<< HEAD
 import { aladdin_talents } from "./talents/aladdin";
 //#endregion
 
 // Hero Section
+=======
+//#endregion
+
+>>>>>>> 767a2af1006244cf4aea16d1d7915ffcff6958f2
 //#region Registry
 export const registry = {
   heroes: {
@@ -160,6 +165,7 @@ export function getHeroUltimateAbilities(heroId: string): Abilities[] {
     (ability) => ability.type === "ultimate"
   );
 }
+//#endregion
 
 //#region Build validation helpers
 

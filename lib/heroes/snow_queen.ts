@@ -11,6 +11,7 @@ export const snow_queen: Hero = {
   talents: snow_queen_talents,
   abilities: snow_queen_abilities,
 <<<<<<< HEAD
+<<<<<<< HEAD
   encoding_id: "h",
 =======
   type: "heroes",
@@ -21,4 +22,10 @@ export const snow_queen: Hero = {
     return `/heroes/${this.id}.png`;
   },
 >>>>>>> c30b0d6 (Add imagePath getter to hero objects and refactor image retrieval in HeroPage)
+=======
+  type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
+>>>>>>> 767a2af1006244cf4aea16d1d7915ffcff6958f2
 };
