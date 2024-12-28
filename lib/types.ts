@@ -51,6 +51,7 @@ export interface Magical_Objects {
   encoding_id: string;
 =======
   readonly imagePath: string;
+  type: "magical_objects";
 }
 
 export function createMagical_Objects(
