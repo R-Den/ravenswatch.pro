@@ -66,7 +66,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
 
           <main>
             {/* Overview */}
-            <Card className="mb-8">
+            <Card className="mb-8 bg-secondary">
               <CardHeader>
                 <CardTitle>Overview</CardTitle>
               </CardHeader>
@@ -81,7 +81,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
             {entity.type === "heroes" ? (
               <>
                 {/* Abilities */}
-                <Card className="mb-8">
+                <Card className="mb-8 bg-accent">
                   <CardHeader>
                     <CardTitle>Abilities</CardTitle>
                   </CardHeader>
@@ -100,7 +100,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
                 </Card>
 
                 {/* Talents */}
-                <Card className="mb-8">
+                <Card className="mb-8 bg-accent">
                   <CardHeader>
                     <CardTitle>Talents</CardTitle>
                   </CardHeader>
@@ -120,7 +120,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
             ) : (
               <>
                 {/* Stats & Usage */}
-                <Card className="mb-8">
+                <Card className="mb-8 bg-accent">
                   <CardHeader>
                     <CardTitle>Stats & Usage</CardTitle>
                   </CardHeader>
@@ -132,7 +132,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
                 </Card>
 
                 {/* Acquisition */}
-                <Card className="mb-8">
+                <Card className="mb-8 bg-accent">
                   <CardHeader>
                     <CardTitle>Acquisition</CardTitle>
                   </CardHeader>
