@@ -39,7 +39,7 @@ export default async function HeroPage({ params }: HeroPageProps) {
             <h2 className="text-3xl font-bold mb-4">Introduction</h2>
             <div className="flex flex-col md:flex-row items-center md:items-start">
               <Image
-                src={`/heroes/${hero.id}.png`}
+                src={hero.imagePath}
                 alt={hero.name}
                 height={300}
                 width={200}

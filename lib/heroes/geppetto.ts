@@ -10,5 +10,8 @@ export const geppetto: Hero = {
     "Geppetto is the 7th Hero from the Ravenswatch. Geppetto, the Mad Inventor creates puppets to fight in his place—using his hammer to repair and protect or even launch his puppets toward enemies undermining the madness of his mind and power of those without.",
   talents: geppetto_talents,
   abilities: geppetto_abilities,
-  encoding_id: "d",
+  type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
 };

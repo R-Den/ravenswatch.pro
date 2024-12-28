@@ -50,8 +50,12 @@ const Header = () => {
               {navigationItems.map((item) => (
                 <NavigationMenuItem
                   key={item.href}
-                  onMouseEnter={() => item.label === "Heroes" && setIsDropdownOpen(true)}
-                  onMouseLeave={() => item.label === "Heroes" && setIsDropdownOpen(false)}
+                  onMouseEnter={() =>
+                    item.label === "Heroes" && setIsDropdownOpen(true)
+                  }
+                  onMouseLeave={() =>
+                    item.label === "Heroes" && setIsDropdownOpen(false)
+                  }
                 >
                   <NavigationMenuLink
                     className={navigationMenuTriggerStyle()}
@@ -62,17 +66,22 @@ const Header = () => {
                   {item.label === "Heroes" && (
                     <div
                       className={`absolute mt-2 w-48 bg-background border border-border rounded shadow-lg transition-all duration-300 ease-in-out transform ${
-                        isDropdownOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
+                        isDropdownOpen
+                          ? "scale-y-100 opacity-100"
+                          : "scale-y-0 opacity-0"
                       } origin-top`}
                       onMouseEnter={() => setIsDropdownOpen(true)}
                       onMouseLeave={() => setIsDropdownOpen(false)}
                     >
                       <ul>
                         {heroes.map((hero) => (
-                          <li key={hero.id}>
+                          <li
+                            key={hero.id}
+                            className="relative overflow-hidden bg-gradient-to-r from-primary to-transparent bg-[length:0%_100%] bg-no-repeat transition-[background-size] duration-500 ease-in-out hover:bg-[length:100%_100%] cursor-pointer"
+                          >
                             <Link
                               href={`/Heroes/${hero.id}`}
-                              className="block px-4 py-2 hover:bg-accent"
+                              className="block px-4 py-2 relative z-10 text-foreground transition-colors duration-300"
                             >
                               {hero.name}
                             </Link>
