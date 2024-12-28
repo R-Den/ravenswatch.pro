@@ -153,7 +153,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
             imageUrl={entity.imagePath}
             altText={entity.name}
             name={entity.name}
-            rarity={entity.rarity}
+            rarity={entity.type === "magical_objects" ? entity.rarity : undefined}
           />
         </aside>
       </div>

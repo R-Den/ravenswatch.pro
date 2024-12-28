@@ -5,7 +5,7 @@ interface InfoBoxProps {
   imageUrl: string;
   altText: string;
   name: string;
-  rarity: string;
+  rarity?: string;
   // Add other fields as needed, e.g. "description", "category", etc.
 }
 

@@ -39,6 +39,7 @@ export interface Magical_Objects {
   super_effect?: string;
   stacks_to_effect?: 3 | 4 | 5;
   readonly imagePath: string;
+  type: "magical_objects";
 }
 
 export function createMagical_Objects(
