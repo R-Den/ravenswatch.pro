@@ -53,8 +53,11 @@ export function createMagical_Objects(
 
 export function createManyMagical_Objects(
   dataArray: Array<Omit<Magical_Objects, "imagePath">>
-): Magical_Objects[] {
-  return dataArray.map((item) => createMagical_Objects(item));
+): { [key: string]: Magical_Objects } {
+  return dataArray.reduce((acc, item) => {
+    acc[item.id] = createMagical_Objects(item);
+    return acc;
+  }, {} as { [key: string]: Magical_Objects });
 }
 
 export interface WikiEntry<T> {

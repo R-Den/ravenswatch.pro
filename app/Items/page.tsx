@@ -82,7 +82,7 @@ export default function Items() {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {magical_objects
+                      {Object.values(magical_objects)
                         .filter((item) => item.rarity === rarity)
                         .map((item) => (
                           <TableRow
