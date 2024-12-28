@@ -17,7 +17,7 @@ import { BuildTalentBoard } from "./BuildTalentBoard";
 import ItemBoard from "./BuildItemBoard";
 import { ItemSelectionBar } from "./ItemSelectionBar";
 import { TalentSelectionBar } from "./TalentSelectionBar";
-import { Book, Sword, Save, Eraser } from "lucide-react";
+import { Book, Sword, Clipboard, Eraser } from "lucide-react";
 import BuildEncoder from "@/lib/build-url";
 import { useSearchParams } from "next/navigation";
 
@@ -129,6 +129,7 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
 
       // Optional: Show a success message
       // You could use toast or some other notification
+      navigator.clipboard.writeText(url.href);
     }
   };
 
@@ -278,8 +279,8 @@ const BuildCreator = ({ heroes }: { heroes: Hero[] }) => {
                     onClick={handleSaveBuild}
                     className="flex items-center space-x-1"
                   >
-                    <Save className="w-4 h-4" />
-                    <span>Save</span>
+                    <Clipboard className="w-4 h-4" />
+                    <span>Copy Build</span>
                   </Button>
                 </div>
                 <BuildTalentBoard
