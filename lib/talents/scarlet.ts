@@ -10,6 +10,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "starter",
     upgrade_changes: "+10% damage",
+    encoding_id: "a",
   },
   {
     id: "scarlet-devourer",
@@ -20,6 +21,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "starter",
     upgrade_changes: "+20% chance for no cooldown",
+    encoding_id: "b",
   },
   {
     id: "scarlet-shadow-strikes",
@@ -30,6 +32,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "starter",
     upgrade_changes: "+5% Crit Damage",
+    encoding_id: "c",
   },
   {
     id: "scarlet-shapeshifter",
@@ -40,6 +43,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "starter",
     upgrade_changes: "reduce cooldown by 4 seconds",
+    encoding_id: "d",
   },
   {
     id: "scarlet-slash-flurry",
@@ -50,6 +54,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+10% increased damaged",
+    encoding_id: "aa",
   },
   {
     id: "scarlet-cleave",
@@ -60,6 +65,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+30% damage",
+    encoding_id: "ab",
   },
   {
     id: "scarlet-short-wick",
@@ -70,6 +76,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+5% faster",
+    encoding_id: "ac",
   },
   {
     id: "scarlet-pyromania",
@@ -80,6 +87,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+10% Crit Chance",
+    encoding_id: "ad",
   },
   {
     id: "scarlet-aggressive-defense",
@@ -89,6 +97,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+25 damage + Hero Level + DMG",
+    encoding_id: "ae",
   },
   {
     id: "scarlet-murderous-intent",
@@ -98,6 +107,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+5% longer",
+    encoding_id: "af",
   },
   {
     id: "scarlet-energy",
@@ -108,6 +118,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+1% Crit Chance",
+    encoding_id: "ag",
   },
   {
     id: "scarlet-evisceration",
@@ -118,6 +129,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+2% damage dealt",
+    encoding_id: "ah",
   },
   {
     id: "scarlet-armor-break",
@@ -127,6 +139,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+1 second(s)",
+    encoding_id: "ai",
   },
   {
     id: "scarlet-true-instincts",
@@ -137,6 +150,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+2% Move Speed, +5% Maximum Health",
+    encoding_id: "aj",
   },
   {
     id: "scarlet-wide-attacks",
@@ -146,6 +160,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "ak",
   },
   {
     id: "scarlet-double-strike",
@@ -156,6 +171,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+100% damage",
+    encoding_id: "al",
   },
   {
     id: "scarlet-pulverize",
@@ -166,6 +182,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+10% damage",
+    encoding_id: "am",
   },
   {
     id: "scarlet-explosive-rush",
@@ -176,6 +193,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+10% of its normal damage",
+    encoding_id: "an",
   },
   {
     id: "scarlet-adrenaline",
@@ -186,6 +204,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+0.8 Health + Hero Level, +1% ATTACK SPEED",
+    encoding_id: "ao",
   },
   {
     id: "scarlet-fan-of-spikes",
@@ -196,6 +215,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+1 spike(s)",
+    encoding_id: "ap",
   },
   {
     id: "scarlet-savagery",
@@ -206,6 +226,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+5 Maximum stacks of Savagery, +0.2 DMG",
+    encoding_id: "aq",
   },
   {
     id: "scarlet-on-the-hunt",
@@ -216,6 +237,7 @@ export const scarlet_talents: Talents[] = [
     hero: HERO_IDS.SCARLET,
     type: "normal",
     upgrade_changes: "+2 seconds",
+    encoding_id: "ar",
   },
   {
     id: "scarlet-fiery-maw",
@@ -227,6 +249,7 @@ export const scarlet_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+5% damage",
     prerequisite: "Hunter's Souvenir",
+    encoding_id: "g0",
   },
   {
     id: "scarlet-reload",
@@ -238,6 +261,7 @@ export const scarlet_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "-2 times",
     prerequisite: "Hunter's Souvenir",
+    encoding_id: "g1",
   },
   {
     id: "scarlet-bone-cracker",
@@ -249,6 +273,7 @@ export const scarlet_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Grandmother's Souvenir",
+    encoding_id: "g0",
   },
   {
     id: "scarlet-pack-leader",
@@ -260,5 +285,6 @@ export const scarlet_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Grandmother's Souvenir",
+    encoding_id: "g1",
   },
 ];

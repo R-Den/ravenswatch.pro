@@ -5,6 +5,7 @@ export interface Hero {
   description?: string;
   talents: Talents[];
   abilities: Abilities[];
+  encoding_id: string;
 }
 
 export interface Talents {
@@ -17,6 +18,7 @@ export interface Talents {
   upgrade_changes?: string;
   prerequisite?: string;
   tags?: string[]; // for future use in filtering. Could add things like "weaken", "heal", "damage", vulnerable, etc.
+  encoding_id: string;
 }
 
 export interface Abilities {
@@ -27,6 +29,7 @@ export interface Abilities {
   type: "trait" | "attack" | "power" | "special" | "defence" | "ultimate";
   passive?: boolean;
   tags?: string[]; // for future use in filtering. Could add things like "weaken", "heal", "damage", vulnerable, etc.
+  image?: string;
 }
 
 export interface Magical_Objects {
@@ -36,6 +39,7 @@ export interface Magical_Objects {
   rarity: "common" | "rare" | "epic" | "legendary" | "cursed";
   super_effect?: string;
   stacks_to_effect?: 3 | 4 | 5;
+  encoding_id: string;
 }
 
 export interface Build {
@@ -43,9 +47,9 @@ export interface Build {
   name: string;
   description: string;
   hero: string;
-  core_talents: Talents[];
-  secondary_talents: Talents[];
-  magical_objects: Magical_Objects[];
+  core_talents: string[];
+  secondary_talents: string[];
+  magical_objects: string[];
   tips: string;
   tags?: string[];
 }
@@ -75,35 +79,17 @@ export interface AbilityButtonProps {
   isSelected?: boolean;
 }
 
-export interface DraggableSyntheticListeners {
-  onKeyDown?(event: React.KeyboardEvent<HTMLElement>): void;
-  onClick?(event: React.MouseEvent<HTMLElement>): void;
-  onMouseDown?(event: React.MouseEvent<HTMLElement>): void;
-  onMouseUp?(event: React.MouseEvent<HTMLElement>): void;
-  onTouchEnd?(event: React.TouchEvent<HTMLElement>): void;
-  onTouchStart?(event: React.TouchEvent<HTMLElement>): void;
-}
-
-export interface DraggableAttributes {
-  role?: string;
-  tabIndex?: number;
-  "aria-describedby"?: string;
-  "aria-disabled"?: boolean;
-  "aria-pressed"?: boolean;
-  "aria-roledescription"?: string;
-  "data-testid"?: string;
-  draggable?: boolean;
-  style?: React.CSSProperties;
-  translate?: "yes" | "no";
-  hidden?: boolean;
-  id?: string;
-  className?: string;
-  title?: string;
-}
-
-export interface DraggableSlotProps {
-  slot: BuildSlot;
-  onRemove: () => void;
-  attributes?: DraggableAttributes;
-  listeners?: DraggableSyntheticListeners;
+export interface EncodedBuild {
+  hero: Hero;
+  talents: {
+    starter?: Talents;
+    ultimate?: Talents;
+    ultimate_upgrade?: Talents;
+    core?: Talents[];
+    alternative?: Talents[];
+  };
+  items?: Array<{
+    item: Magical_Objects;
+    quantity: number;
+  }>;
 }

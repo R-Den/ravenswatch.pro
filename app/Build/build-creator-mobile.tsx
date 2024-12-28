@@ -17,7 +17,9 @@ import { BuildTalentBoard } from "./BuildTalentBoard";
 import ItemBoard from "./BuildItemBoard";
 import { ItemSelectionBar } from "./ItemSelectionBar";
 import { TalentSelectionBar } from "./TalentSelectionBar";
-import { Book, Sword, Save, Eraser } from "lucide-react";
+import { Book, Sword, Clipboard, Eraser } from "lucide-react";
+import BuildEncoder from "@/lib/build-url";
+import { useSearchParams } from "next/navigation";
 
 // when implementing sharing / editing builds from can populate this
 const INITIAL_BUILD_SLOTS: BuildSlot[] = [
@@ -33,15 +35,26 @@ const INITIAL_BUILD_SLOTS: BuildSlot[] = [
   { id: "ultimate-upgrade", type: "ultimate-upgrade", content: null },
 ];
 const MobileBuildCreator = ({ heroes }: { heroes: Hero[] }) => {
-  const [selectedHero, setSelectedHero] = useState<Hero | null>(null);
-  const [buildSlots, setBuildSlots] =
-    useState<BuildSlot[]>(INITIAL_BUILD_SLOTS);
-  const [selectedItems, setSelectedItems] = useState<Map<string, number>>(
-    new Map(),
+  const searchParams = useSearchParams();
+  const initialBuildString = searchParams.get("build");
+  const initialBuild = initialBuildString
+    ? BuildEncoder.decodeBuild(initialBuildString)
+    : null;
+
+  const [selectedHero, setSelectedHero] = useState<Hero | null>(
+    initialBuild?.hero || null,
   );
-  const [showTalentBar, setShowTalentBar] = useState(true);
+  const [buildSlots, setBuildSlots] = useState<BuildSlot[]>(
+    initialBuild?.buildSlots || INITIAL_BUILD_SLOTS,
+  );
+  const [selectedItems, setSelectedItems] = useState<Map<string, number>>(
+    initialBuild?.selectedItems || new Map(),
+  );
+  const [showTalentBar, setShowTalentBar] = useState(false);
   const [showItemBar, setShowItemBar] = useState(false);
-  const [alternativeTalents, setAlternativeTalents] = useState<BuildSlot[]>([]);
+  const [alternativeTalents, setAlternativeTalents] = useState<BuildSlot[]>(
+    initialBuild?.alternativeTalents || [],
+  );
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
   const [pendingHeroSelection, setPendingHeroSelection] = useState<Hero | null>(
     null,
@@ -97,6 +110,25 @@ const MobileBuildCreator = ({ heroes }: { heroes: Hero[] }) => {
       setAlternativeTalents([]);
       setShowConfirmDialog(false);
       setPendingHeroSelection(null);
+    }
+  };
+  const handleSaveBuild = () => {
+    const encodedBuild = BuildEncoder.encodeBuild(
+      selectedHero,
+      buildSlots,
+      alternativeTalents,
+      selectedItems,
+    );
+
+    if (encodedBuild) {
+      // Update URL without page reload
+      const url = new URL(window.location.href);
+      url.searchParams.set("build", encodedBuild);
+      window.history.pushState({}, "", url);
+
+      // Optional: Show a success message
+      // You could use toast or some other notification
+      navigator.clipboard.writeText(url.href);
     }
   };
 
@@ -249,9 +281,10 @@ const MobileBuildCreator = ({ heroes }: { heroes: Hero[] }) => {
                 variant="outline"
                 size="sm"
                 className="flex items-center space-x-1"
+                onClick={handleSaveBuild}
               >
-                <Save className="w-4 h-4" />
-                <span>Save</span>
+                <Clipboard className="w-4 h-4" />
+                <span>Copy</span>
               </Button>
             </div>
 
@@ -294,7 +327,7 @@ const MobileBuildCreator = ({ heroes }: { heroes: Hero[] }) => {
 
         {/* Selection Bars - Full screen overlays */}
         {selectedHero && showTalentBar && (
-          <div className="fixed inset-0 z-50 bg-background/80">
+          <div className="fixed inset-0 z-50 bg-background/70">
             <TalentSelectionBar
               selectedHero={selectedHero}
               buildSlots={buildSlots}

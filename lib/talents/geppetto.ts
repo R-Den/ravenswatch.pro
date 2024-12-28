@@ -11,6 +11,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "starter",
     upgrade_changes: "+8 damage + Hero Level + DMG",
+    encoding_id: "a",
   },
   {
     id: "geppetto-dummyball",
@@ -21,6 +22,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "starter",
     upgrade_changes: "+15% damage",
+    encoding_id: "b",
   },
   {
     id: "geppetto-twin-dummies",
@@ -30,6 +32,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "starter",
     upgrade_changes: "+15% chance",
+    encoding_id: "c",
   },
   {
     id: "geppetto-unstable-cores",
@@ -40,6 +43,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "starter",
     upgrade_changes: "+10 area damage + Hero Level + DMG",
+    encoding_id: "d",
   },
   {
     id: "geppetto-nailing-strike",
@@ -50,6 +54,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+100% damage",
+    encoding_id: "aa",
   },
   {
     id: "geppetto-oiled-mechanisms",
@@ -60,6 +65,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+10% damage",
+    encoding_id: "ab",
   },
   {
     id: "geppetto-heart-ties",
@@ -70,6 +76,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+10% of Geppetto's VITALITY",
+    encoding_id: "ac",
   },
   {
     id: "geppetto-forked-lightning",
@@ -80,6 +87,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+10 damage + Hero Level + DMG",
+    encoding_id: "ad",
   },
   {
     id: "geppetto-large-family",
@@ -90,6 +98,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+5% reduced cooldown",
+    encoding_id: "ae",
   },
   {
     id: "geppetto-mourning-rage",
@@ -100,6 +109,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+2 seconds",
+    encoding_id: "af",
   },
   {
     id: "geppetto-explosive-builds",
@@ -110,6 +120,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+10 area damage + Hero Level + DMG",
+    encoding_id: "ag",
   },
   {
     id: "geppetto-pogo-hoppers",
@@ -119,6 +130,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+33% farther",
+    encoding_id: "ah",
   },
   {
     id: "geppetto-flux-capacitor",
@@ -129,6 +141,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "ai",
   },
   {
     id: "geppetto-fireworks",
@@ -139,6 +152,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "-5% of its Maximum Health threshold",
+    encoding_id: "aj",
   },
   {
     id: "geppetto-clockwork-medicine",
@@ -148,6 +162,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+2 REGENERATION",
+    encoding_id: "ak",
   },
   {
     id: "geppetto-family-meeting",
@@ -158,6 +173,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+5% ATTACK SPEED",
+    encoding_id: "al",
   },
   {
     id: "geppetto-laser-lenses",
@@ -168,6 +184,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+50% ranged damage",
+    encoding_id: "am",
   },
   {
     id: "geppetto-vacuum-capsule",
@@ -178,6 +195,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+10% of POWER damage",
+    encoding_id: "an",
   },
   {
     id: "geppetto-sharp-noses",
@@ -188,6 +206,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+40% damage",
+    encoding_id: "ao",
   },
   {
     id: "geppetto-magnetic-hammer",
@@ -198,6 +217,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+10% damage",
+    encoding_id: "ap",
   },
   {
     id: "geppetto-flash-of-genius",
@@ -208,6 +228,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+1 random Magical Object(s)",
+    encoding_id: "aq",
   },
   {
     id: "geppetto-lightning-rod-dummies",
@@ -218,6 +239,7 @@ export const geppetto_talents: Talents[] = [
     hero: HERO_IDS.GEPPETTO,
     type: "normal",
     upgrade_changes: "+10 damage + Hero Level + DMG",
+    encoding_id: "ar",
   },
   {
     id: "geppetto-bomb-reserve",
@@ -229,6 +251,7 @@ export const geppetto_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+50 area damage + Hero Level + DMG",
     prerequisite: "Meca-Puppet",
+    encoding_id: "g0",
   },
   {
     id: "geppetto-master-puppet",
@@ -240,6 +263,7 @@ export const geppetto_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Meca-Puppet",
+    encoding_id: "g1",
   },
   {
     id: "geppetto-high-voltage",
@@ -251,6 +275,7 @@ export const geppetto_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Overclock",
+    encoding_id: "g0",
   },
   {
     id: "geppetto-hyperclock",
@@ -262,5 +287,6 @@ export const geppetto_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Overclock",
+    encoding_id: "g1",
   },
 ];
