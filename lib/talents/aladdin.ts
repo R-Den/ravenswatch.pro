@@ -11,6 +11,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "starter",
     upgrade_changes: "+3 SHIELD + Hero Level",
+    encoding_id: "a",
   },
   {
     id: "aladdin-jinniyas-gift",
@@ -21,6 +22,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "starter",
     upgrade_changes: "+10% chance",
+    encoding_id: "b",
   },
   {
     id: "aladdin-jinns-might",
@@ -31,6 +33,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "starter",
     upgrade_changes: "+10% bonus damage",
+    encoding_id: "c",
   },
   {
     id: "aladdin-wish-of-omnipotence",
@@ -41,6 +44,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "starter",
     upgrade_changes: "+2 seconds",
+    encoding_id: "d",
   },
   {
     id: "aladdin-slide-attack",
@@ -51,6 +55,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+100% of ATTACK's damage",
+    encoding_id: "aa",
   },
   {
     id: "aladdin-shard-blades",
@@ -61,6 +66,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+5% range",
+    encoding_id: "ab",
   },
   {
     id: "aladdin-air-dash",
@@ -71,6 +77,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+1 second(s)",
+    encoding_id: "ac",
   },
   {
     id: "aladdin-jinns-fury",
@@ -81,6 +88,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "ad",
   },
   {
     id: "aladdin-healing-blades",
@@ -91,6 +99,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+4 Health + Hero Level",
+    encoding_id: "ae",
   },
   {
     id: "aladdin-major-enchantment",
@@ -101,6 +110,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "Rare: -0.50 seconds. Epic and Legendary: -0.25 seconds",
+    encoding_id: "af",
   },
   {
     id: "aladdin-dancing-blades",
@@ -111,6 +121,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+25% increased spin duration",
+    encoding_id: "ag",
   },
   {
     id: "aladdin-cyclonic-appearance",
@@ -121,6 +132,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+10% of POWER's damage",
+    encoding_id: "ah",
   },
   {
     id: "aladdin-dive",
@@ -131,6 +143,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+100% of ATTACK's damage",
+    encoding_id: "ai",
   },
   {
     id: "aladdin-spinning-strikes",
@@ -141,6 +154,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+20% damage",
+    encoding_id: "aj",
   },
   {
     id: "aladdin-acrobatics",
@@ -151,6 +165,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+1 ENCHANTMENT point",
+    encoding_id: "ak",
   },
   {
     id: "aladdin-swordjinn",
@@ -161,6 +176,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "Rare: +40% damage. Epic and Legendary: +20% damage",
+    encoding_id: "al",
   },
   {
     id: "aladdin-leaping-strike",
@@ -171,6 +187,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+50% damage",
+    encoding_id: "am",
   },
   {
     id: "aladdin-tornado-jump",
@@ -181,6 +198,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+15 damage + Hero Level + DMG",
+    encoding_id: "an",
   },
   {
     id: "aladdin-dream-scimitars",
@@ -191,6 +209,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+10% chance",
+    encoding_id: "ao",
   },
   {
     id: "aladdin-sand-vortex",
@@ -201,6 +220,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+10% damage",
+    encoding_id: "ap",
   },
   {
     id: "aladdin-master-thief",
@@ -211,6 +231,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+10%/5%/2% chance",
+    encoding_id: "aq",
   },
   {
     id: "aladdin-enchanted-jinn",
@@ -221,6 +242,7 @@ export const aladdin_talents: Talents[] = [
     hero: HERO_IDS.ALADDIN,
     type: "normal",
     upgrade_changes: "+5 maximum ENCHANTMENT points",
+    encoding_id: "ar",
   },
   {
     id: "aladdin-wondrous-wishes",
@@ -232,6 +254,7 @@ export const aladdin_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Dream Wish",
+    encoding_id: "g0",
   },
   {
     id: "aladdin-infinite-wishes",
@@ -243,6 +266,7 @@ export const aladdin_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Dream Wish",
+    encoding_id: "g1",
   },
   {
     id: "aladdin-dream-stride",
@@ -254,6 +278,7 @@ export const aladdin_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Magic Carpet",
+    encoding_id: "g0",
   },
   {
     id: "aladdin-quick-ride",
@@ -265,5 +290,6 @@ export const aladdin_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     prerequisite: "Magic Carpet",
+    encoding_id: "g1",
   },
 ];

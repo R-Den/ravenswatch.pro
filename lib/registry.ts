@@ -10,8 +10,10 @@ import { scarlet } from "./heroes/scarlet";
 import { snow_queen } from "./heroes/snow_queen";
 import { wukong } from "./heroes/wukong";
 import { magical_objects } from "./magical_objects/magical_objects";
+import { aladdin_talents } from "./talents/aladdin";
 //#endregion
 
+// Hero Section
 //#region Registry
 export const registry = {
   heroes: {
@@ -53,17 +55,6 @@ export function getAllHeroes(): Hero[] {
  */
 export function getAllMagicalObjects(): Magical_Objects[] {
   return Object.values(registry.magical_objects);
-}
-
-/**
- * Get a magical object by ID.
- * @param objectId The ID of the magical object to retrieve.
- * @returns The magical object, or `undefined` if not found.
- */
-export function getMagicalObject(
-  objectId: string
-): Magical_Objects | undefined {
-  return registry.magical_objects[objectId];
 }
 
 //#endregion
@@ -157,6 +148,30 @@ export function getHeroUltimateAbilities(heroId: string): Abilities[] {
   return getHeroAbilities(heroId).filter(
     (ability) => ability.type === "ultimate"
   );
+}
+
+export const talentRegistry = new Map<string, Talents>();
+export const magicalObjectRegistry = new Map<string, Magical_Objects>();
+
+// Initialize registries
+export function initializeRegistries() {
+  // Add talents to registry
+  aladdin_talents.forEach((talent) => {
+    talentRegistry.set(talent.id, talent);
+  });
+  // Add magical objects to registry
+  Object.values(magical_objects).forEach((obj) => {
+    magicalObjectRegistry.set(obj.id, obj);
+  });
+}
+
+// Utility functions for safe lookups
+export function getTalent(id: string): Talents | undefined {
+  return talentRegistry.get(id);
+}
+
+export function getMagicalObject(id: string): Magical_Objects | undefined {
+  return magicalObjectRegistry.get(id);
 }
 //#endregion
 

@@ -14,4 +14,5 @@ export const beowulf: Hero = {
   get imagePath(): string {
     return `/heroes/${this.id}.png`;
   },
+  encoding_id: "b",
 };

@@ -11,6 +11,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "starter",
     upgrade_changes: "+20 area damage + Hero Level + DMG",
+    encoding_id: "a",
   },
   {
     id: "snow_queen-rupture",
@@ -21,6 +22,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "starter",
     upgrade_changes: "+1 second",
+    encoding_id: "b",
   },
   {
     id: "snow_queen-frost-queen",
@@ -31,6 +33,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "starter",
     upgrade_changes: "+1 second",
+    encoding_id: "c",
   },
   {
     id: "snow_queen-dual-lances",
@@ -41,6 +44,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "starter",
     upgrade_changes: "+10% damage",
+    encoding_id: "d",
   },
   {
     id: "snow_queen-snowball",
@@ -51,6 +55,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "",
+    encoding_id: "aa",
   },
   {
     id: "snow_queen-windy-lances",
@@ -61,6 +66,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "+1 duration reset",
+    encoding_id: "ab",
   },
   {
     id: "snow_queen-lance-burst",
@@ -70,6 +76,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "+1 ATTACK",
+    encoding_id: "ac",
   },
   {
     id: "snow_queen-slide",
@@ -80,6 +87,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "+25% of DEFENSE damage",
+    encoding_id: "ad",
   },
   {
     id: "snow_queen-flurry-of-shards",
@@ -89,6 +97,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "can be held +1 more time",
+    encoding_id: "ae",
   },
   {
     id: "snow_queen-hailstorm",
@@ -99,6 +108,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "+1 wave",
+    encoding_id: "af",
   },
   {
     id: "snow_queen-frost-surge",
@@ -109,6 +119,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "ag",
   },
   {
     id: "snow_queen-cold-heart",
@@ -119,6 +130,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "+1% Crit Chance",
+    encoding_id: "ah",
   },
   {
     id: "snow_queen-radiant-crown",
@@ -128,6 +140,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "ai",
   },
   {
     id: "snow_queen-strafe",
@@ -137,6 +150,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "+1 ATTACK",
+    encoding_id: "aj",
   },
   {
     id: "snow_queen-ice-spray",
@@ -147,6 +161,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "ak",
   },
   {
     id: "snow_queen-ice-shield",
@@ -157,6 +172,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "+6 SHIELD + Hero Level",
+    encoding_id: "al",
   },
   {
     id: "snow_queen-shattering-blast",
@@ -167,6 +183,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "+5% damage",
+    encoding_id: "am",
   },
   {
     id: "snow_queen-freezing-stars",
@@ -177,6 +194,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "+10 area damage + Hero Level + DMG",
+    encoding_id: "an",
   },
   {
     id: "snow_queen-protective-crown",
@@ -187,6 +205,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "",
+    encoding_id: "ao",
   },
   {
     id: "snow_queen-ice-cores",
@@ -197,6 +216,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "",
+    encoding_id: "ap",
   },
   {
     id: "snow_queen-pirouette",
@@ -207,6 +227,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "",
+    encoding_id: "aq",
   },
   {
     id: "snow_queen-frostbite",
@@ -217,6 +238,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "normal",
     upgrade_changes: "",
+    encoding_id: "ar",
   },
   {
     id: "snow_queen-royal-ray",
@@ -227,6 +249,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "ultimate",
     upgrade_changes: "",
+    encoding_id: "g0",
   },
   {
     id: "snow_queen-ice-beam",
@@ -237,6 +260,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "ultimate",
     upgrade_changes: "+40% damage",
+    encoding_id: "g1",
   },
   {
     id: "snow_queen-rending-storm",
@@ -247,6 +271,7 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "ultimate",
     upgrade_changes: "",
+    encoding_id: "g0",
   },
   {
     id: "snow_queen-shattering-storm",
@@ -257,5 +282,6 @@ export const snow_queen_talents: Talents[] = [
     hero: HERO_IDS.THE_SNOW_QUEEN,
     type: "ultimate",
     upgrade_changes: "",
+    encoding_id: "g1",
   },
 ];

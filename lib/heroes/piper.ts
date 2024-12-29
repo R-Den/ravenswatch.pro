@@ -10,6 +10,7 @@ export const piper: Hero = {
     " The Pied Piper uses his cursed music to attack his enemies with ear-splitting notes, sending them dancing to their graves or falling prey to the horde of rats at his call.",
   talents: piper_talents,
   abilities: piper_abilities,
+  encoding_id: "f",
   type: "heroes",
   get imagePath(): string {
     return `/heroes/${this.id}.png`;

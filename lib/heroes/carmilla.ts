@@ -13,6 +13,7 @@ export const carmilla: Hero = {
     "Carmilla is the 9th Hero from the Ravenswatch. Carmilla is described as a bewitching woman, torn between humanity and vampire savagery. She embodies the vampire fantasy and can use unnaturally strong abilities with her special resource, BLOOD.",
   abilities: carmilla_abilities,
   talents: carmilla_talents,
+  encoding_id: "c",
   type: "heroes",
   get imagePath(): string {
     return `/heroes/${this.id}.png`;
