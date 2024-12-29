@@ -1,7 +1,19 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CodeIcon, GithubIcon, UserIcon, PaletteIcon } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { team, TeamMember } from "@/lib/team";
+import { TeamCard } from "./team-card";
 
 export default async function AboutPage() {
+  const teamByRole = team.reduce(
+    (acc, member) => {
+      const role = member.role;
+      if (!acc[role]) {
+        acc[role] = [];
+      }
+      acc[role].push(member);
+      return acc;
+    },
+    {} as Record<string, TeamMember[]>,
+  );
   return (
     <main className="min-h-screen py-12 bg-background">
       <div className="container px-4 mx-auto space-y-8">
@@ -42,71 +54,9 @@ export default async function AboutPage() {
             Meet the Team
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
-            {/* Developers Card */}
-            <Card className="bg-secondary">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <CodeIcon className="w-5 h-5" />
-                  Developers
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li>
-                    <a
-                      href="https://github.com/WhatTheShuck"
-                      className="text-primary hover:text-primary/90 underline underline-offset-4 flex items-center gap-2"
-                    >
-                      <GithubIcon className="w-4 h-4" />
-                      WhatTheShuck
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://github.com/R-Den"
-                      className="text-primary hover:text-primary/90 underline underline-offset-4 flex items-center gap-2"
-                    >
-                      <GithubIcon className="w-4 h-4" />
-                      R-Den
-                    </a>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            {/* Project Manager Card */}
-            <Card className="bg-secondary">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <UserIcon className="w-5 h-5" />
-                  Project Manager
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul>
-                  <li>
-                    <span className="text-primary">Miet</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            {/* Designers Card */}
-            <Card className="bg-secondary">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <PaletteIcon className="w-5 h-5" />
-                  Designers
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul>
-                  <li>
-                    <span className="text-primary">Jinariadne</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            {Object.entries(teamByRole).map(([role, members]) => (
+              <TeamCard key={role} role={role} members={members} />
+            ))}
           </div>
         </section>
       </div>
