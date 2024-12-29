@@ -6,6 +6,8 @@ export interface Hero {
   talents: Talents[];
   abilities: Abilities[];
   encoding_id: string;
+  type: "heroes";
+  readonly imagePath: string;
 }
 
 export interface Talents {
@@ -40,6 +42,32 @@ export interface Magical_Objects {
   super_effect?: string;
   stacks_to_effect?: 3 | 4 | 5;
   encoding_id: string;
+  readonly imagePath: string;
+  type: "magical_objects";
+}
+
+export function createMagical_Objects(
+  data: Omit<Magical_Objects, "imagePath">
+): Magical_Objects {
+  return {
+    ...data,
+    imagePath: `/items/${data.id}.png`,
+  };
+}
+
+export function createManyMagical_Objects(
+  dataArray: Array<Omit<Magical_Objects, "imagePath">>
+): { [key: string]: Magical_Objects } {
+  return dataArray.reduce((acc, item) => {
+    acc[item.id] = createMagical_Objects(item);
+    return acc;
+  }, {} as { [key: string]: Magical_Objects });
+}
+
+export interface WikiEntry<T> {
+  entity: T;
+  tips: string;
+  notes: string;
 }
 
 export interface Build {

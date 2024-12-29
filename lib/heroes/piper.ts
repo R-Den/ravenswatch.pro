@@ -11,4 +11,8 @@ export const piper: Hero = {
   talents: piper_talents,
   abilities: piper_abilities,
   encoding_id: "f",
+  type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
 };

@@ -11,4 +11,8 @@ export const snow_queen: Hero = {
   talents: snow_queen_talents,
   abilities: snow_queen_abilities,
   encoding_id: "h",
+  type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
 };

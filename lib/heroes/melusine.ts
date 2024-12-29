@@ -11,4 +11,8 @@ export const melusine: Hero = {
   talents: melusine_talents,
   abilities: melusine_abilities,
   encoding_id: "e",
+  type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
 };

@@ -14,4 +14,8 @@ export const carmilla: Hero = {
   abilities: carmilla_abilities,
   talents: carmilla_talents,
   encoding_id: "c",
+  type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
 };

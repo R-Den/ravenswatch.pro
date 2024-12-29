@@ -11,4 +11,8 @@ export const aladdin: Hero = {
   talents: aladdin_talents,
   abilities: aladdin_abilities,
   encoding_id: "a",
+  type: "heroes",
+  get imagePath(): string {
+    return `/heroes/${this.id}.png`;
+  },
 };
