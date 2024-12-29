@@ -17,7 +17,7 @@ const MemberInfo = ({ member }: { member: TeamMember }) => {
       const fetchPlaytime = async () => {
         try {
           const response = await fetch(
-            `/api/steam-stats?alias=${member.steamAlias}`,
+            `/api/steam-hours?alias=${member.steamAlias}`,
           );
           const data = await response.json();
           if (data.time) {

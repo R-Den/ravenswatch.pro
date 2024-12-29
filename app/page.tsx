@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
+import { RwStats } from "./rw-stats";
 
 const featuredHeroes = [
   {
@@ -43,16 +44,22 @@ export default function Home() {
         <section className="mb-8 text-center">
           <h2 className="text-2xl font-semibold mb-2">About Ravenswatch</h2>
           <p className="text-lg">
-            Fallen heroes of old folk tales and legends: you are on the verge of
-            a crucial battle against the Nightmare invading and corrupting your
-            world. A roguelike action game from the creators of Curse of the
-            Dead Gods©, playable solo or in online co-op.
+            Ravenswatch is an top-down action roguelike game developed by
+            Passtech Games and published by Nacon. It is playable solo or in
+            online co-op with up to 4 players. The game is set in the world of
+            Reverie, a dark fantasy world built on old folklore and fairy tales.
+            Players cam enjoy a variety of Heros, each with their own unique
+            abilities and playstyles.
           </p>
         </section>
         <section className="text-center">
+          <RwStats />
+        </section>
+        <br />
+        <section className="text-center">
           <h2 className="text-2xl font-semibold mb-2">Featured Heroes</h2>
           <p className="text-lg">
-            Discover the Dev Team&apos;s favourite heroes in Ravenswatch.
+            Discover our favourite heroes in Ravenswatch.
           </p>
 
           <br />
@@ -61,29 +68,29 @@ export default function Home() {
               <Link key={hero.id} href={`/Heroes/${hero.id}`} className="block">
                 <Card
                   key={hero.name}
-                  className="bg-secondary 
-                              border-border 
-                              shadow-md 
-                              rounded-lg 
-                              overflow-hidden 
-                              flex 
-                              flex-col 
-                              justify-between 
-                              cursor-pointer 
-                              relative 
-                              bg-gradient-to-r 
-                              from-primary 
-                              to-transparent 
-                              bg-[length:0%_100%] 
-                              bg-no-repeat 
-                              transition-all 
-                              duration-500 
-                              ease-in-out 
-                              transform 
-                              hover:scale-105 
-                              hover:bg-[length:100%_100%] 
-                              hover:bg-gradient-to-r 
-                              hover:from-primary 
+                  className="bg-secondary
+                              border-border
+                              shadow-md
+                              rounded-lg
+                              overflow-hidden
+                              flex
+                              flex-col
+                              justify-between
+                              cursor-pointer
+                              relative
+                              bg-gradient-to-r
+                              from-primary
+                              to-transparent
+                              bg-[length:0%_100%]
+                              bg-no-repeat
+                              transition-all
+                              duration-500
+                              ease-in-out
+                              transform
+                              hover:scale-105
+                              hover:bg-[length:100%_100%]
+                              hover:bg-gradient-to-r
+                              hover:from-primary
                               hover:to-accent"
                 >
                   <CardHeader>
