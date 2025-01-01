@@ -16,8 +16,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ravenswatch.pro",
-  description: "Ravenswatch Wiki",
+  title: "Ravenswatch.Pro",
+  description:
+    "Become a Ravenswatch Pro with our ultimate resource. Learn about the game, create and share builds, and more.",
 };
 
 export default function RootLayout({

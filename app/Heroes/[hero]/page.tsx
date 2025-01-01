@@ -5,12 +5,13 @@ import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import TableOfContents from "@/components/ui/toc";
 
 interface HeroPageProps {
-  params: {
+  params: Promise<{
     hero: string;
-  };
+  }>;
 }
 
-export default async function HeroPage({ params }: HeroPageProps) {
+export default async function HeroPage(props: HeroPageProps) {
+  const params = await props.params;
   const hero = getHero(params.hero);
 
   if (!hero) {

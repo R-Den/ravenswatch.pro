@@ -1,0 +1,13 @@
+services:
+  nextjs-app:
+    container_name: ravenswatch-dot-pro
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    ports:
+      - "3420:3420"
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+    restart: unless-stopped
