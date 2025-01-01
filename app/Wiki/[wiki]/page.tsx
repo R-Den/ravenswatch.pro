@@ -5,12 +5,13 @@ import { InfoBox } from "@/app/Wiki/infobox"; // Import the InfoBox component
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 
 interface WikiPageProps {
-  params: {
+  params: Promise<{
     wiki: string;
-  };
+  }>;
 }
 
-export default async function WikiPage({ params }: WikiPageProps) {
+export default async function WikiPage(props: WikiPageProps) {
+  const params = await props.params;
   // Fetch items and heroes
   const magicalObjects = await getAllMagicalObjects();
   const heroes = await getAllHeroes();
