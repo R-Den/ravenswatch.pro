@@ -250,6 +250,7 @@ export const snow_queen_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     encoding_id: "g0",
+    prerequisite: "Frost Ray",
   },
   {
     id: "snow_queen-ice-beam",
@@ -261,6 +262,7 @@ export const snow_queen_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "+40% damage",
     encoding_id: "g1",
+    prerequisite: "Frost Ray",
   },
   {
     id: "snow_queen-rending-storm",
@@ -272,6 +274,7 @@ export const snow_queen_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     encoding_id: "g0",
+    prerequisite: "Snowstorm",
   },
   {
     id: "snow_queen-shattering-storm",
@@ -283,5 +286,6 @@ export const snow_queen_talents: Talents[] = [
     type: "ultimate",
     upgrade_changes: "",
     encoding_id: "g1",
+    prerequisite: "Snowstorm",
   },
 ];
