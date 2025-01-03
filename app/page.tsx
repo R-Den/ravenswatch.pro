@@ -31,7 +31,7 @@ const featuredHeroes = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen  bg-background p-8">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-background p-8">
       <header className="text-center my-8">
         <h1 className="text-4xl font-bold mb-4">Ravenswatch Pro</h1>
         <p className="text-lg">
