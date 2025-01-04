@@ -48,7 +48,7 @@ export default function Home() {
             Passtech Games and published by Nacon. It is playable solo or in
             online co-op with up to 4 players. The game is set in the world of
             Reverie, a dark fantasy world built on old folklore and fairy tales.
-            Players cam enjoy a variety of Heros, each with their own unique
+            Players can enjoy a variety of Heros, each with their own unique
             abilities and playstyles.
           </p>
         </section>
