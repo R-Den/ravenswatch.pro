@@ -47,7 +47,7 @@ export interface Magical_Objects {
 }
 
 export function createMagical_Objects(
-  data: Omit<Magical_Objects, "imagePath">
+  data: Omit<Magical_Objects, "imagePath">,
 ): Magical_Objects {
   return {
     ...data,
@@ -56,12 +56,15 @@ export function createMagical_Objects(
 }
 
 export function createManyMagical_Objects(
-  dataArray: Array<Omit<Magical_Objects, "imagePath">>
+  dataArray: Array<Omit<Magical_Objects, "imagePath">>,
 ): { [key: string]: Magical_Objects } {
-  return dataArray.reduce((acc, item) => {
-    acc[item.id] = createMagical_Objects(item);
-    return acc;
-  }, {} as { [key: string]: Magical_Objects });
+  return dataArray.reduce(
+    (acc, item) => {
+      acc[item.id] = createMagical_Objects(item);
+      return acc;
+    },
+    {} as { [key: string]: Magical_Objects },
+  );
 }
 
 export interface WikiEntry<T> {
@@ -121,3 +124,15 @@ export interface EncodedBuild {
     quantity: number;
   }>;
 }
+
+export type DropdownItem = {
+  id: string;
+  label: string;
+  href: string;
+};
+
+export type NavigationItem = {
+  href: string;
+  label: string;
+  dropdownItems?: DropdownItem[];
+};

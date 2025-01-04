@@ -1,5 +1,5 @@
 import { Hero } from "@/lib/types";
-import { Card, CardContent, CardHeader } from "@/app/Build/cardCollapsible";
+import { Card, CardContent, CardHeader } from "./cardCollapsible";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
