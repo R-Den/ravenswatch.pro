@@ -10,7 +10,6 @@ import { scarlet } from "./heroes/scarlet";
 import { snow_queen } from "./heroes/snow_queen";
 import { wukong } from "./heroes/wukong";
 import { magical_objects } from "./magical_objects/magical_objects";
-import { aladdin_talents } from "./talents/aladdin";
 //#endregion
 
 // Hero Section
