@@ -82,7 +82,7 @@ export function getHeroTalents(heroId: string): Talents[] {
  */
 export function getHeroTalentsByType(
   heroId: string,
-  type: Talents["type"]
+  type: Talents["type"],
 ): Talents[] {
   return getHeroTalents(heroId).filter((talent) => talent.type === type);
 }
@@ -134,7 +134,7 @@ export function getHeroAbilities(heroId: string): Abilities[] {
  */
 export function getHeroAbilityByType(
   heroId: string,
-  type: Abilities["type"]
+  type: Abilities["type"],
 ): Abilities | undefined {
   return getHeroAbilities(heroId).find((ability) => ability.type === type);
 }
@@ -146,32 +146,20 @@ export function getHeroAbilityByType(
  */
 export function getHeroUltimateAbilities(heroId: string): Abilities[] {
   return getHeroAbilities(heroId).filter(
-    (ability) => ability.type === "ultimate"
+    (ability) => ability.type === "ultimate",
   );
 }
 
 export const talentRegistry = new Map<string, Talents>();
 export const magicalObjectRegistry = new Map<string, Magical_Objects>();
 
-// Initialize registries
-export function initializeRegistries() {
-  // Add talents to registry
-  aladdin_talents.forEach((talent) => {
-    talentRegistry.set(talent.id, talent);
-  });
-  // Add magical objects to registry
-  Object.values(magical_objects).forEach((obj) => {
-    magicalObjectRegistry.set(obj.id, obj);
-  });
-}
-
 // Utility functions for safe lookups
-export function getTalent(id: string): Talents | undefined {
-  return talentRegistry.get(id);
-}
+// export function getTalent(id: string): Talents | undefined {
+//   return talentRegistry.get(id);
+// }
 
 export function getMagicalObject(id: string): Magical_Objects | undefined {
-  return magicalObjectRegistry.get(id);
+  return registry.magical_objects[id];
 }
 //#endregion
 
@@ -191,7 +179,7 @@ export function isValidBuild(
   starterTalent: Talents | null,
   normalTalents: Talents[],
   ultimate: Abilities | null,
-  ultimateUpgrade: Talents | null
+  ultimateUpgrade: Talents | null,
 ): { valid: boolean; error?: string } {
   const hero = getHero(heroId);
   if (!hero) return { valid: false, error: "Invalid hero" };
@@ -236,88 +224,5 @@ export function isValidBuild(
   }
 
   return { valid: true };
-}
-//#endregion
-
-//#region Build serialization helpers
-
-/**
- * Serialise a build into a plain object.
- * @param heroId The ID of the hero for the build.
- * @param starterTalent The starter talent for the build.
- * @param normalTalents The normal talents for the build.
- * @param ultimate The ultimate ability for the build.
- * @param ultimateUpgrade The ultimate upgrade for the build.
- * @returns A plain object representing the build.
- */
-export interface SerialisedBuild {
-  heroId: string;
-  starterTalentId: string;
-  normalTalentIds: string[];
-  ultimateId?: string;
-  ultimateUpgradeId?: string;
-}
-
-/**
- * Deserialise a build from a plain object.
- * @param build The plain object representing the build.
- * @returns An object with the hero, talents, and abilities for the build.
- */
-export function serialiseBuild(
-  heroId: string,
-  starterTalent: Talents,
-  normalTalents: Talents[],
-  ultimate: Abilities | null,
-  ultimateUpgrade: Talents | null
-): SerialisedBuild {
-  return {
-    heroId,
-    starterTalentId: starterTalent.id,
-    normalTalentIds: normalTalents.map((t) => t.id),
-    ...(ultimate && { ultimateId: ultimate.id }),
-    ...(ultimateUpgrade && { ultimateUpgradeId: ultimateUpgrade.id }),
-  };
-}
-
-/**
- * Deserialise a build from a plain object.
- * @param build The plain object representing the build.
- * @returns An object with the hero, talents, and abilities for the build.
- */
-export function deserialiseBuild(build: SerialisedBuild): {
-  hero: Hero | undefined;
-  starterTalent: Talents | undefined;
-  normalTalents: Talents[];
-  ultimate: Abilities | undefined;
-  ultimateUpgrade: Talents | undefined;
-} {
-  const hero = getHero(build.heroId);
-  if (!hero)
-    return {
-      hero: undefined,
-      starterTalent: undefined,
-      normalTalents: [],
-      ultimate: undefined,
-      ultimateUpgrade: undefined,
-    };
-
-  const starterTalent = hero.talents.find(
-    (t) => t.id === build.starterTalentId
-  );
-  const normalTalents = hero.talents.filter((t) =>
-    build.normalTalentIds.includes(t.id)
-  );
-  const ultimate = hero.abilities.find((a) => a.id === build.ultimateId);
-  const ultimateUpgrade = hero.talents.find(
-    (t) => t.id === build.ultimateUpgradeId
-  );
-
-  return {
-    hero,
-    starterTalent,
-    normalTalents,
-    ultimate,
-    ultimateUpgrade,
-  };
 }
 //#endregion

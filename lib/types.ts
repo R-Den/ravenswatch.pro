@@ -47,7 +47,7 @@ export interface Magical_Objects {
 }
 
 export function createMagical_Objects(
-  data: Omit<Magical_Objects, "imagePath">
+  data: Omit<Magical_Objects, "imagePath">,
 ): Magical_Objects {
   return {
     ...data,
@@ -56,12 +56,15 @@ export function createMagical_Objects(
 }
 
 export function createManyMagical_Objects(
-  dataArray: Array<Omit<Magical_Objects, "imagePath">>
+  dataArray: Array<Omit<Magical_Objects, "imagePath">>,
 ): { [key: string]: Magical_Objects } {
-  return dataArray.reduce((acc, item) => {
-    acc[item.id] = createMagical_Objects(item);
-    return acc;
-  }, {} as { [key: string]: Magical_Objects });
+  return dataArray.reduce(
+    (acc, item) => {
+      acc[item.id] = createMagical_Objects(item);
+      return acc;
+    },
+    {} as { [key: string]: Magical_Objects },
+  );
 }
 
 export interface WikiEntry<T> {
@@ -70,17 +73,26 @@ export interface WikiEntry<T> {
   notes: string;
 }
 
-export interface Build {
+interface BaseBuild {
   version: string;
   name: string;
   description: string;
+  required_magical_objects: string[];
+  optional_magical_objects: string[];
+  tips?: string;
+  tags?: string[];
+}
+export interface GeneralBuild extends BaseBuild {
+  recommended_heroes: string[];
+  heroes_description: string;
+}
+
+export interface HeroBuild extends BaseBuild {
   hero: string;
   core_talents: string[];
   secondary_talents: string[];
-  magical_objects: string[];
-  tips: string;
-  tags?: string[];
 }
+
 export interface BuildSlot {
   type: "starter" | "normal" | "ultimate" | "ultimate-upgrade";
   content: Talents | Abilities | null;
