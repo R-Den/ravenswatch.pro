@@ -31,7 +31,7 @@ const featuredHeroes = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen  bg-background p-8">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-background p-8">
       <header className="text-center my-8">
         <h1 className="text-4xl font-bold mb-4">Ravenswatch Pro</h1>
         <p className="text-lg">
@@ -48,7 +48,7 @@ export default function Home() {
             Passtech Games and published by Nacon. It is playable solo or in
             online co-op with up to 4 players. The game is set in the world of
             Reverie, a dark fantasy world built on old folklore and fairy tales.
-            Players cam enjoy a variety of Heros, each with their own unique
+            Players can enjoy a variety of Heros, each with their own unique
             abilities and playstyles.
           </p>
         </section>

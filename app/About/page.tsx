@@ -33,8 +33,9 @@ export default async function AboutPage() {
                   Ravenswatch
                 </a>
                 . It is a work in progress and is not affiliated with the game
-                developers. This website is Open Source and contributions are
-                welcome. The source code can be found on{" "}
+                developers. We are a small group of friends from Australia,
+                working on this in our spare time. This website is Open Source
+                and contributions are welcome. The source code can be found on{" "}
                 <a
                   href="https://github.com/R-Den/ravenswatch.pro"
                   className="text-primary hover:text-primary/90 underline underline-offset-4"

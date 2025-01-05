@@ -13,14 +13,12 @@ type ExtendedNextConfig = NextConfig & {
 
 const nextConfig: ExtendedNextConfig = {
   output: "standalone",
-  experimental: {
-    outputFileTracingIncludes: {
-      '/**': [
-        './node_modules/.pnpm/steamapi@3.0.12/**/*',
-        './node_modules/steamapi/**/*'
-      ]
-    }
-  }
+  outputFileTracingIncludes: {
+    "/**": [
+      "./node_modules/.pnpm/steamapi@3.0.12/**/*",
+      "./node_modules/steamapi/**/*",
+    ],
+  },
 };
 
 export default nextConfig;
