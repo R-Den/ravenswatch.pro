@@ -9,10 +9,10 @@ export default function GeneralBuildPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-background p-8">
       <header className="text-center my-8">
-        <h1 className="text-4xl font-bold mb-4">General Builds</h1>
+        <h1 className="text-4xl font-bold mb-4">Featured Builds</h1>
         <p className="text-lg">
-          These are builds that apply to a wide variety of heroes. Click on a
-          build to get started.
+          These are builds that the Ravenswatch.Pro team really loves. Click on
+          a build to get started.
         </p>
       </header>
       {generalBuilds.map((build) => (
