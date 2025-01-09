@@ -1,5 +1,5 @@
 //#region Imports
-import { Hero, Talents, Abilities, Magical_Objects } from "./types";
+import { Hero, Talents, Abilities, Magical_Objects, HeroBuild } from "./types";
 import { aladdin } from "./heroes/aladdin";
 import { beowulf } from "./heroes/beowulf";
 import { carmilla } from "./heroes/carmilla";
@@ -10,6 +10,15 @@ import { scarlet } from "./heroes/scarlet";
 import { snow_queen } from "./heroes/snow_queen";
 import { wukong } from "./heroes/wukong";
 import { magical_objects } from "./magical_objects/magical_objects";
+import { aladdin_builds } from "./builds/aladdin";
+// import { beowulf_builds } from "./builds/beowulf";
+// import { carmilla_builds } from "./builds/carmilla";
+// import { geppetto_builds } from "./builds/geppetto";
+// import { melusine_builds } from "./builds/melusine";
+// import { piper_builds } from "./builds/piper";
+// import { scarlet_builds } from "./builds/scarlet";
+// import { snow_queen_builds } from "./builds/snow_queen";
+// import { wukong_builds } from "./builds/wukong";
 //#endregion
 
 // Hero Section
@@ -27,6 +36,17 @@ export const registry = {
     [wukong.id]: wukong,
   },
   magical_objects,
+  hero_builds: {
+    [aladdin.id]: aladdin_builds,
+    // [beowulf.id]: beowulf_builds,
+    // [carmilla.id]: carmilla_builds,
+    // [geppetto.id]: geppetto_builds,
+    // [melusine.id]: melusine_builds,
+    // [piper.id]: piper_builds,
+    // [scarlet.id]: scarlet_builds,
+    // [snow_queen.id]: snow_queen_builds,
+    // [wukong.id]: wukong_builds,
+  },
 } as const;
 //#endregion
 
@@ -225,3 +245,53 @@ export function isValidBuild(
   return { valid: true };
 }
 //#endregion
+
+//#region Build helpers
+/**
+ * Get all builds for a specific hero
+ * @param heroId The ID of the hero to retrieve builds for
+ * @returns Array of builds for the hero, or undefined if hero not found
+ */
+export function getHeroBuilds(heroId: string): HeroBuild[] | undefined {
+  return registry.hero_builds[heroId];
+}
+
+/**
+ * Get a specific build for a hero by name
+ * @param heroId The ID of the hero
+ * @param buildName The name of the build (will be converted to slug format)
+ * @returns The build object if found, undefined otherwise
+ */
+export function getHeroBuildByName(
+  heroId: string,
+  buildName: string,
+): HeroBuild | undefined {
+  const builds = getHeroBuilds(heroId);
+  if (!builds) return undefined;
+
+  const formattedBuildName = buildName.toLowerCase().replace(/\s+/g, "-");
+  return builds.find(
+    (build) =>
+      build.name.toLowerCase().replace(/\s+/g, "-") === formattedBuildName,
+  );
+}
+
+/**
+ * Get all hero builds across all heroes
+ * @returns Array of all hero builds with their corresponding hero IDs
+ */
+export function getAllHeroBuilds(): { heroId: string; builds: HeroBuild[] }[] {
+  return Object.entries(registry.hero_builds).map(([heroId, builds]) => ({
+    heroId,
+    builds,
+  }));
+}
+
+/**
+ * Format a build name into a URL-friendly slug
+ * @param name The build name to format
+ * @returns URL-friendly slug version of the name
+ */
+export function formatBuildName(name: string): string {
+  return name.toLowerCase().replace(/\s+/g, "-");
+}

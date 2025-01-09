@@ -1,34 +1,50 @@
 import { notFound } from "next/navigation";
-import { generalBuilds } from "@/lib/builds/generalBuilds";
-import BuildCard from "../../../BuildCard";
+import HeroBuildCard from "../../../HeroBuildCard";
+import {
+  getHero,
+  getHeroBuildByName,
+  getAllHeroBuilds,
+  formatBuildName,
+} from "@/lib/registry";
 
 interface BuildPageProps {
-  params: Promise<{
+  params: {
+    hero: string;
     "build-name": string;
-  }>;
+  };
 }
 
 export async function generateStaticParams() {
-  return generalBuilds.map((build) => ({
-    "build-name": build.name.toLowerCase().replace(/\s+/g, "-"),
-  }));
+  // This will create static pages for all hero builds at build time
+  const allHeroBuilds = getAllHeroBuilds();
+  const params = [];
+
+  for (const { heroId, builds } of allHeroBuilds) {
+    for (const build of builds) {
+      params.push({
+        hero: heroId,
+        "build-name": formatBuildName(build.name),
+      });
+    }
+  }
+
+  return params;
 }
 
-export default async function BuildPage(props: BuildPageProps) {
-  const params = await props.params;
+export default async function BuildPage({ params }: BuildPageProps) {
+  const heroId = params.hero;
   const buildName = decodeURIComponent(params["build-name"]);
 
-  const build = generalBuilds.find(
-    (b) => b.name.toLowerCase().replace(/\s+/g, "-") === buildName,
-  );
+  const hero = getHero(heroId);
+  const build = getHeroBuildByName(heroId, buildName);
 
-  if (!build) {
+  if (!hero || !build) {
     notFound();
   }
 
   return (
     <div className="flex justify-center mx-auto py-8">
-      <BuildCard build={build} />
+      <HeroBuildCard build={build} />
     </div>
   );
 }

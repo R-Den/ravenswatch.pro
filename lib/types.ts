@@ -91,6 +91,7 @@ export interface HeroBuild extends BaseBuild {
   hero: string;
   core_talents: string[];
   secondary_talents: string[];
+  talents_description?: string;
 }
 
 export interface BuildSlot {
