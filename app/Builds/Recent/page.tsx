@@ -16,21 +16,30 @@ export default function GeneralBuildPage() {
             Click on a build to get started.
           </p>
         </header>
-        {generalBuilds.map((build) => (
-          <Link
-            key={build.name}
-            href={`/Builds/General/${formattedBuildLink(build.name)}`}
-          >
-            <Card className="w-full mb-4">
-              <CardHeader>
-                <CardTitle>{build.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>{build.description}</p>
-              </CardContent>
-            </Card>
-          </Link>
-        ))}
+        {[...generalBuilds]
+          .sort((a, b) => {
+            // First compare by date (newest first)
+            const dateComparison =
+              new Date(b.added_date).getTime() -
+              new Date(a.added_date).getTime();
+
+            return dateComparison;
+          })
+          .map((build) => (
+            <Link
+              key={build.name}
+              href={`/Builds/General/${formattedBuildLink(build.name)}`}
+            >
+              <Card className="w-full mb-4">
+                <CardHeader>
+                  <CardTitle>{build.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>{build.description}</p>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
       </div>
     </div>
   );

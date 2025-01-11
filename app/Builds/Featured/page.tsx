@@ -16,21 +16,23 @@ export default function GeneralBuildPage() {
             on a build to get started.
           </p>
         </header>
-        {generalBuilds.map((build) => (
-          <Link
-            key={build.name}
-            href={`/Builds/General/${formattedBuildLink(build.name)}`}
-          >
-            <Card className="w-full mb-4">
-              <CardHeader>
-                <CardTitle>{build.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>{build.description}</p>
-              </CardContent>
-            </Card>
-          </Link>
-        ))}
+        {generalBuilds
+          .filter((build) => build.featured === true)
+          .map((build) => (
+            <Link
+              key={build.name}
+              href={`/Builds/General/${formattedBuildLink(build.name)}`}
+            >
+              <Card className="w-full mb-4">
+                <CardHeader>
+                  <CardTitle>{build.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>{build.description}</p>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
       </div>
     </div>
   );

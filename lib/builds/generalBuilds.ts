@@ -13,6 +13,7 @@ export const generalBuilds: GeneralBuild[] = [
       "Great on all heroes, but Wukong and Aladdin benefit greatly due to Fiery Golden Eyes and Master Thief, respectively.",
     tips: "Too flush with shards? Spending shards at the Alter of Heroes (Where feathers are bought) can be a great way to spend more shards and increase your damage stat further.",
     added_date: new Date("2025-01-11"),
+    featured: true,
   },
   {
     version: "1.0",
