@@ -12,6 +12,7 @@ export const generalBuilds: GeneralBuild[] = [
     heroes_description:
       "Great on all heroes, but Wukong and Aladdin benefit greatly due to Fiery Golden Eyes and Master Thief, respectively.",
     tips: "Too flush with shards? Spending shards at the Alter of Heroes (Where feathers are bought) can be a great way to spend more shards and increase your damage stat further.",
+    added_date: new Date("2025-01-11"),
   },
   {
     version: "1.0",
@@ -37,11 +38,13 @@ export const generalBuilds: GeneralBuild[] = [
     heroes_description:
       "Can be done on most champs, but Geppetto, Wukong, Aladdin, Beowulf and The Pied Piper benefit most, due to have synergistic talents such as: Rocket Scientist, Sprint (sorta spinning strikes too), Quick Ride (sorta leap strike), Fireball (sorta fiery slash), and Spinning Solo",
     tips: "The Crit from the Eternal Rose stacks with each dash, so the more dashes you have, the more crit you get. Doing 3 short dashes with a full stack of Eternal Rose, you can get 150% crit chance from the roses alone, meaning your next hit will be at least 155% more damage.",
+    added_date: new Date("2025-01-11"),
   },
   {
     version: "1.0",
     name: "Crit Build",
-    description: "",
+    description:
+      "This build offers a variety of routes to explore where to focus your damage. If the ability that you are trying to crit with has a long animation, it may be more beneficial to stack crit and crit damage from Horn of Plenty, rather than the Eternal Rose, as the crit chance can wear off before the ability lands. Horn of Plenty may be the better choice in most scenarios, particularly as it allows for greater flexibilty, however, the consistency of Eternal Rose's crit chance growth cannot be overlooked. The Jack of Diamonds and Kings of Clubs are great items to stack crit chance for Speical and Power respectively, but they should not be built together. Make sure to choose one of these two items and stick to it.",
     required_magical_objects: [
       "eternal-rose",
       "horn-of-plenty",
@@ -50,8 +53,9 @@ export const generalBuilds: GeneralBuild[] = [
     ],
     optional_magical_objects: [],
     recommended_heroes: ["carmilla", "scarlet", "beowulf", "the-pied-piper"],
+    added_date: new Date("2025-01-11"),
     heroes_description:
-      "Most useful on heroes that have an inbuilt source of crit / an ability that provides a large amount of crit",
+      "Most useful on heroes that have an inbuilt source of crit / an ability that provides a large amount of crit. For example, Pyromania on Scarlet's special provides 70% crit chance at max rarity, meaning that a a full stack of Jack of Diamonds will provide 115% crit chance on her special without any further investment, allowing you to focus more on crit damage.",
     tips: "Excess crit chance is converted to damage! Don't be afraid to overcap crit chance, as it will increase your damage output.",
   },
   {
@@ -71,6 +75,7 @@ export const generalBuilds: GeneralBuild[] = [
     heroes_description:
       "Heroes that have methods of naturally stacking armor can be beneficial. Wukong, Geppetto, Aladdin, Melusine & the Pied Piper all have talents that can grant between 10 and 50 armor",
     tips: "Most sources of armor in the game have higher quanities, than the other resources available. This means pulling armor from a grimoire or a horn of plenty can be a very effective method of gaining damage.",
+    added_date: new Date("2025-01-11"),
   },
   {
     version: "1.0",
@@ -83,5 +88,6 @@ export const generalBuilds: GeneralBuild[] = [
     heroes_description:
       "Works best for Heroes that have an easy way of getting extra vitality, such as Wukong, Carmilla and Geppetto(?)",
     tips: "Healing Fountains are your best friend, each one can give you 10 vitality, meaning an easy 1 damage per ogre blood.",
+    added_date: new Date("2025-01-11"),
   },
 ];

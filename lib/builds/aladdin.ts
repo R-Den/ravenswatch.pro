@@ -6,6 +6,7 @@ export const aladdin_builds: HeroBuild[] = [
     version: "1.0",
     name: "Attack Build",
     description: "An attack focused build for Aladdin",
+    added_date: new Date("2025-01-11"),
     hero: HERO_IDS.ALADDIN,
     core_talents: [
       "aladdin-shard-blades",
@@ -41,6 +42,7 @@ export const aladdin_builds: HeroBuild[] = [
     name: "Power Build",
     description: "A Power focused build for Aladdin",
     hero: HERO_IDS.ALADDIN,
+    added_date: new Date("2025-01-11"),
     core_talents: ["aladdin-jinns-fury", "aladdin-swordjinn"],
     secondary_talents: [
       "aladdin-jinns-might",

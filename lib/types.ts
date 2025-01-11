@@ -80,6 +80,8 @@ interface BaseBuild {
   required_magical_objects: string[];
   optional_magical_objects: string[];
   tips?: string;
+  added_date: Date;
+  featured?: boolean;
   tags?: string[];
 }
 export interface GeneralBuild extends BaseBuild {
