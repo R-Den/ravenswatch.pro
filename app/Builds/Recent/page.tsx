@@ -1,11 +1,12 @@
 import { Card, CardTitle, CardHeader, CardContent } from "@/components/ui/card";
-import { generalBuilds } from "@/lib/builds/generalBuilds";
 import Link from "next/link";
+import { getAllBuilds } from "@/lib/registry";
 function formattedBuildLink(name: string): string {
   return name.toLowerCase().replace(/\s+/g, "-");
 }
 
 export default function GeneralBuildPage() {
+  const builds = getAllBuilds();
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-background p-8">
       <div className="max-w-5xl w-full">
@@ -16,7 +17,7 @@ export default function GeneralBuildPage() {
             Click on a build to get started.
           </p>
         </header>
-        {[...generalBuilds]
+        {builds
           .sort((a, b) => {
             // First compare by date (newest first)
             const dateComparison =

@@ -1,11 +1,12 @@
 import { Card, CardTitle, CardHeader, CardContent } from "@/components/ui/card";
-import { generalBuilds } from "@/lib/builds/generalBuilds";
+import { getAllBuilds } from "@/lib/registry";
 import Link from "next/link";
 function formattedBuildLink(name: string): string {
   return name.toLowerCase().replace(/\s+/g, "-");
 }
 
 export default function GeneralBuildPage() {
+  const builds = getAllBuilds();
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-background p-8">
       <div className="max-w-5xl w-full">
@@ -16,7 +17,7 @@ export default function GeneralBuildPage() {
             on a build to get started.
           </p>
         </header>
-        {generalBuilds
+        {builds
           .filter((build) => build.featured === true)
           .map((build) => (
             <Link

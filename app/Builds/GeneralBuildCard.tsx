@@ -39,7 +39,7 @@ const BuildCard = ({ build }: BuildCardProps) => {
           <TooltipTrigger>
             <div className="flex flex-col items-center group">
               <div
-                className={`w-12 h-12 rounded-lg overflow-hidden border-2 ${
+                className={`w-28 h-28 rounded-lg overflow-hidden border-2 ${
                   isOptional ? "border-amber-500" : "border-blue-500"
                 } bg-gray-800 hover:border-primary transition-colors`}
               >
@@ -74,7 +74,7 @@ const BuildCard = ({ build }: BuildCardProps) => {
       return (
         <div className="flex flex-col items-center group">
           {/* <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-green-500 bg-gray-800 hover:border-purple-500 transition-colors flex items-center justify-center"> */}
-          <CircleUserRound color="#692cc3" size={48} />
+          <CircleUserRound color="#692cc3" size={108} />
           {/* </div> */}
           <span className="text-xs mt-1 text-center group-hover:text-primary transition-colors">
             All Heroes
@@ -91,7 +91,7 @@ const BuildCard = ({ build }: BuildCardProps) => {
         <Tooltip>
           <TooltipTrigger>
             <div className="flex flex-col items-center group">
-              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-green-500 bg-gray-800 hover:border-purple-500 transition-colors">
+              <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-green-500 bg-gray-800 hover:border-purple-500 transition-colors">
                 <Image
                   src={`/heroes/thumbnail/${hero.id}.png`}
                   width={500}
@@ -134,7 +134,7 @@ const BuildCard = ({ build }: BuildCardProps) => {
       <CardContent className="space-y-6">
         {/* Required Items */}
         <div>
-          <h3 className="text-lg font-semibold mb-3 text-blue-400">
+          <h3 className="text-lg font-semibold mb-3 text-blue-400 items-start">
             Required Items
           </h3>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
@@ -151,7 +151,7 @@ const BuildCard = ({ build }: BuildCardProps) => {
               <h3 className="text-lg font-semibold mb-3 text-amber-400">
                 Optional Items
               </h3>
-              <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+              <div className="grid grid-cols-3 md:grid-cols-6 gap-4 items-start">
                 {build.optional_magical_objects.map((itemId) => (
                   <ItemIcon key={itemId} id={itemId} isOptional={true} />
                 ))}

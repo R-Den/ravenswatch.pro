@@ -1,5 +1,12 @@
 //#region Imports
-import { Hero, Talents, Abilities, Magical_Objects, HeroBuild } from "./types";
+import {
+  Hero,
+  Talents,
+  Abilities,
+  Magical_Objects,
+  HeroBuild,
+  GeneralBuild,
+} from "./types";
 import { aladdin } from "./heroes/aladdin";
 import { beowulf } from "./heroes/beowulf";
 import { carmilla } from "./heroes/carmilla";
@@ -19,6 +26,7 @@ import { aladdin_builds } from "./builds/aladdin";
 // import { scarlet_builds } from "./builds/scarlet";
 // import { snow_queen_builds } from "./builds/snow_queen";
 // import { wukong_builds } from "./builds/wukong";
+import { generalBuilds } from "./builds/generalBuilds";
 //#endregion
 
 // Hero Section
@@ -285,6 +293,20 @@ export function getAllHeroBuilds(): { heroId: string; builds: HeroBuild[] }[] {
     heroId,
     builds,
   }));
+}
+
+/**
+ * Get all builds across all heroes and all general builds
+ * @returns Array containing all hero builds and general builds
+ */
+export function getAllBuilds(): (HeroBuild | GeneralBuild)[] {
+  // Get all hero builds and flatten them into a single array
+  const heroBuilds = Object.entries(registry.hero_builds).flatMap(
+    ([_, builds]) => builds,
+  );
+
+  // Combine hero builds with general builds
+  return [...heroBuilds, ...generalBuilds];
 }
 
 /**
