@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { generalBuilds } from "@/lib/builds/generalBuilds";
-import BuildCard from "../../BuildCard";
+import BuildCard from "../../GeneralBuildCard";
 
 interface BuildPageProps {
   params: Promise<{
