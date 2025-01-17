@@ -302,7 +302,7 @@ export function getAllHeroBuilds(): { heroId: string; builds: HeroBuild[] }[] {
 export function getAllBuilds(): (HeroBuild | GeneralBuild)[] {
   // Get all hero builds and flatten them into a single array
   const heroBuilds = Object.entries(registry.hero_builds).flatMap(
-    ([_, builds]) => builds,
+    ([, builds]) => builds,
   );
 
   // Combine hero builds with general builds
