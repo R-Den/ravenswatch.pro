@@ -8,10 +8,10 @@ import {
 } from "@/lib/registry";
 
 interface BuildPageProps {
-  params: {
+  params: Promise<{
     hero: string;
     "build-name": string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -31,7 +31,8 @@ export async function generateStaticParams() {
   return params;
 }
 
-export default async function BuildPage({ params }: BuildPageProps) {
+export default async function BuildPage(props: BuildPageProps) {
+  const params = await props.params;
   const heroId = params.hero;
   const buildName = decodeURIComponent(params["build-name"]);
 
