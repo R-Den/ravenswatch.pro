@@ -25,7 +25,7 @@ import { aladdin_builds } from "./builds/aladdin";
 // import { piper_builds } from "./builds/piper";
 // import { scarlet_builds } from "./builds/scarlet";
 // import { snow_queen_builds } from "./builds/snow_queen";
-// import { wukong_builds } from "./builds/wukong";
+import { wukong_builds } from "./builds/wukong";
 import { generalBuilds } from "./builds/generalBuilds";
 //#endregion
 
@@ -53,7 +53,7 @@ export const registry = {
     // [piper.id]: piper_builds,
     // [scarlet.id]: scarlet_builds,
     // [snow_queen.id]: snow_queen_builds,
-    // [wukong.id]: wukong_builds,
+    [wukong.id]: wukong_builds,
   },
 } as const;
 //#endregion
