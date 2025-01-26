@@ -40,7 +40,7 @@ const HeroBuildCard = ({ build }: HeroBuildCardProps) => {
           <TooltipTrigger>
             <div className="flex flex-col items-center group">
               <div
-                className={`w-12 h-12 rounded-lg overflow-hidden border-2 ${
+                className={`w-28 h-28 rounded-lg overflow-hidden border-2 ${
                   isOptional ? "border-amber-500" : "border-blue-500"
                 } bg-gray-800 hover:border-primary transition-colors`}
               >
@@ -80,7 +80,7 @@ const HeroBuildCard = ({ build }: HeroBuildCardProps) => {
           <TooltipTrigger>
             <div className="flex flex-col items-center group">
               <div
-                className={`w-12 h-12 rounded-lg overflow-hidden border-2 ${
+                className={`w-28 h-28 rounded-lg overflow-hidden border-2 ${
                   isCore ? "border-purple-500" : "border-indigo-500"
                 } bg-gray-800 hover:border-primary transition-colors flex items-center justify-center`}
               >
