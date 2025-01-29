@@ -18,7 +18,7 @@ import { snow_queen } from "./heroes/snow_queen";
 import { wukong } from "./heroes/wukong";
 import { magical_objects } from "./magical_objects/magical_objects";
 import { aladdin_builds } from "./builds/aladdin";
-// import { beowulf_builds } from "./builds/beowulf";
+import { beowulf_builds } from "./builds/beowulf";
 // import { carmilla_builds } from "./builds/carmilla";
 // import { geppetto_builds } from "./builds/geppetto";
 // import { melusine_builds } from "./builds/melusine";
@@ -46,7 +46,7 @@ export const registry = {
   magical_objects,
   hero_builds: {
     [aladdin.id]: aladdin_builds,
-    // [beowulf.id]: beowulf_builds,
+    [beowulf.id]: beowulf_builds,
     // [carmilla.id]: carmilla_builds,
     // [geppetto.id]: geppetto_builds,
     // [melusine.id]: melusine_builds,
