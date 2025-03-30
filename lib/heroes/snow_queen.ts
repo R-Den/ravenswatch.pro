@@ -7,7 +7,7 @@ export const snow_queen: Hero = {
   name: "The Snow Queen",
   unlock_condition: "Default",
   description:
-    "Sun snow_queen is the 8th Hero from the Ravenswatch. The Monkey King Sun snow_queen battles with his magical staff and stances to withstand powerful blows or crush ignorant foes dissuaded by his playful demeanor.",
+    "The Snow Queen controls the wrath of winter, slowing and freezing her enemies beneath blankets of frost while sliding gracefully through the battlefield with her chilling aura.",
   talents: snow_queen_talents,
   abilities: snow_queen_abilities,
   encoding_id: "h",
